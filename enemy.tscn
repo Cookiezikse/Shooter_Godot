@@ -25,7 +25,7 @@ modulate = Color(1, 1, 1, 0.0901961)
 shape = SubResource("CircleShape2D_pei2k")
 
 [node name="AtkSpeed" type="Timer" parent="."]
-one_shot = true
+wait_time = 0.4
 autostart = true
 
 [node name="PosTir" type="Marker2D" parent="."]
