@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcsqaoeeidaq4"]
+
+[ext_resource type="Texture2D" uid="uid://o0b6lx8bopr1" path="res://Imports/Graphics/Ships/ship_0006.png" id="1_s6fmv"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(1.90625, 1.65625)
+texture = ExtResource("1_s6fmv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 7, -1, 7, -1, 6, -3, 6, -3, 4, -2, 4, -2, 3, -1, 3, -1, 2, -2, 2, -2, 1, -5, 1, -5, 2, -7, 2, -7, 1, -9, 1, -9, -1, -8, -1, -8, -2, -7, -2, -7, -4, -5, -4, -5, -3, -2, -3, -2, -5, -1, -5, -1, -7, 1, -7, 1, -5, 2, -5, 2, -3, 5, -3, 5, -4, 7, -4, 7, -2, 8, -2, 8, -1, 9, -1, 9, 1, 7, 1, 7, 2, 5, 2, 5, 1, 2, 1, 2, 2, 1, 2, 1, 3, 2, 3, 2, 4, 3, 4, 3, 6, 1, 6, 1, 7)
