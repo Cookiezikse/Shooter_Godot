@@ -12,6 +12,7 @@ var amelioration = 0
 @onready var muzzleflash2 = $Muzzleflash2_2
 
 @warning_ignore("unused_parameter")
+
 func _physics_process(delta):
 	var horizontale = Input.get_axis("ui_left", "ui_right") 
 	var verticale = Input.get_axis("ui_up", "ui_down")
