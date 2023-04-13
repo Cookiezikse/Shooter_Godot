@@ -1,7 +1,14 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+var Bullet = preload("res://player_bullet.tscn")
 
+const SPEED = 300.0
+var canshoot = true
+
+@onready var spawnpos = $SpawnPos
+@onready var spawnpos2 = $SpawnPos2
+
+@warning_ignore("unused_parameter")
 func _physics_process(delta):
 
 	var horizontale = Input.get_axis("ui_left", "ui_right") 
@@ -24,3 +31,28 @@ func _physics_process(delta):
 	global_position.y = clamp(global_position.y, 40, 780)
 
 	move_and_slide()
+
+
+func _on_ShootSpeed_timeout():
+	canshoot = true 
+
+func _process(delta):
+	if Input.is_action_pressed("shoot") and canshoot:
+		shoot()
+		
+func shoot():
+	var bullet = Bullet.instantiate()
+	bullet.position = spawnpos.global_position
+	get_tree().current_scene.add_child(bullet)
+	
+	$ShootSpeed.start()
+	canshoot = false
+	
+	#SpawnPos2
+	
+	var bullet2 = Bullet.instantiate()
+	bullet2.position = spawnpos2.global_position
+	get_tree().current_scene.add_child(bullet2)
+	
+	$ShootSpeed.start()
+	canshoot = false
