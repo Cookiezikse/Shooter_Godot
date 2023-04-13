@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://yfq3x16nm34l"]
 
 [ext_resource type="PackedScene" uid="uid://dcsqaoeeidaq4" path="res://Player.tscn" id="1_nxivh"]
-[ext_resource type="PackedScene" uid="uid://ybhdu8dtuo3" path="res://enemy.tscn" id="2_7wk3q"]
+[ext_resource type="PackedScene" path="res://enemy.tscn" id="2_7wk3q"]
 
 [node name="Map" type="Node2D"]
 
