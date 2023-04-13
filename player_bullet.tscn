@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgwvy02tt5slq"]
+[gd_scene load_steps=4 format=3 uid="uid://bitgmp513npvw"]
 
+[ext_resource type="Script" path="res://player_bullet.gd" id="1_4ifaa"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="1_c3rbj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocqjx"]
 size = Vector2(12, 32)
 
 [node name="PlayerBullet" type="Area2D"]
+script = ExtResource("1_4ifaa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)

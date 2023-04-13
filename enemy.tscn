@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ybhdu8dtuo3"]
+[gd_scene load_steps=4 format=3 uid="uid://ycsuekws1106"]
 
 [ext_resource type="Script" path="res://enemy1.gd" id="1_6w6qu"]
 [ext_resource type="Texture2D" uid="uid://cimmq6eyy3b64" path="res://Imports/Graphics/Ships/ship_0009.png" id="1_kggje"]
@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_pei2k"]
 radius = 576.001
 
-[node name="Enemy1" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D"]
 position = Vector2(46, 49)
 script = ExtResource("1_6w6qu")
 
@@ -23,6 +23,8 @@ polygon = PackedVector2Array(-1, -7, 1, -7, 1, -6, 3, -6, 3, -5, 2, -5, 2, -4, 1
 shape = SubResource("CircleShape2D_pei2k")
 
 [node name="AtkSpeed" type="Timer" parent="."]
+one_shot = true
+autostart = true
 
 [node name="PosTir" type="Marker2D" parent="."]
 position = Vector2(0, 7)

@@ -1,7 +1,70 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcsqaoeeidaq4"]
+[gd_scene load_steps=7 format=3 uid="uid://dcsqaoeeidaq4"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_6mwfa"]
 [ext_resource type="Texture2D" uid="uid://o0b6lx8bopr1" path="res://Imports/Graphics/Ships/ship_0006.png" id="1_s6fmv"]
+[ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_lo0vl"]
+
+[sub_resource type="Animation" id="Animation_ugri4"]
+resource_name = "Muzzleflash1"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Muzzleflash1_1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Muzzleflash1_1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.349066]
+}
+
+[sub_resource type="Animation" id="Animation_vuu0n"]
+resource_name = "Muzzleflash2"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Muzzleflash2_1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.0002, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Muzzleflash2_1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.349066]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iltfn"]
+_data = {
+"Muzzleflash1": SubResource("Animation_ugri4"),
+"Muzzleflash2": SubResource("Animation_vuu0n")
+}
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_6mwfa")
@@ -23,5 +86,27 @@ position = Vector2(-12, -10)
 
 [node name="SpawnPos2" type="Marker2D" parent="."]
 position = Vector2(11, -10)
+
+[node name="Muzzleflash1_1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-12, -10)
+scale = Vector2(1.04221, 0.962827)
+texture = ExtResource("3_lo0vl")
+
+[node name="Muzzleflash1_2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iltfn")
+}
+
+[node name="Muzzleflash2_1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(11, -10)
+scale = Vector2(0.921875, 0.882813)
+texture = ExtResource("3_lo0vl")
+
+[node name="Muzzleflash2_2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iltfn")
+}
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]
