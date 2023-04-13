@@ -143,7 +143,7 @@ position = Vector2(234, 7)
 
 [node name="Background" type="ParallaxBackground" parent="."]
 script = ExtResource("3_6wcdc")
-speed = 300
+speed = 50
 
 [node name="WaterBackground" type="ParallaxLayer" parent="Background"]
 position = Vector2(600, 0)
