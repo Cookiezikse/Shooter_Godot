@@ -5,3 +5,4 @@
 [node name="Map" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_nxivh")]
+position = Vector2(244, 143)
