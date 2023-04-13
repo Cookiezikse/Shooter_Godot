@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ybhdu8dtuo3"]
+
+[ext_resource type="Script" path="res://enemy1.gd" id="1_6w6qu"]
+[ext_resource type="Texture2D" uid="uid://cimmq6eyy3b64" path="res://Imports/Graphics/Ships/ship_0009.png" id="1_kggje"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pei2k"]
+radius = 576.001
+
+[node name="Enemy1" type="CharacterBody2D"]
+position = Vector2(46, 49)
+script = ExtResource("1_6w6qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("1_kggje")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, -7, 1, -7, 1, -6, 3, -6, 3, -5, 2, -5, 2, -4, 1, -4, 1, -2, 2, -2, 2, -1, 7, -1, 7, 0, 9, 0, 9, 1, 10, 1, 10, 3, 8, 3, 8, 4, 6, 4, 6, 3, 2, 3, 2, 4, 1, 4, 1, 5, 2, 5, 2, 6, -2, 6, -2, 5, -1, 5, -1, 4, -2, 4, -2, 3, -6, 3, -6, 4, -8, 4, -8, 3, -10, 3, -10, 1, -9, 1, -9, 0, -7, 0, -7, -1, -2, -1, -2, -2, -1, -2, -1, -4, -2, -4, -2, -5, -3, -5, -3, -6, -1, -6)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pei2k")
+
+[node name="AtkSpeed" type="Timer" parent="."]
+
+[node name="PosTir" type="Marker2D" parent="."]
+position = Vector2(0, 7)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="AtkSpeed" to="." method="_on_atk_speed_timeout"]
