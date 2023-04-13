@@ -1,7 +1,137 @@
-[gd_scene load_steps=3 format=3 uid="uid://yfq3x16nm34l"]
+[gd_scene load_steps=8 format=3 uid="uid://yfq3x16nm34l"]
 
 [ext_resource type="PackedScene" uid="uid://dcsqaoeeidaq4" path="res://Player.tscn" id="1_nxivh"]
 [ext_resource type="PackedScene" uid="uid://ycsuekws1106" path="res://enemy.tscn" id="2_7wk3q"]
+[ext_resource type="Script" path="res://Background.gd" id="3_6wcdc"]
+[ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="3_u5rap"]
+[ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="4_naxba"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hyx3"]
+texture = ExtResource("4_naxba")
+separation = Vector2i(1, 1)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ksr5l"]
+sources/0 = SubResource("TileSetAtlasSource_1hyx3")
 
 [node name="Map" type="Node2D"]
 
@@ -10,3 +140,23 @@ position = Vector2(312, 728)
 
 [node name="Enemy" parent="." instance=ExtResource("2_7wk3q")]
 position = Vector2(234, 7)
+
+[node name="Background" type="ParallaxBackground" parent="."]
+script = ExtResource("3_6wcdc")
+speed = 300
+
+[node name="WaterBackground" type="ParallaxLayer" parent="Background"]
+position = Vector2(600, 0)
+rotation = 3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/WaterBackground"]
+position = Vector2(298.5, -402.794)
+scale = Vector2(38.3125, 53.3905)
+texture = ExtResource("3_u5rap")
+
+[node name="MapBackground" type="ParallaxLayer" parent="Background"]
+
+[node name="TileMap" type="TileMap" parent="Background/MapBackground"]
+tile_set = SubResource("TileSet_ksr5l")
+format = 2
+layer_0/tile_data = PackedInt32Array(786439, 65536, 3, 851975, 65536, 4, 917511, 65536, 5, 786440, 131072, 3, 851976, 131072, 4, 917512, 131072, 5, 786441, 196608, 3, 851977, 196608, 4, 917513, 196608, 5, -917495, 65536, 3, -851959, 65536, 4, -786423, 65536, 5, -917494, 131072, 3, -851958, 131072, 4, -786422, 131072, 5, -917493, 196608, 3, -851957, 196608, 4, -786421, 196608, 5, -1114085, 65536, 3, -1048549, 65536, 4, -983013, 65536, 5, -1114084, 131072, 3, -1048548, 131072, 4, -983012, 131072, 5, -1114083, 196608, 3, -1048547, 196608, 4, -983011, 196608, 5, 1376282, 65536, 3, 1441818, 65536, 4, 1507354, 65536, 5, 1376283, 131072, 3, 1441819, 131072, 4, 1507355, 131072, 5, 1376284, 196608, 3, 1441820, 196608, 4, 1507356, 196608, 5, 1835016, 65536, 3, 1900552, 65536, 4, 1966088, 65536, 5, 1835017, 131072, 3, 1900553, 131072, 4, 1966089, 131072, 5, 1835018, 196608, 3, 1900554, 196608, 4, 1966090, 196608, 5, 2097171, 65536, 3, 2162707, 65536, 4, 2228243, 65536, 5, 2097172, 131072, 3, 2162708, 131072, 4, 2228244, 131072, 5, 2097173, 196608, 3, 2162709, 196608, 4, 2228245, 196608, 5)

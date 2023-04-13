@@ -5,7 +5,7 @@ var Bullet = preload("res://enemy_bullet.tscn")
 var player = null
 var canshoot = true
 
-@export var speed = 1
+@export var speed = 1.5
 
 @onready var postir = $PosTir
 
@@ -21,14 +21,16 @@ func _physics_process(delta):
 		velocity.y = speed
 	move_and_collide(velocity)
 
-#Il y a un pb car la fonction ne se lance meme pas
-#Ok c'est bon il fallait le mettre en auto start sinon il ne marche pas automatiquement
+#------Il y a un pb car la fonction ne se lance meme pas
+#------Ok c'est bon il fallait le mettre en auto start sinon il ne marche pas automatiquement
+
 func _on_atk_speed_timeout():
 	canshoot = true 
-	print("Test canshoot")
-	#La fonction ne marche pas, il n'y a pas de renvoi de valeurs 
+	#print("Test canshoot")
+	
+	#-----La fonction ne marche pas, il n'y a pas de renvoi de valeurs 
 	if player != null:
-		print("test player and shoot")
+		#print("test player and shoot")
 		shoot()
 
 func shoot():
