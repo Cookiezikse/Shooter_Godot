@@ -19,10 +19,8 @@ func _physics_process(delta):
 		velocity.y = verticale * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
+		
+	global_position.x = clamp(global_position.x, 25, 580)
+	global_position.y = clamp(global_position.y, 40, 780)
 
 	move_and_slide()
-# Bonjou
-# fzssdfsf
-# fzfezfzefezfze
-#huiogjdrsxuiog
-#hjseuiohfgseuiof
