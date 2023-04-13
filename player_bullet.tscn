@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgwvy02tt5slq"]
+
+[ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="1_c3rbj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocqjx"]
+size = Vector2(12, 32)
+
+[node name="PlayerBullet" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_c3rbj")
+region_enabled = true
+region_rect = Rect2(-0.0293808, 0.0263767, 15.1617, 15.9049)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_ocqjx")
