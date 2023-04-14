@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var Bullet = preload("res://player_bullet.tscn")
+var Bullet = preload("res://Player/player_bullet.tscn")
 
 const SPEED = 300.0
 var health = 1
@@ -65,5 +65,5 @@ func shoot():
 func player_hit( ):
 	health -= 1
 	if health == 0:
-		get_tree( ).change_scene_to_file("res://gameovermenu.tscn")
+		get_tree( ).change_scene_to_file("res://Menus/Game Over/gameovermenu.tscn")
 		queue_free()

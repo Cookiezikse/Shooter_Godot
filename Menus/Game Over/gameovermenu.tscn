@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpyox2v0hp27k"]
+[gd_scene load_steps=8 format=3 uid="uid://c6cc7560dq5kx"]
 
-[ext_resource type="Script" path="res://gameovermenu.gd" id="1_273dy"]
+[ext_resource type="Script" path="res://Menus/Game Over/gameovermenu.gd" id="1_273dy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmbie"]
 bg_color = Color(0.203922, 0.188235, 0.235294, 1)

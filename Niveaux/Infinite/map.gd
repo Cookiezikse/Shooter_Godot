@@ -1,6 +1,6 @@
 extends Node2D
 
-var Enemy = preload("res://Enemy.tscn")
+var Enemy = preload("res://Ennemies/Ennemi_1/enemy.tscn")
 
 func _on_spawn_timeout():
 	print("Spawning enemy...")

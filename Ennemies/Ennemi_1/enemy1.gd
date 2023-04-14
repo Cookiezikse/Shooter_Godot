@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var Bullet = preload("res://enemy_bullet.tscn")
-var Explosion = preload("res://Explosion.tscn")
+var Bullet = preload("res://Ennemies/enemy_bullet.tscn")
+var Explosion = preload("res://Autres/Explosion.tscn")
 var player = null
 var canshoot = true
 

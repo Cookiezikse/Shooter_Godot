@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcsqaoeeidaq4"]
+[gd_scene load_steps=7 format=3 uid="uid://6k33bmmxwbg"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_6mwfa"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_i2ueo"]
 [ext_resource type="Texture2D" uid="uid://o0b6lx8bopr1" path="res://Imports/Graphics/Ships/ship_0006.png" id="1_s6fmv"]
 [ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_lo0vl"]
 
@@ -67,7 +67,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-script = ExtResource("1_6mwfa")
+script = ExtResource("1_i2ueo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(9.53674e-07, 0)

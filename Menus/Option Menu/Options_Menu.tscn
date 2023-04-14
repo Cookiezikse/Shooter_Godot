@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://u06goru65tkf"]
+[gd_scene load_steps=5 format=3 uid="uid://bds22too37ka2"]
 
-[ext_resource type="Script" path="res://Options_Menu.gd" id="1_3chke"]
+[ext_resource type="Script" path="res://Menus/Option Menu/Options_Menu.gd" id="1_3chke"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="2_e6xem"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bnlib"]

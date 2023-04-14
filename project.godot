@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Shooter_Godot"
-run/main_scene="res://Menu.tscn"
+run/main_scene="res://Menus/Main Menu/Menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Imports/Graphics/Ships/ship_0006.png"
 
 [autoload]
 

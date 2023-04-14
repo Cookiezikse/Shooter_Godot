@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtlt4mqm1io7e"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" path="res://Explosion.gd" id="1_nvm4x"]
+[ext_resource type="Script" path="res://Autres/Explosion.gd" id="1_nvm4x"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vn1u8"]
 load_path = "res://.godot/imported/cercle.png-fa1c02dfa5b287f7eba0bf0ffc251adb.ctex"
