@@ -6,6 +6,4 @@ func _on_spawn_timeout():
 	print("Spawning enemy...")
 	var enemy = Enemy.instantiate()
 	add_child(enemy)
-	enemy.position = Vector2(randi_range(2,515),randi_range(-5,-5))
-
-
+	enemy.position = Vector2(randi_range(2,580),randi_range(-5,-5))

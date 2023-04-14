@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtlt4mqm1io7e"]
+
+[ext_resource type="Script" path="res://Explosion.gd" id="1_nvm4x"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vn1u8"]
+load_path = "res://.godot/imported/cercle.png-fa1c02dfa5b287f7eba0bf0ffc251adb.ctex"
+
+[sub_resource type="Curve" id="Curve_wx3rc"]
+_data = [Vector2(0, 0.318182), 0.0, 0.0, 0, 0, Vector2(0.862245, 0.0636363), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_lohac"]
+colors = PackedColorArray(0.955313, 0.209601, 0, 1, 0.129558, 0.129558, 0.129558, 1)
+
+[node name="Explosion" type="CPUParticles2D"]
+scale = Vector2(0.21, 0.21)
+emitting = false
+amount = 15
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.8
+texture = SubResource("CompressedTexture2D_vn1u8")
+emission_shape = 1
+emission_sphere_radius = 0.01
+spread = 180.0
+gravity = Vector2(0, 500)
+initial_velocity_min = 490.57
+initial_velocity_max = 500.0
+scale_amount_min = 0.01
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_wx3rc")
+color_ramp = SubResource("Gradient_lohac")
+script = ExtResource("1_nvm4x")
