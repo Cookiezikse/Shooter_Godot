@@ -3,6 +3,7 @@ extends CharacterBody2D
 var Bullet = preload("res://player_bullet.tscn")
 
 const SPEED = 300.0
+var health = 1
 var canshoot = true
 var amelioration = 0
 
@@ -61,3 +62,7 @@ func shoot():
 		$ShootSpeed.start()
 		canshoot = false
 
+func player_hit( ):
+	health -= 1
+	if health == 0:
+		queue_free()

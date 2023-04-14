@@ -6,8 +6,10 @@ var player = null
 var canshoot = true
 
 @export var speed = 1.2
+@export var health = 3
 
 @onready var postir = $PosTir
+@onready var muzzleflash = $Muzzleflash
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
@@ -39,6 +41,12 @@ func shoot():
 		bullet.position = postir.global_position
 		get_parent().add_child(bullet)
 		
+		muzzleflash.play("Muzzleflash")
 		$AtkSpeed.start()
 		canshoot = false
+		
+func enemy_hit( ):
+	health -= 1
+	if health == 0:
+		queue_free()
 
