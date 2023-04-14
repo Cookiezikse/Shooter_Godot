@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2u6jxp5dlpgu"]
+[gd_scene load_steps=8 format=3 uid="uid://bpyox2v0hp27k"]
 
 [ext_resource type="Script" path="res://gameovermenu.gd" id="1_273dy"]
 
@@ -22,6 +22,7 @@ bg_color = Color(0.223529, 0.203922, 0.262745, 1)
 
 [node name="Gameovermenu" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -80,7 +81,7 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_qxv2d")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ac0bj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_e64qb")
-text = " Quit "
+text = "Menu"
 
 [connection signal="pressed" from="CenterContainer2/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="CenterContainer2/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
