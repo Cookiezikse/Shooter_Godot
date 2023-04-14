@@ -26,19 +26,11 @@ func _physics_process(delta):
 		velocity.y = speed
 	move_and_collide(velocity)
 
-#------Il y a un pb car la fonction ne se lance meme pas
-#------Ok c'est bon il fallait le mettre en auto start sinon il ne marche pas automatiquement
-
 func _on_atk_speed_timeout():
 	canshoot = true 
-	#print("Test canshoot")
 	
-	#-----La fonction ne marche pas, il n'y a pas de renvoi de valeurs 
 	if player != null:
 		shoot()
-	else:
-		print("marche")
-		pass
 
 func shoot():
 	if canshoot:
