@@ -4,11 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bicv3sb5mpn75" path="res://Imports/Graphics/Ships/ship_0005.png" id="2_3gnp7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gkhc5"]
-radius = 805.201
+radius = 463.108
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 rotation = 3.14159
 script = ExtResource("1_sa6a3")
+speed = null
+health = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-10, -10)
