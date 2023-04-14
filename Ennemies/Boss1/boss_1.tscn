@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Ennemies/Boss1/Boss1.gd" id="1_s5ktk"]
 [ext_resource type="Texture2D" uid="uid://c032w4iexrds" path="res://Imports/Graphics/Ships/ship_0001.png" id="2_fi5mk"]
 
-[node name="Boss1" type="Node2D"]
+[node name="Boss1" type="CharacterBody2D"]
 rotation = 3.14159
 script = ExtResource("1_s5ktk")
 
@@ -14,5 +14,8 @@ texture = ExtResource("2_fi5mk")
 [node name="ShootTimer" type="Timer" parent="."]
 
 [node name="Rotater" type="Node2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12, -10, -11.9999, -36, 1.00011, -44, 12.0001, -33, 41.0001, -27.9999, 56, -3.99986, 59, 15.0001, 37.9999, 28.0001, 1.99988, 48, -21.0001, 35.9999, -45.0001, 25.9999, -59, 8.99985, -54, -16.0001, -42.9999, -28.0001, -23.9999, -29.0001)
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

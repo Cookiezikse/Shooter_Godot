@@ -6,8 +6,9 @@ const Bullet_scene = preload("res://Ennemies/Boss1/bullet_boss.tscn")
 
 const rotate_speed = 100
 const shooter_timer_wait_time = 0.1
-const spawn_point_count = 4
+const spawn_point_count = 8
 const radius = 100
+var health = 50
 
 func _ready():
 	var step = 2 * PI / spawn_point_count
@@ -32,3 +33,9 @@ func _on_shoot_timer_timeout() -> void:
 		get_tree().root.add_child(bullet)
 		bullet.position = s.global_position
 		bullet.rotation = s.global_rotation
+
+func enemy_hit( ):
+	health -= 1
+	if health == 0:
+		Global.score +=500
+		queue_free()
