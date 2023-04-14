@@ -18,7 +18,6 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	player = null
 
-		
 func _physics_process(delta):
 	velocity.y = speed
 	velocity.x = 0
@@ -28,9 +27,10 @@ func _physics_process(delta):
 
 func _on_atk_speed_timeout():
 	canshoot = true 
-	
-	if player != null:
-		shoot()
+	# Je l'ai mit en commentaire parce que flemme de chercker si le joueur est la, il tire et puis c'est tout
+	#car y a des bug, si il apparait dedans direct il est pas compté et il tire pas
+	#if player != null:
+	shoot()
 
 func shoot():
 	if canshoot:

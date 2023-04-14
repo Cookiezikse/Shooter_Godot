@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Niveaux/Infinite/Background.gd" id="3_flxbs"]
 [ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="4_sn71v"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="5_b75lf"]
-[ext_resource type="Script" path="res://DispScore.gd" id="6_ktgyq"]
+[ext_resource type="PackedScene" uid="uid://cudtwa1o4hcw3" path="res://Score.tscn" id="6_utghi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hyx3"]
 texture = ExtResource("5_b75lf")
@@ -163,28 +163,6 @@ layer_0/tile_data = PackedInt32Array(786439, 65536, 3, 851975, 65536, 4, 917511,
 [node name="Spawn" type="Timer" parent="."]
 autostart = true
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Control" type="Control" parent="Node2D"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 160.0
-offset_bottom = 64.0
-
-[node name="Score" type="Label" parent="Node2D/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Score : "
-
-[node name="DispScore" type="Label" parent="Node2D/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.35
-anchor_right = 0.35
-offset_right = 112.0
-offset_bottom = 26.0
-text = "0"
-script = ExtResource("6_ktgyq")
+[node name="Node2D" parent="." instance=ExtResource("6_utghi")]
 
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]

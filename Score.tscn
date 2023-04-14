@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cudtwa1o4hcw3"]
+
+[ext_resource type="Script" path="res://DispScore.gd" id="1_qhxuc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 64.0
+
+[node name="Score" type="Label" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score : "
+
+[node name="DispScore" type="Label" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_right = 0.35
+offset_right = 112.0
+offset_bottom = 26.0
+text = "0"
+script = ExtResource("1_qhxuc")

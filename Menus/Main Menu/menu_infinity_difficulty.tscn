@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bd67j8v7f2lgh"]
 
-[ext_resource type="Script" path="res://Menus/Main Menu/menu_difficulty.gd" id="1_wh6bd"]
+[ext_resource type="Script" path="res://Menus/Main Menu/menu_infinity_difficulty.gd" id="1_hjjk2"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="2_7l886"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wvo01"]
@@ -130,14 +130,14 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_yi4rf"]
 sources/0 = SubResource("TileSetAtlasSource_wvo01")
 
-[node name="Menu_Difficulty" type="Control"]
+[node name="Menu_Infinity_Difficulty" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wh6bd")
+script = ExtResource("1_hjjk2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

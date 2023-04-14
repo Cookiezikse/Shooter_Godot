@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cd3w8yt7d33tv"]
 
-[ext_resource type="Script" path="res://Niveaux/Infinite/map.gd" id="1_y6yww"]
+[ext_resource type="Script" path="res://Niveaux/Story/Niveaux1.gd" id="1_jpdu1"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_nq5jh"]
 [ext_resource type="Script" path="res://Niveaux/Infinite/Background.gd" id="3_s0nwc"]
 [ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="4_3l8t8"]
@@ -134,8 +134,8 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_ksr5l"]
 sources/0 = SubResource("TileSetAtlasSource_1hyx3")
 
-[node name="Map" type="Node2D"]
-script = ExtResource("1_y6yww")
+[node name="Map2" type="Node2D"]
+script = ExtResource("1_jpdu1")
 
 [node name="Player" parent="." instance=ExtResource("2_nq5jh")]
 position = Vector2(312, 728)
@@ -173,12 +173,14 @@ offset_right = 160.0
 offset_bottom = 64.0
 
 [node name="Score" type="Label" parent="Node2D/Control"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Score : "
 
 [node name="DispScore" type="Label" parent="Node2D/Control"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.35

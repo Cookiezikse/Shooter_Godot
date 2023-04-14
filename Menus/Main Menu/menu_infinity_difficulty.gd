@@ -1,6 +1,6 @@
 extends Control
 
-var Map = "res://Menus/Select Menu/select_menu1.tscn"
+var Map = "res://Niveaux/Infinite/map.tscn"
 
 
 func _on_easy_pressed():

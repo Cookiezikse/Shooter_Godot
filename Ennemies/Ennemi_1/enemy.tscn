@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_okejg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tad0"]
-size = Vector2(709, 757.5)
+size = Vector2(709, 629.5)
 
 [sub_resource type="Animation" id="Animation_lbveo"]
 resource_name = "Muzzleflash"
@@ -59,7 +59,7 @@ polygon = PackedVector2Array(-1, -7, 1, -7, 1, -6, 3, -6, 3, -5, 2, -5, 2, -4, 1
 modulate = Color(1, 1, 1, 0.0901961)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 348.25)
+position = Vector2(-0.5, 284.25)
 shape = SubResource("RectangleShape2D_7tad0")
 
 [node name="AtkSpeed" type="Timer" parent="."]

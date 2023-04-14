@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-var Bullet = preload("res://enemy_bullet.tscn")
+var Bullet = preload("res://Ennemies/enemy_bullet.tscn")
 
 var player = null
 var canshoot = true
 
-@export var speed = 3
+@export var speed = 2
 @export var health = 2
 
 func _on_area_2d_body_entered(body):
@@ -20,8 +20,7 @@ func _physics_process(delta):
 	velocity.y = speed
 	velocity.x = 0
 	if player:
-		velocity = position.direction_to(player.position)
-		velocity.y = speed
+		velocity = position.direction_to(player.position) * speed
 	move_and_collide(velocity)
 
 		
