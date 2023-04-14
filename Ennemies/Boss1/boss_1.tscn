@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmb8xk5i4qfhh"]
+
+[ext_resource type="Script" path="res://Ennemies/Boss1/Boss1.gd" id="1_s5ktk"]
+[ext_resource type="Texture2D" uid="uid://c032w4iexrds" path="res://Imports/Graphics/Ships/ship_0001.png" id="2_fi5mk"]
+
+[node name="Boss1" type="Node2D"]
+rotation = 3.14159
+script = ExtResource("1_s5ktk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4.25, 4.28125)
+texture = ExtResource("2_fi5mk")
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="Rotater" type="Node2D" parent="."]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
