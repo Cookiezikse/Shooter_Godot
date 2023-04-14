@@ -50,13 +50,15 @@ scale = Vector2(2.32858, 2.11202)
 texture = ExtResource("1_kggje")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-3.15905e-06, 0.0576902)
+scale = Vector2(2.3125, 2.11538)
 polygon = PackedVector2Array(-1, -7, 1, -7, 1, -6, 3, -6, 3, -5, 2, -5, 2, -4, 1, -4, 1, -2, 2, -2, 2, -1, 7, -1, 7, 0, 9, 0, 9, 1, 10, 1, 10, 3, 8, 3, 8, 4, 6, 4, 6, 3, 2, 3, 2, 4, 1, 4, 1, 5, 2, 5, 2, 6, -2, 6, -2, 5, -1, 5, -1, 4, -2, 4, -2, 3, -6, 3, -6, 4, -8, 4, -8, 3, -10, 3, -10, 1, -9, 1, -9, 0, -7, 0, -7, -1, -2, -1, -2, -2, -1, -2, -1, -4, -2, -4, -2, -5, -3, -5, -3, -6, -1, -6)
 
 [node name="Area2D" type="Area2D" parent="."]
 modulate = Color(1, 1, 1, 0.0901961)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 195)
+position = Vector2(0, 179)
 shape = SubResource("RectangleShape2D_7tad0")
 
 [node name="AtkSpeed" type="Timer" parent="."]
