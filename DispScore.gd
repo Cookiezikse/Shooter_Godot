@@ -1,4 +1,4 @@
-extends Label
+#extends Label
 
-func _process(delta):
-	text= String(Global.score)
+f#unc _process(delta):
+#	text= String(Global.score)
