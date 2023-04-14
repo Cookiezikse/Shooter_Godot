@@ -5,7 +5,6 @@ var Bullet = preload("res://Player/player_bullet.tscn")
 const SPEED = 300.0
 var health = 1
 var canshoot = true
-var amelioration = 0
 
 @onready var spawnpos = $SpawnPos
 @onready var spawnpos2 = $SpawnPos2
@@ -16,8 +15,8 @@ var amelioration = 0
 @warning_ignore("unused_parameter")
 
 func _physics_process(delta):
-	var horizontale = Input.get_axis("ui_left", "ui_right") 
-	var verticale = Input.get_axis("ui_up", "ui_down")
+	var horizontale = Input.get_axis("ui_left_p2", "ui_right_p2") 
+	var verticale = Input.get_axis("ui_up_2", "ui_down_p2")
 	if Input.is_action_pressed("ui_focus_next"):
 		Godmod.disabled = true
 	#direction horizontale
@@ -42,7 +41,7 @@ func _on_shoot_speed_timeout():
 	canshoot = true 
 
 func _process(delta):
-	if Input.is_action_pressed("shoot") and canshoot:
+	if Input.is_action_pressed("shoot_p2") and canshoot:
 		shoot()
 		
 func shoot():
@@ -67,7 +66,7 @@ func shoot():
 func player_hit( ):
 	health -= 1
 	if health == 0:
-		Global.P1_dead = 1
+		Global.P2_dead = 1
 		if Global.P1_dead == 1 && Global.P2_dead == 1 && Global.P3_dead == 1 && Global.P4_dead == 1:
 			get_tree( ).change_scene_to_file("res://Menus/Game Over/gameovermenu.tscn")
 		queue_free()

@@ -4,6 +4,7 @@ extends Node2D
 # Config 1 : rotate speed = 50 shoot timer wait time = 0.2 spawn point count = 6
 # Config 2 : rotate speed = 100 shoot timer wait time = 0.1 ou 0.2 spawn point count = 8
 # Config 3 : rotate speed = 75 shoot timer wait time = 0.2 spawn point count 12
+# Config 4 : Les balles se tirent en cloche en suivant une fonction
 
 const Bullet_scene = preload("res://Ennemies/Boss1/bullet_boss.tscn")
 @onready var shoot_timer = $ShootTimer
