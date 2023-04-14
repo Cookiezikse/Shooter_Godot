@@ -13,13 +13,16 @@ var canshoot = true
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
-		player = body
+		player = true
+		
+func _on_area_2d_body_exited(body):
+	player = null
+
 		
 func _physics_process(delta):
 	velocity.y = speed
 	velocity.x = 0
 	if player:
-		velocity = position.direction_to(player.position) * speed
 		velocity.y = speed
 	move_and_collide(velocity)
 
@@ -32,8 +35,10 @@ func _on_atk_speed_timeout():
 	
 	#-----La fonction ne marche pas, il n'y a pas de renvoi de valeurs 
 	if player != null:
-		#print("test player and shoot")
 		shoot()
+	else:
+		print("marche")
+		pass
 
 func shoot():
 	if canshoot:
