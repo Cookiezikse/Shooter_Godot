@@ -11,13 +11,15 @@ var amelioration = 0
 @onready var spawnpos2 = $SpawnPos2
 @onready var muzzleflash1 = $Muzzleflash1_2
 @onready var muzzleflash2 = $Muzzleflash2_2
+@onready var Godmod = $CollisionPolygon2D
 
 @warning_ignore("unused_parameter")
 
 func _physics_process(delta):
 	var horizontale = Input.get_axis("ui_left", "ui_right") 
 	var verticale = Input.get_axis("ui_up", "ui_down")
-	
+	if Input.is_action_pressed("ui_focus_next"):
+		Godmod.disabled = true
 	#direction horizontale
 	if horizontale == 1:
 		velocity.x = horizontale * SPEED 
@@ -52,7 +54,7 @@ func shoot():
 	muzzleflash1.play("Muzzleflash1")
 	$ShootSpeed.start()
 	canshoot = false
-	
+
 	#SpawnPos2
 	if amelioration == 1:
 		var bullet2 = Bullet.instantiate()

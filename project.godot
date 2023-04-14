@@ -18,6 +18,7 @@ config/icon="res://Imports/Graphics/Ships/ship_0006.png"
 [autoload]
 
 Global="*res://Global.gd"
+AtkSpeedEnnemi="*res://Atk_speed_ennemi.gd"
 
 [display]
 

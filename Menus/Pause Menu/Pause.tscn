@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://oku32b6au18i"]
 
 [ext_resource type="Script" path="res://Menus/Pause Menu/Pause.gd" id="1_ef80t"]
 
