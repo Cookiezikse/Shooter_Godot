@@ -17,7 +17,7 @@ func _on_area_2d_body_exited(body):
 		
 func _physics_process(delta):
 	velocity.y = speed
-	if player && velocity > 0:
+	if player && velocity.y > 0:
 		velocity = position.direction_to(player.position) * speed
 	move_and_collide(velocity)
 
