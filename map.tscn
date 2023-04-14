@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="3_u5rap"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="4_naxba"]
 [ext_resource type="Script" path="res://DispScore.gd" id="7_vk7q3"]
-[ext_resource type="PackedScene" uid="uid://caidckjscyrqa" path="res://Pause.tscn" id="8_lpyq7"]
+[ext_resource type="PackedScene" path="res://Pause.tscn" id="8_lpyq7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hyx3"]
 texture = ExtResource("4_naxba")
