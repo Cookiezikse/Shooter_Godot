@@ -5,7 +5,7 @@ var Bullet = preload("res://enemy_bullet.tscn")
 var player = null
 var canshoot = true
 
-@export var speed = 1.2
+@export var speed = 2.2
 
 @onready var postir = $PosTir
 
@@ -41,4 +41,3 @@ func shoot():
 		
 		$AtkSpeed.start()
 		canshoot = false
-
