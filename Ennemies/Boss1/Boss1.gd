@@ -1,5 +1,10 @@
 extends Node2D
 
+# Faire un script pour choisir des config, en mode avec rotate speed = 100, spawn point = 4 
+# Config 1 : rotate speed = 50 shoot timer wait time = 0.2 spawn point count = 6
+# Config 2 : rotate speed = 100 shoot timer wait time = 0.1 ou 0.2 spawn point count = 8
+# Config 3 : rotate speed = 75 shoot timer wait time = 0.2 spawn point count 12
+
 const Bullet_scene = preload("res://Ennemies/Boss1/bullet_boss.tscn")
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
