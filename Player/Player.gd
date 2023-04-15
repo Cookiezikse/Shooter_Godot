@@ -7,6 +7,8 @@ var health = 1
 var canshoot = true
 var amelioration = 0
 
+
+@onready var Noscoop = $Noscoopie
 @onready var spawnpos = $SpawnPos
 @onready var spawnpos2 = $SpawnPos2
 @onready var muzzleflash1 = $Muzzleflash1_2
@@ -42,6 +44,9 @@ func _on_shoot_speed_timeout():
 	canshoot = true 
 
 func _process(delta):
+	if Input.is_action_pressed("Noscoop"):
+		Noscoop.play("Nscoop")
+	
 	if Input.is_action_pressed("shoot") and canshoot:
 		shoot()
 		

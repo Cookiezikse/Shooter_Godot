@@ -6,6 +6,7 @@ const SPEED = 300.0
 var health = 1
 var canshoot = true
 
+@onready var Noscoop = $Noscoop
 @onready var spawnpos = $SpawnPos
 @onready var spawnpos2 = $SpawnPos2
 @onready var muzzleflash1 = $Muzzleflash1_2
@@ -16,7 +17,8 @@ var canshoot = true
 
 func _physics_process(delta):
 	var horizontale = Input.get_axis("ui_left_p2", "ui_right_p2") 
-	var verticale = Input.get_axis("ui_up_2", "ui_down_p2")
+	var verticale = Input.get_axis("ui_up_p2", "ui_down_p2")
+	
 	if Input.is_action_pressed("ui_focus_next"):
 		Godmod.disabled = true
 	#direction horizontale
@@ -41,6 +43,9 @@ func _on_shoot_speed_timeout():
 	canshoot = true 
 
 func _process(delta):
+	if Input.is_action_pressed("Noscoop"):
+		Noscoop.play("Nscoop")	
+
 	if Input.is_action_pressed("shoot_p2") and canshoot:
 		shoot()
 		

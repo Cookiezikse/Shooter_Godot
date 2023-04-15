@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6k33bmmxwbg"]
+[gd_scene load_steps=9 format=3 uid="uid://6k33bmmxwbg"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_i2ueo"]
 [ext_resource type="Texture2D" uid="uid://o0b6lx8bopr1" path="res://Imports/Graphics/Ships/ship_0006.png" id="1_s6fmv"]
@@ -66,7 +66,29 @@ _data = {
 "Muzzleflash2": SubResource("Animation_vuu0n")
 }
 
+[sub_resource type="Animation" id="Animation_b3go3"]
+resource_name = "Nscoop"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cpegb"]
+_data = {
+"Nscoop": SubResource("Animation_b3go3")
+}
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+rotation = 6.28319
 script = ExtResource("1_i2ueo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -108,6 +130,11 @@ texture = ExtResource("3_lo0vl")
 [node name="Muzzleflash2_2" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_iltfn")
+}
+
+[node name="Noscoopie" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cpegb")
 }
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]

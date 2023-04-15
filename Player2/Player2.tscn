@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cys3ak2h84xuo"]
+[gd_scene load_steps=10 format=3 uid="uid://cys3ak2h84xuo"]
 
 [ext_resource type="Script" path="res://Player2/Player2.gd" id="1_0iqd5"]
 [ext_resource type="Texture2D" uid="uid://brkx8qlm870d" path="res://Imports/Graphics/Ships/ship_0010.png" id="2_jxk67"]
@@ -69,7 +69,29 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vuw4"]
 radius = 12.0
 
+[sub_resource type="Animation" id="Animation_naajx"]
+resource_name = "Nscop"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(9.51365, 10.1965),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8kf1"]
+_data = {
+"Nscop": SubResource("Animation_naajx")
+}
+
 [node name="Player2" type="CharacterBody2D" groups=["Player2"]]
+rotation = 6.28319
 script = ExtResource("1_0iqd5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -112,5 +134,10 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1vuw4")
+
+[node name="Noscoop" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g8kf1")
+}
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]

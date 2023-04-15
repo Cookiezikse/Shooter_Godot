@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://1bclrx2w8d2p"]
+[gd_scene load_steps=10 format=3 uid="uid://1bclrx2w8d2p"]
 
 [ext_resource type="Script" path="res://Niveaux/Infinite/map.gd" id="1_jt7uk"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_83wul"]
 [ext_resource type="Script" path="res://Niveaux/Infinite/Background.gd" id="3_flxbs"]
 [ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="4_sn71v"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="5_b75lf"]
-[ext_resource type="PackedScene" uid="uid://cudtwa1o4hcw3" path="res://Score.tscn" id="6_utghi"]
+[ext_resource type="Script" path="res://Niveaux/Infinite/Spawn_infinite.gd" id="6_74mks"]
+[ext_resource type="PackedScene" path="res://Score.tscn" id="6_utghi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hyx3"]
 texture = ExtResource("5_b75lf")
@@ -162,7 +163,9 @@ layer_0/tile_data = PackedInt32Array(786439, 65536, 3, 851975, 65536, 4, 917511,
 
 [node name="Spawn" type="Timer" parent="."]
 autostart = true
+script = ExtResource("6_74mks")
 
 [node name="Node2D" parent="." instance=ExtResource("6_utghi")]
 
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
+[connection signal="timeout" from="Spawn" to="Spawn" method="_on_timeout"]

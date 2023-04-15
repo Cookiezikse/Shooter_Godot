@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://jbv4vveh3ilg"]
+[gd_scene load_steps=12 format=3 uid="uid://jbv4vveh3ilg"]
 
+[ext_resource type="Script" path="res://Menus/Select Menu/select_menu1.gd" id="1_bf1d8"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="1_myooo"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_7lua1"]
 [ext_resource type="Script" path="res://Menus/Select Menu/Niveau_1.gd" id="2_od41o"]
@@ -274,6 +275,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bf1d8")
 
 [node name="Ground + Water" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_gwmno")
@@ -327,3 +329,4 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [connection signal="area_entered" from="Niveau_1" to="Niveau_1" method="_on_area_entered"]
+[connection signal="script_changed" from="Niveau_1" to="." method="_on_niveau_1_script_changed"]

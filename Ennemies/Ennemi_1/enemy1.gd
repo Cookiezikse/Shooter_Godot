@@ -6,7 +6,7 @@ var player = null
 var canshoot = true
 
 @export var speed = 1.2
-var health = AtkSpeedEnnemi.Health
+var health = EnnemiVars.Health_Ennemi_1
 
 @onready var postir = $PosTir
 @onready var muzzleflash = $Muzzleflash
