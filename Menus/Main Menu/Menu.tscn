@@ -146,7 +146,6 @@ grow_vertical = 2
 script = ExtResource("1_80ywm")
 
 [node name="Player" parent="." instance=ExtResource("3_408j6")]
-rotation = 4.46638e-06
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
