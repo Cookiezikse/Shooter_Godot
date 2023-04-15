@@ -2,8 +2,6 @@ extends Control
 
 var Map = "res://Niveaux/Infinite/map.tscn"
 
-
-
 func _on_easy_pressed():
 	EnnemiVars.Speed_Ennemi_1 = 1.5
 	EnnemiVars.Health_Ennemi_1 = 2
