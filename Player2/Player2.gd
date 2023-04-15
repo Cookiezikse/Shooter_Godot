@@ -16,6 +16,10 @@ var canshoot = true
 @warning_ignore("unused_parameter")
 
 func _physics_process(delta):
+	
+	if Global.P2_dead == 1:
+		queue_free()
+	
 	var horizontale = Input.get_axis("ui_left_p2", "ui_right_p2") 
 	var verticale = Input.get_axis("ui_up_p2", "ui_down_p2")
 	
@@ -43,8 +47,8 @@ func _on_shoot_speed_timeout():
 	canshoot = true 
 
 func _process(delta):
-	if Input.is_action_pressed("Noscoop"):
-		Noscoop.play("Nscoop")	
+	if Input.is_action_pressed("Noscoop2"):
+		Noscoop.play("Nscop")	
 
 	if Input.is_action_pressed("shoot_p2") and canshoot:
 		shoot()

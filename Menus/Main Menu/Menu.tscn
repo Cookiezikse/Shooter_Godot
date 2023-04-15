@@ -221,4 +221,4 @@ text = "Come Here to remove a player !"
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="body_entered" from="Spawn_Player" to="." method="_on_spawn_player_body_entered"]
-[connection signal="body_entered" from="Destroy_player" to="." method="_on_spawn_player_body_entered"]
+[connection signal="body_entered" from="Destroy_player" to="." method="_on_destroy_player_body_entered"]
