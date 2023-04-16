@@ -1,8 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://hsemjvhhbfex"]
+[gd_scene load_steps=15 format=3 uid="uid://hsemjvhhbfex"]
 
 [ext_resource type="Script" path="res://Menus/Main Menu/Menu.gd" id="1_80ywm"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="2_0guqo"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="3_408j6"]
+[ext_resource type="Script" path="res://Menus/Main Menu/Start_story.gd" id="3_g474m"]
+[ext_resource type="Script" path="res://Menus/Main Menu/Start_infinite.gd" id="4_q8v6t"]
+[ext_resource type="Script" path="res://Menus/Main Menu/Options.gd" id="5_3gwmh"]
+[ext_resource type="Script" path="res://Menus/Main Menu/Quit.gd" id="6_4rt42"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sp56q"]
 size = Vector2(85, 31.5)
@@ -173,59 +177,63 @@ scale = Vector2(2, 2)
 theme_override_constants/separation = 20
 
 [node name="Start_story2" type="Button" parent="VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
+button_mask = 0
 text = "Play Story
 "
 
 [node name="Start_story" type="Area2D" parent="VBoxContainer/Start_story2"]
 position = Vector2(-19, 0)
+script = ExtResource("3_g474m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Start_story2/Start_story"]
 position = Vector2(61.5, 15.25)
 shape = SubResource("RectangleShape2D_sp56q")
 
 [node name="Start_infinite2" type="Button" parent="VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
+button_mask = 0
 text = "Play Infinite"
 
 [node name="Start_infinite" type="Area2D" parent="VBoxContainer/Start_infinite2"]
 position = Vector2(-11, -35)
+script = ExtResource("4_q8v6t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Start_infinite2/Start_infinite"]
 position = Vector2(61, 50.75)
 shape = SubResource("RectangleShape2D_rq4gg")
 
 [node name="Options2" type="Button" parent="VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
 z_index = 1
 z_as_relative = false
 y_sort_enabled = true
 layout_mode = 2
 size_flags_horizontal = 4
+button_mask = 0
 text = "Options"
 
 [node name="Options" type="Area2D" parent="VBoxContainer/Options2"]
 position = Vector2(-26, 5)
+script = ExtResource("5_3gwmh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Options2/Options"]
 position = Vector2(61.25, 10.5)
 shape = SubResource("RectangleShape2D_ot1nl")
 
 [node name="Quit2" type="Button" parent="VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
+button_mask = 0
 text = "Quit"
 
 [node name="Quit" type="Area2D" parent="VBoxContainer/Quit2"]
+script = ExtResource("6_4rt42")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Quit2/Quit"]
 position = Vector2(20.75, 15.5)
@@ -264,9 +272,13 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Come Here to remove a player !"
 
-[connection signal="body_entered" from="VBoxContainer/Start_story2/Start_story" to="." method="_on_start_story_body_entered"]
-[connection signal="body_entered" from="VBoxContainer/Start_infinite2/Start_infinite" to="." method="_on_start_infinite_body_entered"]
-[connection signal="body_entered" from="VBoxContainer/Options2/Options" to="." method="_on_options_body_entered"]
-[connection signal="body_entered" from="VBoxContainer/Quit2/Quit" to="." method="_on_quit_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Start_story2/Start_story" to="VBoxContainer/Start_story2/Start_story" method="_on_body_entered"]
+[connection signal="body_exited" from="VBoxContainer/Start_story2/Start_story" to="VBoxContainer/Start_story2/Start_story" method="_on_body_exited"]
+[connection signal="body_entered" from="VBoxContainer/Start_infinite2/Start_infinite" to="VBoxContainer/Start_infinite2/Start_infinite" method="_on_body_entered"]
+[connection signal="body_exited" from="VBoxContainer/Start_infinite2/Start_infinite" to="VBoxContainer/Start_infinite2/Start_infinite" method="_on_body_exited"]
+[connection signal="body_entered" from="VBoxContainer/Options2/Options" to="VBoxContainer/Options2/Options" method="_on_body_entered"]
+[connection signal="body_exited" from="VBoxContainer/Options2/Options" to="VBoxContainer/Options2/Options" method="_on_body_exited"]
+[connection signal="body_entered" from="VBoxContainer/Quit2/Quit" to="VBoxContainer/Quit2/Quit" method="_on_body_entered"]
+[connection signal="body_exited" from="VBoxContainer/Quit2/Quit" to="VBoxContainer/Quit2/Quit" method="_on_body_exited"]
 [connection signal="body_entered" from="Spawn_Player" to="." method="_on_spawn_player_body_entered"]
 [connection signal="body_entered" from="Destroy_player" to="." method="_on_destroy_player_body_entered"]
