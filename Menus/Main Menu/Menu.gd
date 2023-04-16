@@ -6,19 +6,6 @@ extends Control
 @onready var Player2 = $Player2
 
 var Player2_scene = preload("res://Player2/Player2.tscn")
-	
-func _on_start_story_pressed():
-	emit_signal("JOUEURS")
-	get_tree().change_scene_to_file("res://Menus/Main Menu/menu_story_difficulty.tscn")
-	
-func _on_start_infinite_pressed():
-	get_tree().change_scene_to_file("res://Menus/Main Menu/menu_infinity_difficulty.tscn")  #A metre la scene de sélection level story
-
-func _on_options_pressed():
-	get_tree().change_scene_to_file("res://Menus/Option Menu/Options_Menu.tscn")
-
-func _on_quit_pressed():
-	get_tree().quit()
 
 func _on_spawn_player_body_entered(body):
 	if Global.P2_dead == 1:
@@ -34,4 +21,19 @@ func _on_destroy_player_body_entered(body):
 	if Global.P2_dead == 0:
 		Global.P2_dead = 1
 		
-		
+func _on_start_story_body_entered(body):
+	emit_signal("JOUEURS")
+	Global.Scene2 = "res://Menus/Select Menu/select_menu1.tscn"
+	get_tree().change_scene_to_file("res://Menus/Main Menu/menu_difficulty.tscn")
+
+
+func _on_start_infinite_body_entered(body):
+	Global.Scene2 = "res://Niveaux/Infinite/map.tscn"
+	get_tree().change_scene_to_file("res://Menus/Main Menu/menu_difficulty.tscn")  #A metre la scene de sélection level story
+
+func _on_options_body_entered(body):
+	get_tree().change_scene_to_file("res://Menus/Option Menu/Options_Menu.tscn")
+
+
+func _on_quit_body_entered(body):
+	get_tree().quit()

@@ -2,6 +2,10 @@ extends Node
 
 var score = 0
 
+var Scene = 0
+var Scene2 = ""
+var Scene_story = ""
+
 var Main_scene = 1
 
 var P1_dead = 0
