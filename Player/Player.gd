@@ -6,7 +6,7 @@ const SPEED = 300.0
 var health = 1
 var canshoot = true
 var amelioration = 0
-
+var amount_grenade = 3
 
 @onready var Noscoop = $Noscoopie
 @onready var spawnpos = $SpawnPos
@@ -50,6 +50,9 @@ func _process(delta):
 	if Input.is_action_pressed("shoot") and canshoot:
 		shoot()
 		
+	if Input.is_action_pressed("grenade"):
+		grenade()
+		
 func shoot():
 	
 	#SpawnPos1
@@ -71,8 +74,13 @@ func shoot():
 
 func player_hit( ):
 	health -= 1
-	if health == 0:
+	if health >= 0:
 		Global.P1_dead = 1
 		if Global.P1_dead == 1 && Global.P2_dead == 1 && Global.P3_dead == 1 && Global.P4_dead == 1:
 			get_tree( ).change_scene_to_file("res://Menus/Game Over/gameovermenu.tscn")
 		queue_free()
+				
+func grenade( ):
+	if amount_grenade > 0 and Input.is_action_pressed("grenade"):
+		amount_grenade -= 1
+		print(amount_grenade)
