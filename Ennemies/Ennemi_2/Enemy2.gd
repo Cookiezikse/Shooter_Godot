@@ -20,7 +20,14 @@ func _physics_process(delta):
 	if player && velocity.y > 0:
 		velocity = position.direction_to(player.position) * speed
 	move_and_collide(velocity)
-
+	if Global.grenade1 > 0 && Input.is_action_pressed("grenade"):
+		Global.grenade1 -= 1
+		Global.score += 50
+		queue_free()
+	if Global.grenade2 > 0 && Input.is_action_pressed("grenade2"):
+		Global.grenade2 -= 1
+		Global.score += 50
+		queue_free()
 		
 func enemy_hit( ):
 	health -= 1

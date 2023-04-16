@@ -16,3 +16,6 @@ var P4_dead = 1
 
 var amelioration = 0
 #Faire une variable pour l'amélioration du joueur pour que dans le shop on la sélec
+
+var grenade1 = 3
+var grenade2 = 3

@@ -4,17 +4,12 @@ var Bullet = preload("res://Ennemies/enemy_bullet.tscn")
 var Explosion = preload("res://Autres/Explosion.tscn")
 var player = null
 var canshoot = true
-var amount_grenade = 3
 
 @export var speed = 1.2
 var health = EnnemiVars.Health_Ennemi_1
 
 @onready var postir = $PosTir
 @onready var muzzleflash = $Muzzleflash
-
-func _process(delta):
-	if Input.is_action_pressed("grenade"):
-		grenade()
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
@@ -29,6 +24,14 @@ func _physics_process(delta):
 	if player:
 		velocity.y = speed
 	move_and_collide(velocity)
+	if Global.grenade1 > 0 && Input.is_action_pressed("grenade1"): 
+		Global.grenade1 -= 1
+		Global.score += 50
+		queue_free()
+	if Global.grenade2 > 0 && Input.is_action_pressed("grenade2"):
+		Global.grenade2 -= 1
+		Global.score += 50
+		queue_free()
 
 func _on_atk_speed_timeout():
 	canshoot = true 
@@ -58,6 +61,3 @@ func enemy_hit( ):
 		explosion.global_position = global_position
 		get_tree().current_scene.add_child(explosion)
 		
-func grenade( ):
-	if Input.is_action_pressed("grenade"):
-		health -= 1
