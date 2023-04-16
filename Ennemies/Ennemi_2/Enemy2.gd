@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var Bullet = preload("res://Ennemies/enemy_bullet.tscn")
+var Explosion = preload("res://Autres/Explosion.tscn")
 var Player_pos #Faire une variable qui a les coordonnées du player
 var player = null
 var canshoot = true
@@ -20,13 +21,11 @@ func _physics_process(delta):
 	if player && velocity.y > 0:
 		velocity = position.direction_to(player.position) * speed
 	move_and_collide(velocity)
-	if Global.grenade1 > 0 && Input.is_action_pressed("grenade"):
-		Global.grenade1 -= 1
+	if Global.grenade1 >= 0 && Input.is_action_pressed("grenade1"): 
 		Global.score += 50
-		queue_free()
-	if Global.grenade2 > 0 && Input.is_action_pressed("grenade2"):
-		Global.grenade2 -= 1
-		Global.score += 50
+		var explosion = Explosion.instantiate()
+		explosion.global_position = global_position
+		get_tree().current_scene.add_child(explosion)
 		queue_free()
 		
 func enemy_hit( ):

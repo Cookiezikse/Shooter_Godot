@@ -24,13 +24,11 @@ func _physics_process(delta):
 	if player:
 		velocity.y = speed
 	move_and_collide(velocity)
-	if Global.grenade1 > 0 && Input.is_action_pressed("grenade1"): 
-		Global.grenade1 -= 1
+	if Global.grenade1 >= 0 && Input.is_action_pressed("grenade1"): 
 		Global.score += 50
-		queue_free()
-	if Global.grenade2 > 0 && Input.is_action_pressed("grenade2"):
-		Global.grenade2 -= 1
-		Global.score += 50
+		var explosion = Explosion.instantiate()
+		explosion.global_position = global_position
+		get_tree().current_scene.add_child(explosion)
 		queue_free()
 
 func _on_atk_speed_timeout():
