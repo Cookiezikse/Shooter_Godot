@@ -29,7 +29,7 @@ func _on_start_story_body_entered(body):
 
 func _on_start_infinite_body_entered(body):
 	Global.Scene2 = "res://Niveaux/Infinite/map.tscn"
-	get_tree().change_scene_to_file("res://Menus/Main Menu/menu_difficulty.tscn")  #A metre la scene de sélection level story
+	get_tree().change_scene_to_file("res://Menus/Main Menu/menu_difficulty.tscn")  #A mettre la scene de sélection level story
 
 func _on_options_body_entered(body):
 	get_tree().change_scene_to_file("res://Menus/Option Menu/Options_Menu.tscn")
