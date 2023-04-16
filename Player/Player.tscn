@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://6k33bmmxwbg"]
+[gd_scene load_steps=10 format=3 uid="uid://6k33bmmxwbg"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_i2ueo"]
 [ext_resource type="Texture2D" uid="uid://o0b6lx8bopr1" path="res://Imports/Graphics/Ships/ship_0006.png" id="1_s6fmv"]
 [ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_lo0vl"]
+[ext_resource type="Script" path="res://Player/ShootSpeed.gd" id="3_wb4q8"]
 
 [sub_resource type="Animation" id="Animation_ugri4"]
 resource_name = "Muzzleflash1"
@@ -102,6 +103,7 @@ polygon = PackedVector2Array(0, 12, -2, 12, -2, 10, -6, 10, -6, 6, -4, 6, -4, 5,
 [node name="ShootSpeed" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+script = ExtResource("3_wb4q8")
 
 [node name="SpawnPos" type="Marker2D" parent="."]
 position = Vector2(-12, -10)

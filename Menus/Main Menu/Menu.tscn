@@ -173,11 +173,11 @@ scale = Vector2(2, 2)
 theme_override_constants/separation = 20
 
 [node name="Start_story2" type="Button" parent="VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
+button_mask = 0
 text = "Play Story
 "
 
@@ -189,10 +189,10 @@ position = Vector2(61.5, 15.25)
 shape = SubResource("RectangleShape2D_sp56q")
 
 [node name="Start_infinite2" type="Button" parent="VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
+button_mask = 0
 text = "Play Infinite"
 
 [node name="Start_infinite" type="Area2D" parent="VBoxContainer/Start_infinite2"]
@@ -203,12 +203,12 @@ position = Vector2(61, 50.75)
 shape = SubResource("RectangleShape2D_rq4gg")
 
 [node name="Options2" type="Button" parent="VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
 z_index = 1
 z_as_relative = false
 y_sort_enabled = true
 layout_mode = 2
 size_flags_horizontal = 4
+button_mask = 0
 text = "Options"
 
 [node name="Options" type="Area2D" parent="VBoxContainer/Options2"]
@@ -219,10 +219,10 @@ position = Vector2(61.25, 10.5)
 shape = SubResource("RectangleShape2D_ot1nl")
 
 [node name="Quit2" type="Button" parent="VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
+button_mask = 0
 text = "Quit"
 
 [node name="Quit" type="Area2D" parent="VBoxContainer/Quit2"]

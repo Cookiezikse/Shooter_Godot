@@ -15,4 +15,5 @@ var P3_dead = 1
 var P4_dead = 1
 
 var amelioration = 0
+var atk_speed = 0.3
 #Faire une variable pour l'amélioration du joueur pour que dans le shop on la sélec

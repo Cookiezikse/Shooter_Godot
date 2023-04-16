@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://100rssj613rg"]
+
+[ext_resource type="Script" path="res://shop.gd" id="1_yqavo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhroa"]
+size = Vector2(57, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_370vy"]
+size = Vector2(93, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdrcl"]
+size = Vector2(84, 29)
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqavo")
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -159.0
+offset_right = 159.0
+offset_bottom = 168.0
+grow_horizontal = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Shop" type="Label" parent="CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Shop :"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer2"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Tir" type="Button" parent="CanvasLayer/VBoxContainer2/HBoxContainer2"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+button_mask = 0
+text = "+ 1 Tir"
+
+[node name="Tir" type="Area2D" parent="CanvasLayer/VBoxContainer2/HBoxContainer2/Tir"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/VBoxContainer2/HBoxContainer2/Tir/Tir"]
+position = Vector2(27.5, 15)
+shape = SubResource("RectangleShape2D_rhroa")
+
+[node name="Speed" type="Button" parent="CanvasLayer/VBoxContainer2/HBoxContainer2"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+button_mask = 0
+text = "- Atk speed"
+
+[node name="AtkSpeed" type="Area2D" parent="CanvasLayer/VBoxContainer2/HBoxContainer2/Speed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/VBoxContainer2/HBoxContainer2/Speed/AtkSpeed"]
+position = Vector2(46.5, 15.5)
+shape = SubResource("RectangleShape2D_370vy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Fait toi plaisir !"
+
+[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Quit shop"
+
+[node name="Quit" type="Area2D" parent="CanvasLayer/VBoxContainer2/HBoxContainer/Quit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/VBoxContainer2/HBoxContainer/Quit/Quit"]
+position = Vector2(42, 15.5)
+shape = SubResource("RectangleShape2D_qdrcl")
+
+[connection signal="body_entered" from="CanvasLayer/VBoxContainer2/HBoxContainer2/Tir/Tir" to="." method="_on_tir_body_entered"]
+[connection signal="body_entered" from="CanvasLayer/VBoxContainer2/HBoxContainer2/Speed/AtkSpeed" to="." method="_on_atk_speed_body_entered"]

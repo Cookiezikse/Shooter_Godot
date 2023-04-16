@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://jbv4vveh3ilg"]
+[gd_scene load_steps=13 format=3 uid="uid://jbv4vveh3ilg"]
 
 [ext_resource type="Script" path="res://Menus/Select Menu/select_menu1.gd" id="1_bf1d8"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="1_myooo"]
@@ -268,6 +268,9 @@ radius = 74.108
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qtmp"]
 size = Vector2(299, 134)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2n8y"]
+size = Vector2(47, 27)
+
 [node name="select_menu1" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -328,5 +331,18 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="Back" type="Area2D" parent="."]
+position = Vector2(530, 753)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back"]
+position = Vector2(24, 15)
+shape = SubResource("RectangleShape2D_o2n8y")
+
+[node name="Back" type="Button" parent="Back"]
+offset_right = 45.0
+offset_bottom = 31.0
+text = "Back"
+
 [connection signal="area_entered" from="Niveau_1" to="Niveau_1" method="_on_area_entered"]
 [connection signal="script_changed" from="Niveau_1" to="." method="_on_niveau_1_script_changed"]
+[connection signal="body_entered" from="Back" to="." method="_on_back_body_entered"]
