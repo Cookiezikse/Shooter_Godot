@@ -20,20 +20,3 @@ func _on_destroy_player_body_entered(body):
 	#Mettre avant la meme mais pour P4 et ensuite P3
 	if Global.P2_dead == 0:
 		Global.P2_dead = 1
-		
-func _on_start_story_body_entered(body):
-	emit_signal("JOUEURS")
-	Global.Scene2 = "res://Menus/Select Menu/select_menu1.tscn"
-	get_tree().change_scene_to_file("res://Menus/Main Menu/menu_difficulty.tscn")
-
-
-func _on_start_infinite_body_entered(body):
-	Global.Scene2 = "res://Niveaux/Infinite/map.tscn"
-	get_tree().change_scene_to_file("res://Menus/Main Menu/menu_difficulty.tscn")  #A mettre la scene de sélection level story
-
-func _on_options_body_entered(body):
-	get_tree().change_scene_to_file("res://Menus/Option Menu/Options_Menu.tscn")
-
-
-func _on_quit_body_entered(body):
-	get_tree().quit()

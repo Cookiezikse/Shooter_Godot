@@ -1,8 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddn7w57kh05ju"]
+[gd_scene load_steps=14 format=3 uid="uid://ddn7w57kh05ju"]
 
 [ext_resource type="Script" path="res://Menus/Main Menu/menu_difficulty.gd" id="1_m2o4b"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_mw813"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="3_ectld"]
+[ext_resource type="Script" path="res://Menus/Main Menu/Easy.gd" id="3_whk4t"]
+[ext_resource type="Script" path="res://Menus/Main Menu/Medium.gd" id="4_orvl7"]
+[ext_resource type="Script" path="res://Menus/Main Menu/Hard.gd" id="5_ilh4s"]
+[ext_resource type="Script" path="res://Menus/Main Menu/Back.gd" id="6_3t82x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4utv1"]
 size = Vector2(193, 63)
@@ -178,6 +182,7 @@ text = "Easy
 "
 
 [node name="Easy" type="Area2D" parent="VBoxContainer/Easy"]
+script = ExtResource("3_whk4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Easy/Easy"]
 position = Vector2(97, 31)
@@ -191,6 +196,7 @@ text = "Medium
 "
 
 [node name="Medium" type="Area2D" parent="VBoxContainer/Medium"]
+script = ExtResource("4_orvl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Medium/Medium"]
 position = Vector2(96.5, 31)
@@ -203,6 +209,7 @@ size_flags_vertical = 3
 text = "Chad"
 
 [node name="Hard" type="Area2D" parent="VBoxContainer/Hard"]
+script = ExtResource("5_ilh4s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Hard/Hard"]
 position = Vector2(96.5, 31)
@@ -217,6 +224,7 @@ text = "Back
 "
 
 [node name="Back" type="Area2D" parent="VBoxContainer/Back"]
+script = ExtResource("6_3t82x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Back/Back"]
 position = Vector2(22.5, 15.5)
@@ -229,7 +237,10 @@ layer_0/tile_data = PackedInt32Array(3211264, 393216, 3, 3211265, 393216, 3, 321
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[connection signal="body_entered" from="VBoxContainer/Easy/Easy" to="." method="_on_easy_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Easy/Easy" to="VBoxContainer/Easy/Easy" method="_on_body_entered"]
+[connection signal="body_exited" from="VBoxContainer/Easy/Easy" to="VBoxContainer/Easy/Easy" method="_on_body_exited"]
 [connection signal="body_entered" from="VBoxContainer/Medium/Medium" to="." method="_on_medium_body_entered"]
-[connection signal="body_entered" from="VBoxContainer/Hard/Hard" to="." method="_on_hard_body_entered"]
-[connection signal="body_entered" from="VBoxContainer/Back/Back" to="." method="_on_back_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Hard/Hard" to="VBoxContainer/Hard/Hard" method="_on_body_entered"]
+[connection signal="body_exited" from="VBoxContainer/Hard/Hard" to="VBoxContainer/Hard/Hard" method="_on_body_exited"]
+[connection signal="body_entered" from="VBoxContainer/Back/Back" to="VBoxContainer/Back/Back" method="_on_body_entered"]
+[connection signal="body_exited" from="VBoxContainer/Back/Back" to="VBoxContainer/Back/Back" method="_on_body_exited"]
