@@ -93,3 +93,4 @@ shape = SubResource("RectangleShape2D_qdrcl")
 
 [connection signal="body_entered" from="CanvasLayer/VBoxContainer2/HBoxContainer2/Tir/Tir" to="." method="_on_tir_body_entered"]
 [connection signal="body_entered" from="CanvasLayer/VBoxContainer2/HBoxContainer2/Speed/AtkSpeed" to="." method="_on_atk_speed_body_entered"]
+[connection signal="body_entered" from="CanvasLayer/VBoxContainer2/HBoxContainer/Quit/Quit" to="." method="_on_quit_body_entered"]

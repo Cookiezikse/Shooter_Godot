@@ -7,3 +7,6 @@ func _on_tir_body_entered(body):
 func _on_atk_speed_body_entered(body):
 	if Global.score > 1400:
 		Global.atk_speed = 0.2
+
+func _on_quit_body_entered(body):
+	queue_free()
