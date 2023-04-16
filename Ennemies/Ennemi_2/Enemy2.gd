@@ -32,5 +32,5 @@ func _physics_process(delta):
 func enemy_hit( ):
 	health -= 1
 	if health == 0:
+		Global.score += 75
 		queue_free()
-
