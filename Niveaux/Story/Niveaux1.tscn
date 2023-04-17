@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cd3w8yt7d33tv"]
+[gd_scene load_steps=8 format=3 uid="uid://cd3w8yt7d33tv"]
 
 [ext_resource type="Script" path="res://Niveaux/Story/Niveaux1.gd" id="1_jpdu1"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_nq5jh"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://div3wmv8qh51r" path="res://tilemaps.tscn" id="5_nkebx"]
 [ext_resource type="Script" path="res://DispScore.gd" id="6_pkbca"]
 [ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_juamr"]
-[ext_resource type="PackedScene" uid="uid://b5juk21sudj7v" path="res://Ennemies/Ennemi_1/enemy.tscn" id="8_pj0q2"]
 
 [node name="Map2" type="Node2D"]
 script = ExtResource("1_jpdu1")
@@ -73,46 +72,6 @@ script = ExtResource("6_pkbca")
 
 [node name="Node2D2" parent="." instance=ExtResource("8_juamr")]
 position = Vector2(-1, 1)
-
-[node name="All_ennemis" type="Node2D" parent="."]
-
-[node name="Enemy" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-
-[node name="Enemy2" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(227, -7)
-
-[node name="Enemy3" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(386, -53)
-
-[node name="Enemy4" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(389, -241)
-
-[node name="Enemy6" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(228, -294)
-
-[node name="Enemy7" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(68, -366)
-
-[node name="Enemy8" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(224, -438)
-
-[node name="Enemy9" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(381, -495)
-
-[node name="Enemy10" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(545, -566)
-
-[node name="Enemy11" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(383, -685)
-
-[node name="Enemy12" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(231, -779)
-
-[node name="Enemy13" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(70, -888)
-
-[node name="Enemy5" parent="All_ennemis" instance=ExtResource("8_pj0q2")]
-position = Vector2(533, -125)
 
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
 
