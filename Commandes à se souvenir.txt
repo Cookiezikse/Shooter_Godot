@@ -1,1 +1,0 @@
-remove_child(nom child)
