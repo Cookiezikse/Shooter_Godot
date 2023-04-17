@@ -26,10 +26,11 @@ func _on_spawn_timeout():
 		
 	if Global.score >= 1000:
 		mod = 3
-	if Global.score > 5000 && shop == 0:
+	if Global.score > 5000:
 		mod = 4
-	if Global.score > 5000 && SHOOP.visible == false:
-		mod = 5
+	if Global.score > 8000:
+		mod = 3
+		Global.amelioration = 1
 	if mod == 2: 
 		random = (randi() %2 + 1)
 		if random == 1:
@@ -45,14 +46,8 @@ func _on_spawn_timeout():
 		add_child(Boss_Spawn)
 		spawn_boss = 1
 
-	if mod == 4 && shop == 0:
-		SHOOP.visible = true
-		shop = 1
-	if mod == 4 && SHOOP.visible == false:
-		mod = 5
-		
-	if mod == 5:
-		print("OK")
+	if mod == 4:
+		spawn_boss = 0
 		random = (randi() %2 + 1)
 		if random == 1:
 			var enemy2 = Enemy2.instantiate()
@@ -62,7 +57,4 @@ func _on_spawn_timeout():
 			var enemy = Enemy.instantiate()
 			add_child(enemy)
 			enemy.position = Vector
-
-func _on_area_2d_script_changed():
-	SHOOP.visible = false
 

@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://6k33bmmxwbg"]
+[gd_scene load_steps=11 format=3 uid="uid://6k33bmmxwbg"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_i2ueo"]
 [ext_resource type="Texture2D" uid="uid://o0b6lx8bopr1" path="res://Imports/Graphics/Ships/ship_0006.png" id="1_s6fmv"]
 [ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_lo0vl"]
 [ext_resource type="Script" path="res://Player/ShootSpeed.gd" id="3_wb4q8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_der08"]
+size = Vector2(16, 12)
 
 [sub_resource type="Animation" id="Animation_ugri4"]
 resource_name = "Muzzleflash1"
@@ -89,7 +92,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-z_index = 2
+z_index = 4
 script = ExtResource("1_i2ueo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -97,8 +100,9 @@ position = Vector2(9.53674e-07, 0)
 scale = Vector2(1.90625, 1.65625)
 texture = ExtResource("1_s6fmv")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 12, -2, 12, -2, 10, -6, 10, -6, 6, -4, 6, -4, 5, -2, 5, -2, 4, -4, 3, -18, 2, -17, -2, -14, -4, -13, -7, -9, -7, -9, -5, -4, -5, -4, -9, -2, -9, -2, -12, 2, -12, 2, -9, 4, -9, 4, -5, 9, -5, 9, -7, 14, -7, 14, -4, 16, -3, 16, -2, 18, -2, 18, 2, 13, 3, 4, 3, 2, 5, 4, 5, 4, 6, 6, 6, 6, 10, 2, 10, 2, 12)
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_der08")
 
 [node name="ShootSpeed" type="Timer" parent="."]
 wait_time = 0.3

@@ -13,7 +13,7 @@ const Bullet_scene = preload("res://Ennemies/Boss1/bullet_boss.tscn")
 var shooter_timer_wait_time = EnnemiVars.Speed_atk_Boss_1
 var spawn_point_count = EnnemiVars.Spawn_point_Boss_1
 const radius = 70
-var health = 50
+var health = EnnemiVars.Health_Boss_1
 
 func _ready():
 	var step = 2 * PI / spawn_point_count

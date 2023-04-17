@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" path="res://Niveaux/Infinite/map.gd" id="1_jt7uk"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_83wul"]
+[ext_resource type="Script" path="res://Niveaux/Infinite/Area2D.gd" id="2_vppom"]
 [ext_resource type="Script" path="res://Niveaux/Infinite/Background.gd" id="3_flxbs"]
 [ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="4_sn71v"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="5_b75lf"]
 [ext_resource type="Script" path="res://Niveaux/Infinite/Spawn_infinite.gd" id="6_74mks"]
-[ext_resource type="PackedScene" uid="uid://t8kum1rqiuoq" path="res://Score.tscn" id="6_utghi"]
-[ext_resource type="PackedScene" path="res://Grenade.tscn" id="8_l4vyr"]
+[ext_resource type="PackedScene" uid="uid://bnorwxtqfdgst" path="res://Score.tscn" id="6_utghi"]
+[ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_l4vyr"]
 [ext_resource type="PackedScene" uid="uid://100rssj613rg" path="res://shop.tscn" id="9_biitr"]
-[ext_resource type="Script" path="res://Niveaux/Infinite/quit.gd" id="10_ttqhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xaicx"]
+size = Vector2(92, 36)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hyx3"]
 texture = ExtResource("5_b75lf")
@@ -138,11 +141,16 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_ksr5l"]
 sources/0 = SubResource("TileSetAtlasSource_1hyx3")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pco7"]
-size = Vector2(83, 27)
-
 [node name="Map" type="Node2D"]
 script = ExtResource("1_jt7uk")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(320, 145)
+script = ExtResource("2_vppom")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(36, 8)
+shape = SubResource("RectangleShape2D_xaicx")
 
 [node name="Player" parent="." instance=ExtResource("2_83wul")]
 position = Vector2(312, 728)
@@ -181,17 +189,10 @@ visible = false
 offset_left = 300.0
 offset_right = 300.0
 
-[node name="Area2D" type="Area2D" parent="Shop"]
-script = ExtResource("10_ttqhm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop/Area2D"]
-position = Vector2(58.5, 150.5)
-shape = SubResource("RectangleShape2D_0pco7")
-
+[connection signal="Scarafandre" from="Area2D" to="." method="_on_area_2d_scarafandre"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="Spawn" to="Spawn" method="_on_timeout"]
-[connection signal="body_entered" from="Shop/Area2D" to="Shop/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Shop/Area2D" to="Shop/Area2D" method="_on_body_exited"]
-[connection signal="script_changed" from="Shop/Area2D" to="." method="_on_area_2d_script_changed"]
 
 [editable path="Shop"]
