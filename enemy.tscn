@@ -9,8 +9,7 @@ size = Vector2(438, 419)
 
 [sub_resource type="Animation" id="Animation_lbveo"]
 resource_name = "Muzzleflash"
-length = 0.8
-loop_mode = 1
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -18,7 +17,7 @@ tracks/0/path = NodePath("Sprite2D2:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -30,10 +29,10 @@ tracks/1/path = NodePath("Sprite2D2:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.523599]
+"values": [0.0, 0.349066]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qvr1m"]
@@ -51,13 +50,15 @@ scale = Vector2(2.32858, 2.11202)
 texture = ExtResource("1_kggje")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-3.15905e-06, 0.0576902)
+scale = Vector2(2.3125, 2.11538)
 polygon = PackedVector2Array(-1, -7, 1, -7, 1, -6, 3, -6, 3, -5, 2, -5, 2, -4, 1, -4, 1, -2, 2, -2, 2, -1, 7, -1, 7, 0, 9, 0, 9, 1, 10, 1, 10, 3, 8, 3, 8, 4, 6, 4, 6, 3, 2, 3, 2, 4, 1, 4, 1, 5, 2, 5, 2, 6, -2, 6, -2, 5, -1, 5, -1, 4, -2, 4, -2, 3, -6, 3, -6, 4, -8, 4, -8, 3, -10, 3, -10, 1, -9, 1, -9, 0, -7, 0, -7, -1, -2, -1, -2, -2, -1, -2, -1, -4, -2, -4, -2, -5, -3, -5, -3, -6, -1, -6)
 
 [node name="Area2D" type="Area2D" parent="."]
 modulate = Color(1, 1, 1, 0.0901961)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 195)
+position = Vector2(0, 179)
 shape = SubResource("RectangleShape2D_7tad0")
 
 [node name="AtkSpeed" type="Timer" parent="."]
@@ -75,7 +76,7 @@ libraries = {
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, 21)
-rotation = 0.523599
+rotation = 0.349066
 texture = ExtResource("3_okejg")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

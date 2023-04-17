@@ -65,4 +65,5 @@ func shoot():
 func player_hit( ):
 	health -= 1
 	if health == 0:
+		get_tree( ).change_scene_to_file("res://gameovermenu.tscn")
 		queue_free()

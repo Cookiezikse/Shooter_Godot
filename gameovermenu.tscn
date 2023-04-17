@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpyox2v0hp27k"]
+
+[ext_resource type="Script" path="res://gameovermenu.gd" id="1_273dy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmbie"]
+bg_color = Color(0.203922, 0.188235, 0.235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkq8b"]
+bg_color = Color(0.223529, 0.203922, 0.262745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06ofn"]
+bg_color = Color(0.223529, 0.203922, 0.262745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxv2d"]
+bg_color = Color(0.203922, 0.188235, 0.235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ac0bj"]
+bg_color = Color(0.223529, 0.203922, 0.262745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e64qb"]
+bg_color = Color(0.223529, 0.203922, 0.262745, 1)
+
+[node name="Gameovermenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_273dy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.203922, 0.188235, 0.235294, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 184.0
+grow_horizontal = 2
+
+[node name="Game Over Menu" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 95
+text = "Game Over"
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -86.0
+offset_right = -3.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Restart" type="Button" parent="CenterContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_bmbie")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kkq8b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_06ofn")
+text = " Restart "
+
+[node name="Quit" type="Button" parent="CenterContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qxv2d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ac0bj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e64qb")
+text = "Menu"
+
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
