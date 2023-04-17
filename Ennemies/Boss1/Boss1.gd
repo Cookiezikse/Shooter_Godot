@@ -10,8 +10,8 @@ const Bullet_scene = preload("res://Ennemies/Boss1/bullet_boss.tscn")
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
 
-const shooter_timer_wait_time = 0.2
-const spawn_point_count = 12
+const shooter_timer_wait_time = 0.1
+const spawn_point_count = 20
 const radius = 70
 var health = 50
 

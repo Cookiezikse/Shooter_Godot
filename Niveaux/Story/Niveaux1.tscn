@@ -192,6 +192,6 @@ text = "0"
 script = ExtResource("6_pkbca")
 
 [node name="Boss1" parent="." instance=ExtResource("7_lycqm")]
-position = Vector2(298, 358)
+position = Vector2(321, 89)
 
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
