@@ -6,7 +6,7 @@
 load_path = "res://.godot/imported/cercle.png-fa1c02dfa5b287f7eba0bf0ffc251adb.ctex"
 
 [sub_resource type="Curve" id="Curve_wx3rc"]
-_data = [Vector2(0, 0.318182), 0.0, 0.0, 0, 0, Vector2(0.862245, 0.0636363), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.763636), 0.0, 0.0, 0, 0, Vector2(0.872449, 0.3), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_lohac"]
