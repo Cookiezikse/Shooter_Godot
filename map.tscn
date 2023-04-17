@@ -1,16 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://1bclrx2w8d2p"]
+[gd_scene load_steps=10 format=3 uid="uid://5mnc0ewhxijx"]
 
-[ext_resource type="Script" path="res://Niveaux/Infinite/map.gd" id="1_jt7uk"]
-[ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_83wul"]
-[ext_resource type="Script" path="res://Niveaux/Infinite/Background.gd" id="3_flxbs"]
-[ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="4_sn71v"]
-[ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="5_b75lf"]
-[ext_resource type="Script" path="res://Niveaux/Infinite/Spawn_infinite.gd" id="6_74mks"]
-[ext_resource type="PackedScene" uid="uid://bnorwxtqfdgst" path="res://Score.tscn" id="6_utghi"]
-[ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_l4vyr"]
+[ext_resource type="PackedScene" uid="uid://1solf1coiind" path="res://Player.tscn" id="1_nxivh"]
+[ext_resource type="Script" path="res://map.gd" id="1_xk6fj"]
+[ext_resource type="PackedScene" uid="uid://b207t4mt116x7" path="res://enemy.tscn" id="2_7wk3q"]
+[ext_resource type="Script" path="res://Background.gd" id="3_6wcdc"]
+[ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="3_u5rap"]
+[ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="4_naxba"]
+[ext_resource type="Script" path="res://DispScore.gd" id="7_vk7q3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hyx3"]
-texture = ExtResource("5_b75lf")
+texture = ExtResource("4_naxba")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -137,14 +136,17 @@ separation = Vector2i(1, 1)
 sources/0 = SubResource("TileSetAtlasSource_1hyx3")
 
 [node name="Map" type="Node2D"]
-script = ExtResource("1_jt7uk")
+script = ExtResource("1_xk6fj")
 
-[node name="Player" parent="." instance=ExtResource("2_83wul")]
+[node name="Player" parent="." instance=ExtResource("1_nxivh")]
 position = Vector2(312, 728)
 
+[node name="Enemy" parent="." instance=ExtResource("2_7wk3q")]
+position = Vector2(234, 7)
+
 [node name="Background" type="ParallaxBackground" parent="."]
-script = ExtResource("3_flxbs")
-speed = 100
+script = ExtResource("3_6wcdc")
+speed = 50
 
 [node name="WaterBackground" type="ParallaxLayer" parent="Background"]
 position = Vector2(600, 0)
@@ -153,7 +155,7 @@ rotation = 3.14159
 [node name="Sprite2D" type="Sprite2D" parent="Background/WaterBackground"]
 position = Vector2(298.5, -402.794)
 scale = Vector2(38.3125, 53.3905)
-texture = ExtResource("4_sn71v")
+texture = ExtResource("3_u5rap")
 
 [node name="MapBackground" type="ParallaxLayer" parent="Background"]
 
@@ -164,12 +166,29 @@ layer_0/tile_data = PackedInt32Array(786439, 65536, 3, 851975, 65536, 4, 917511,
 
 [node name="Spawn" type="Timer" parent="."]
 autostart = true
-script = ExtResource("6_74mks")
 
-[node name="Node2D" parent="." instance=ExtResource("6_utghi")]
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="Node2D2" parent="." instance=ExtResource("8_l4vyr")]
-position = Vector2(-1, -4)
+[node name="Control" type="Control" parent="Node2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 64.0
+
+[node name="Score" type="Label" parent="Node2D/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score : "
+
+[node name="DispScore" type="Label" parent="Node2D/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_right = 0.35
+offset_right = 112.0
+offset_bottom = 26.0
+text = "1000"
+script = ExtResource("7_vk7q3")
 
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
-[connection signal="timeout" from="Spawn" to="Spawn" method="_on_timeout"]
