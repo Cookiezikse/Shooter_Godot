@@ -3,9 +3,12 @@ extends Node2D
 var Enemy = preload("res://Ennemies/Ennemi_1/enemy.tscn")
 var Enemy2 = preload("res://Ennemies/Ennemi_2/Enemy2.tscn")
 var Boss = preload("res://Ennemies/Boss1/boss_1.tscn")
+var Shop = preload("res://shop.tscn")
 var random = 0
 var mod = 1
 var spawn_boss = 0
+var shop = 0
+@onready var SHOOP = $Shop
 
 func _ready():
 	Global.grenade1 = 3
@@ -22,9 +25,11 @@ func _on_spawn_timeout():
 		EnnemiVars.Spawn_Infinite = 0.5
 		
 	if Global.score >= 1000:
-		print("Boss")
 		mod = 3
-		
+	if Global.score > 5000 && shop == 0:
+		mod = 4
+	if Global.score > 5000 && SHOOP.visible == false:
+		mod = 5
 	if mod == 2: 
 		random = (randi() %2 + 1)
 		if random == 1:
@@ -39,5 +44,25 @@ func _on_spawn_timeout():
 		var Boss_Spawn = Boss.instantiate()
 		add_child(Boss_Spawn)
 		spawn_boss = 1
+
+	if mod == 4 && shop == 0:
+		SHOOP.visible = true
+		shop = 1
+	if mod == 4 && SHOOP.visible == false:
+		mod = 5
 		
-	
+	if mod == 5:
+		print("OK")
+		random = (randi() %2 + 1)
+		if random == 1:
+			var enemy2 = Enemy2.instantiate()
+			add_child(enemy2)
+			enemy2.position = Vector
+		if random == 2:
+			var enemy = Enemy.instantiate()
+			add_child(enemy)
+			enemy.position = Vector
+
+func _on_area_2d_script_changed():
+	SHOOP.visible = false
+
