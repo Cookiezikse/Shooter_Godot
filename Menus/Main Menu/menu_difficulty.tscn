@@ -239,7 +239,8 @@ layer_0/tile_data = PackedInt32Array(3211264, 393216, 3, 3211265, 393216, 3, 321
 
 [connection signal="body_entered" from="VBoxContainer/Easy/Easy" to="VBoxContainer/Easy/Easy" method="_on_body_entered"]
 [connection signal="body_exited" from="VBoxContainer/Easy/Easy" to="VBoxContainer/Easy/Easy" method="_on_body_exited"]
-[connection signal="body_entered" from="VBoxContainer/Medium/Medium" to="." method="_on_medium_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Medium/Medium" to="VBoxContainer/Medium/Medium" method="_on_body_entered"]
+[connection signal="body_exited" from="VBoxContainer/Medium/Medium" to="VBoxContainer/Medium/Medium" method="_on_body_exited"]
 [connection signal="body_entered" from="VBoxContainer/Hard/Hard" to="VBoxContainer/Hard/Hard" method="_on_body_entered"]
 [connection signal="body_exited" from="VBoxContainer/Hard/Hard" to="VBoxContainer/Hard/Hard" method="_on_body_exited"]
 [connection signal="body_entered" from="VBoxContainer/Back/Back" to="VBoxContainer/Back/Back" method="_on_body_entered"]
