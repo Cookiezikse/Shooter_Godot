@@ -57,6 +57,7 @@ func enemy_hit( ):
 	health -= 1
 	if health <= 0:
 		Global.score +=50
+		Global.Death_ennemi1 +=1
 		queue_free()
 
 	if health <= 0:

@@ -19,3 +19,5 @@ var atk_speed = 0.3
 #Faire une variable pour l'amélioration du joueur pour que dans le shop on la sélec
 
 var grenade1 = 3
+
+var Death_ennemi1 = 0

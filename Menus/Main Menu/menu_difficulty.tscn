@@ -108,6 +108,9 @@ shape = SubResource("RectangleShape2D_oph1k")
 [node name="Tilemaps" parent="." instance=ExtResource("7_6nsh6")]
 position = Vector2(250, 687)
 
+[node name="Objects" parent="Tilemaps" index="1"]
+layer_0/tile_data = PackedInt32Array(393222, 196612, 0, 458758, 196612, 1, 393223, 262148, 0, 458759, 262148, 1, 524295, 65540, 2, -589828, 65540, 0, -524292, 65540, 1, -589827, 131076, 0, -524291, 131076, 1, -589825, 327684, 2, -524284, 327684, 2, -524286, 327684, 0, -655354, 327684, 0, -458754, 327684, 0, -524293, 524292, 0, -589822, 327684, 3, 262137, 65540, 0, 327673, 65540, 1, 262138, 131076, 0, 327674, 131076, 1, 524285, 65540, 0, 589821, 65540, 1, 524286, 131076, 0, 589822, 131076, 1, 393209, 4, 3, 524284, 327684, 0, 327675, 327684, 2, 393210, 4, 3, 524281, 393220, 0, 131066, 327684, 4, 65530, 393220, 4, 65531, 393220, 4, 131067, 393220, 4, -196603, 327684, 4, -196604, 327684, 4, -131066, 393220, 4, -131067, 393220, 4, -131068, 393220, 4, -131069, 393220, 4, -262141, 393220, 4, -262140, 393220, 4, -262139, 393220, 4, -262138, 393220, 4, -196602, 393220, 4, -196605, 393220, 4, -262150, 458756, 4, 65534, 458756, 4, 65540, 458756, 4, -393211, 458756, 4, -262146, 524292, 4, -5, 524292, 4, 327677, 524292, 4, 262147, 524292, 4, 458755, 524292, 4, 458750, 524292, 4, 524288, 458756, 4, 327684, 458756, 4, 196614, 458756, 4)
+
 [connection signal="body_entered" from="VBoxContainer/Easy/Easy" to="VBoxContainer/Easy/Easy" method="_on_body_entered"]
 [connection signal="body_exited" from="VBoxContainer/Easy/Easy" to="VBoxContainer/Easy/Easy" method="_on_body_exited"]
 [connection signal="body_entered" from="VBoxContainer/Medium/Medium" to="." method="_on_medium_body_entered"]
@@ -115,3 +118,5 @@ position = Vector2(250, 687)
 [connection signal="body_exited" from="VBoxContainer/Hard/Hard" to="VBoxContainer/Hard/Hard" method="_on_body_exited"]
 [connection signal="body_entered" from="VBoxContainer/Back/Back" to="VBoxContainer/Back/Back" method="_on_body_entered"]
 [connection signal="body_exited" from="VBoxContainer/Back/Back" to="VBoxContainer/Back/Back" method="_on_body_exited"]
+
+[editable path="Tilemaps"]
