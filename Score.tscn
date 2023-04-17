@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 [gd_scene load_steps=2 format=3 uid="uid://bnorwxtqfdgst"]
-=======
-[gd_scene load_steps=3 format=3 uid="uid://e00ig1xcj3ur"]
->>>>>>> Melvin2
 
 [ext_resource type="Script" path="res://DispScore.gd" id="1_qhxuc"]
-[ext_resource type="Script" path="res://DispGrenade.gd" id="2_h2d1h"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -32,26 +27,3 @@ offset_right = 112.0
 offset_bottom = 26.0
 text = "0"
 script = ExtResource("1_qhxuc")
-
-[node name="Control2" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Grenade" type="Label" parent="Control2"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 488.0
-offset_right = 568.0
-offset_bottom = 26.0
-text = "Grenade : "
-
-[node name="DispGrenade" type="Label" parent="Control2"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 568.0
-offset_right = 608.0
-offset_bottom = 26.0
-text = "3"
-script = ExtResource("2_h2d1h")

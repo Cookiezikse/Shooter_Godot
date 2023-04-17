@@ -63,3 +63,4 @@ func enemy_hit( ):
 		var explosion = Explosion.instantiate()
 		explosion.global_position = global_position
 		get_tree().current_scene.add_child(explosion)
+		

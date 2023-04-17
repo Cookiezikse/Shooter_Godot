@@ -37,12 +37,4 @@ func enemy_hit( ):
 	health -= 1
 	if health == 0:
 		Global.score += 75
-		var explosion = Explosion.instantiate()
-		explosion.global_position = global_position
-		get_tree().current_scene.add_child(explosion)
 		queue_free()
-
-	if health <= 0:
-		var explosion = Explosion.instantiate()
-		explosion.global_position = global_position
-		get_tree().current_scene.add_child(explosion)

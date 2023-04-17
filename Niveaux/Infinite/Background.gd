@@ -9,4 +9,4 @@ func _process(delta):
 	scroll_base_offset -= Vector2(0,-speed) * delta
 func _ready():
 	background.motion_mirroring.y = 100 #Ne pas changer cette valeur (normalement)
-	background2.motion_mirroring.y = 2000 #Changer cette valeur si on agrandi la map derriere
+	background2.motion_mirroring.y = 1200 #Changer cette valeur si on agrandi la map derriere

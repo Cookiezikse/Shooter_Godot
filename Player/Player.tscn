@@ -90,8 +90,6 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 2
-collision_layer = 255
-collision_mask = 255
 script = ExtResource("1_i2ueo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
