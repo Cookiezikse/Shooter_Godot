@@ -6,7 +6,7 @@ var Player_pos #Faire une variable qui a les coordonnées du player
 var player = null
 var canshoot = true
 
-@export var speed = 5
+@export var speed = 3.5
 @export var health = 2
 
 func _on_area_2d_body_entered(body):
@@ -15,6 +15,11 @@ func _on_area_2d_body_entered(body):
 		
 func _on_area_2d_body_exited(body):
 	player = null
+	
+func _on_area_2d_2_body_entered(body):
+	if body.has_method("player_hit"):
+		body.player_hit( )
+		queue_free( )
 		
 func _physics_process(delta):
 	velocity.y = speed
