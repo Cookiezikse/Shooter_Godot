@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch03bte612u6g"]
+[gd_scene load_steps=10 format=3 uid="uid://ch03bte612u6g"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_6mwfa"]
 [ext_resource type="Texture2D" uid="uid://o0b6lx8bopr1" path="res://Imports/Graphics/Ships/ship_0006.png" id="1_s6fmv"]
 [ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_lo0vl"]
+[ext_resource type="PackedScene" uid="uid://der634yhpq2ml" path="res://Trail2D.tscn" id="4_v0qo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lky7a"]
 size = Vector2(8, 13)
@@ -69,6 +70,10 @@ _data = {
 "Muzzleflash2": SubResource("Animation_vuu0n")
 }
 
+[sub_resource type="Curve" id="Curve_wq2pr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_6mwfa")
 
@@ -113,5 +118,8 @@ texture = ExtResource("3_lo0vl")
 libraries = {
 "": SubResource("AnimationLibrary_iltfn")
 }
+
+[node name="Trail2D" parent="." instance=ExtResource("4_v0qo2")]
+width_curve = SubResource("Curve_wq2pr")
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]
