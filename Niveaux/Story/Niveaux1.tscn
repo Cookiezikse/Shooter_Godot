@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cd3w8yt7d33tv"]
+[gd_scene load_steps=11 format=3 uid="uid://cd3w8yt7d33tv"]
 
 [ext_resource type="Script" path="res://Niveaux/Story/Niveaux1.gd" id="1_jpdu1"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_nq5jh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="5_hm6ds"]
 [ext_resource type="Script" path="res://DispScore.gd" id="6_pkbca"]
 [ext_resource type="PackedScene" uid="uid://bmb8xk5i4qfhh" path="res://Ennemies/Boss1/boss_1.tscn" id="7_lycqm"]
+[ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_juamr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hyx3"]
 texture = ExtResource("5_hm6ds")
@@ -193,5 +194,8 @@ script = ExtResource("6_pkbca")
 
 [node name="Boss1" parent="." instance=ExtResource("7_lycqm")]
 position = Vector2(321, 89)
+
+[node name="Node2D2" parent="." instance=ExtResource("8_juamr")]
+position = Vector2(-1, 1)
 
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]

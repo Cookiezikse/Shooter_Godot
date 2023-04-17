@@ -7,6 +7,9 @@ var random = 0
 var mod = 1
 var spawn_boss = 0
 
+func _ready():
+	Global.grenade1 = 3
+
 func _on_spawn_timeout():
 	var Vector = Vector2(randi_range(2,580),randi_range(-5,-5))
 	if mod == 1:
