@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Menus/Main Menu/Quit.gd" id="6_4rt42"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sp56q"]
-size = Vector2(85, 31.5)
+size = Vector2(61, 27.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rq4gg"]
 size = Vector2(100, 30.5)
@@ -239,6 +239,27 @@ script = ExtResource("6_4rt42")
 position = Vector2(20.75, 15.5)
 shape = SubResource("RectangleShape2D_3j68s")
 
+[node name="Credits" type="Button" parent="."]
+z_index = 1
+layout_mode = 2
+offset_left = -30.0
+offset_top = 288.0
+offset_right = 33.0
+offset_bottom = 319.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+button_mask = 0
+text = "Credits
+"
+
+[node name="Start_story" type="Area2D" parent="Credits"]
+position = Vector2(-19, 0)
+script = ExtResource("3_g474m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Credits/Start_story"]
+position = Vector2(49.5, 15.125)
+shape = SubResource("RectangleShape2D_sp56q")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1xeys")
 format = 2
@@ -280,5 +301,7 @@ text = "Come Here to remove a player !"
 [connection signal="body_exited" from="VBoxContainer/Options2/Options" to="VBoxContainer/Options2/Options" method="_on_body_exited"]
 [connection signal="body_entered" from="VBoxContainer/Quit2/Quit" to="VBoxContainer/Quit2/Quit" method="_on_body_entered"]
 [connection signal="body_exited" from="VBoxContainer/Quit2/Quit" to="VBoxContainer/Quit2/Quit" method="_on_body_exited"]
+[connection signal="body_entered" from="Credits/Start_story" to="Credits/Start_story" method="_on_body_entered"]
+[connection signal="body_exited" from="Credits/Start_story" to="Credits/Start_story" method="_on_body_exited"]
 [connection signal="body_entered" from="Spawn_Player" to="." method="_on_spawn_player_body_entered"]
 [connection signal="body_entered" from="Destroy_player" to="." method="_on_destroy_player_body_entered"]
