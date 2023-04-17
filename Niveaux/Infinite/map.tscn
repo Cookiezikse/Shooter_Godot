@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://1bclrx2w8d2p"]
+[gd_scene load_steps=13 format=3 uid="uid://1bclrx2w8d2p"]
 
 [ext_resource type="Script" path="res://Niveaux/Infinite/map.gd" id="1_jt7uk"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_83wul"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://div3wmv8qh51r" path="res://tilemaps.tscn" id="6_w4m0b"]
 [ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_l4vyr"]
 [ext_resource type="PackedScene" uid="uid://100rssj613rg" path="res://shop.tscn" id="9_biitr"]
+[ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="11_b8nlw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xaicx"]
 size = Vector2(92, 36)
@@ -67,6 +68,21 @@ position = Vector2(-1, -4)
 visible = false
 offset_left = 300.0
 offset_right = 300.0
+
+[node name="Cow" parent="." instance=ExtResource("11_b8nlw")]
+position = Vector2(18, 371)
+
+[node name="Cow2" parent="." instance=ExtResource("11_b8nlw")]
+position = Vector2(378, 212)
+
+[node name="Cow3" parent="." instance=ExtResource("11_b8nlw")]
+position = Vector2(422, -430)
+
+[node name="Cow4" parent="." instance=ExtResource("11_b8nlw")]
+position = Vector2(353, -997)
+
+[node name="Cow5" parent="." instance=ExtResource("11_b8nlw")]
+position = Vector2(77, -1614)
 
 [connection signal="Scarafandre" from="Area2D" to="." method="_on_area_2d_scarafandre"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
