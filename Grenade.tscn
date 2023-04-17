@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmpkgvykouksg"]
+
+[ext_resource type="Script" path="res://Grenade.gd" id="1_8qlh0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Grenade" type="Label" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 29.0
+offset_right = 75.0
+offset_bottom = 55.0
+text = "Grenade :"
+
+[node name="DispGrenade" type="Label" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 81.0
+offset_top = 30.0
+offset_right = 121.0
+offset_bottom = 56.0
+text = "3"
+script = ExtResource("1_8qlh0")

@@ -38,9 +38,7 @@ func _physics_process(delta):
 	global_position.y = clamp(global_position.y, 40, 780)
 	
 	if Global.grenade1 >= 0 && Input.is_action_just_pressed("grenade1"):
-		print(Global.grenade1)
 		Global.grenade1 -= 1
-		print(Global.grenade1)
 
 	move_and_slide()
 
