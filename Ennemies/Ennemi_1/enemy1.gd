@@ -17,6 +17,11 @@ func _on_area_2d_body_entered(body):
 		
 func _on_area_2d_body_exited(body):
 	player = null
+	
+func _on_area_2d_2_body_entered(body):
+	if body.has_method("player_hit"):
+		body.player_hit( )
+		queue_free( )
 
 func _physics_process(delta):
 	velocity.y = speed

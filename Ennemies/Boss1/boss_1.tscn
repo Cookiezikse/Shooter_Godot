@@ -13,6 +13,7 @@ scale = Vector2(4.25, 4.28125)
 texture = ExtResource("2_fi5mk")
 
 [node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.2
 
 [node name="Rotater" type="Node2D" parent="."]
 
