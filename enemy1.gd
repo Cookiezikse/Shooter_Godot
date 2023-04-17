@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 extends CharacterBody2D
 
 var Bullet = preload("res://enemy_bullet.tscn")
@@ -54,4 +55,6 @@ func enemy_hit( ):
 	health -= 1
 	if health == 0:
 		queue_free()
+=======
+>>>>>>> Melvin2
 

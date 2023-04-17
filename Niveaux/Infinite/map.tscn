@@ -6,8 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="4_sn71v"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="5_b75lf"]
 [ext_resource type="Script" path="res://Niveaux/Infinite/Spawn_infinite.gd" id="6_74mks"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://bnorwxtqfdgst" path="res://Score.tscn" id="6_utghi"]
 [ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_l4vyr"]
+=======
+[ext_resource type="PackedScene" uid="uid://e00ig1xcj3ur" path="res://Score.tscn" id="6_utghi"]
+>>>>>>> Melvin2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hyx3"]
 texture = ExtResource("5_b75lf")
