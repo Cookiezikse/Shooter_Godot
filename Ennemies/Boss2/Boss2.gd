@@ -26,7 +26,7 @@ func _ready():
 		spawn_point.rotation = pos.angle()
 		rotater.add_child(spawn_point)
 	
-	shoot_timer.wait_time = shooter_timer_wait_time
+	shoot_timer.wait_time = shooter_timer_wait_time 
 	shoot_timer.start()
 
 func _process(delta: float) -> void:
