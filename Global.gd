@@ -24,3 +24,5 @@ var grenade1 = 3
 var Death_ennemi1 = 0
 
 var Boss_amelioration = 0
+
+var velocity = 0
