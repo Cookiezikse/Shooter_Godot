@@ -36,7 +36,7 @@ grow_vertical = 2
 script = ExtResource("1_80ywm")
 
 [node name="Player" parent="." instance=ExtResource("3_408j6")]
-position = Vector2(-100, -150)
+position = Vector2(-150, -150)
 
 [node name="Tilemaps" parent="." instance=ExtResource("3_xtupd")]
 

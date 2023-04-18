@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6cc7560dq5kx"]
+[gd_scene load_steps=17 format=3 uid="uid://c6cc7560dq5kx"]
 
 [ext_resource type="Script" path="res://Menus/Game Over/gameovermenu.gd" id="1_273dy"]
 [ext_resource type="PackedScene" uid="uid://bnorwxtqfdgst" path="res://Score.tscn" id="2_emt37"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="3_d77ov"]
+[ext_resource type="Script" path="res://Menus/Game Over/Restart.gd" id="3_roiwo"]
 [ext_resource type="PackedScene" uid="uid://div3wmv8qh51r" path="res://tilemaps.tscn" id="4_l1o2h"]
+[ext_resource type="Script" path="res://Menus/Game Over/Quit.gd" id="4_lpmu0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmbie"]
 bg_color = Color(0.203922, 0.188235, 0.235294, 1)
@@ -94,6 +96,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_06ofn")
 text = " Restart "
 
 [node name="Restart" type="Area2D" parent="CenterContainer2/VBoxContainer/Restart"]
+script = ExtResource("3_roiwo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CenterContainer2/VBoxContainer/Restart/Restart"]
 position = Vector2(100.5, 34)
@@ -108,6 +111,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_e64qb")
 text = "Menu"
 
 [node name="Quit" type="Area2D" parent="CenterContainer2/VBoxContainer/Quit"]
+script = ExtResource("4_lpmu0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CenterContainer2/VBoxContainer/Quit/Quit"]
 position = Vector2(101, 34.5)
@@ -144,8 +148,10 @@ layer_0/tile_data = PackedInt32Array()
 [node name="Water" parent="Tilemaps" index="2"]
 layer_0/tile_data = PackedInt32Array()
 
-[connection signal="body_entered" from="CenterContainer2/VBoxContainer/Restart/Restart" to="." method="_on_restart_body_entered"]
-[connection signal="body_entered" from="CenterContainer2/VBoxContainer/Quit/Quit" to="." method="_on_quit_body_entered"]
+[connection signal="body_entered" from="CenterContainer2/VBoxContainer/Restart/Restart" to="CenterContainer2/VBoxContainer/Restart/Restart" method="_on_body_entered"]
+[connection signal="body_exited" from="CenterContainer2/VBoxContainer/Restart/Restart" to="CenterContainer2/VBoxContainer/Restart/Restart" method="_on_body_exited"]
+[connection signal="body_entered" from="CenterContainer2/VBoxContainer/Quit/Quit" to="CenterContainer2/VBoxContainer/Quit/Quit" method="_on_body_entered"]
+[connection signal="body_exited" from="CenterContainer2/VBoxContainer/Quit/Quit" to="CenterContainer2/VBoxContainer/Quit/Quit" method="_on_body_exited"]
 
 [editable path="Node2D"]
 [editable path="Tilemaps"]

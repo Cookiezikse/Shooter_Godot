@@ -15,24 +15,26 @@ func _ready():
 
 func _on_spawn_timeout():
 	var Vector = Vector2(randi_range(2,580),randi_range(-5,-5))
-	if mod == 1:
-		var enemy = Enemy.instantiate()
-		add_child(enemy)
-		enemy.position = Vector
-		
+	
 	if Global.score >= 300:
 		mod = 2
 		EnnemiVars.Spawn_Infinite = 0.5
-		
 	if Global.score >= 1000:
 		mod = 3
 	if Global.score > 5000:
 		mod = 4
 	if Global.score > 8000:
 		mod = 3
+		Global.Boss_amelioration = 1
 		Global.amelioration = 1
+
+	if mod == 1:
+		var enemy = Enemy.instantiate()
+		add_child(enemy)
+		enemy.position = Vector
+		
 	if mod == 2: 
-		random = (randi() %2 + 1)
+		random = (randi() %2 + 1)	
 		if random == 1:
 			var enemy2 = Enemy2.instantiate()
 			add_child(enemy2)
@@ -41,6 +43,7 @@ func _on_spawn_timeout():
 			var enemy = Enemy.instantiate()
 			add_child(enemy)
 			enemy.position = Vector
+			
 	if mod == 3 && spawn_boss == 0:
 		var Boss_Spawn = Boss.instantiate()
 		add_child(Boss_Spawn)
@@ -57,4 +60,5 @@ func _on_spawn_timeout():
 			var enemy = Enemy.instantiate()
 			add_child(enemy)
 			enemy.position = Vector
+	
 

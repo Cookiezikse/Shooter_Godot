@@ -1,6 +1,7 @@
 extends Node
 
 var score = 0
+var score_temp = 0
 
 var Scene = 0
 var Scene2 = ""
@@ -21,3 +22,5 @@ var atk_speed = 0.3
 var grenade1 = 3
 
 var Death_ennemi1 = 0
+
+var Boss_amelioration = 0
