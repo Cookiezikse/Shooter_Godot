@@ -6,7 +6,7 @@ extends CharacterBody2D
 # Config 3 : rotate speed = 75 shoot timer wait time = 0.2 spawn point count 12
 # Config 4 : Les balles se tirent en cloche en suivant une fonction
 
-const Bullet_scene = preload("res://Ennemies/Boss1/bullet_boss.tscn")
+const Bullet_scene = preload("res://Ennemies/Boss2/bullet_boss.tscn")
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
 @onready var Hit = $AnimationPlayer
@@ -46,6 +46,7 @@ func enemy_hit( ):
 	Hit.play("hit")
 	if health == 0:
 		Global.score +=5000
+		Global.Boss_amelioration = 0
 		queue_free()
 
 const SPEED = 20
@@ -53,6 +54,7 @@ var random = 1
 
 func _physics_process(delta):
 	if Global.Boss_amelioration == 1:
+		EnnemiVars.Health_Boss_1 = 220
 		if random == 1:
 			velocity.x = -SPEED
 

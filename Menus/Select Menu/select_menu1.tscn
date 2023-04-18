@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://jbv4vveh3ilg"]
+[gd_scene load_steps=11 format=3 uid="uid://jbv4vveh3ilg"]
 
 [ext_resource type="Script" path="res://Menus/Select Menu/select_menu1.gd" id="1_bf1d8"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_7lua1"]
 [ext_resource type="Script" path="res://Menus/Select Menu/Niveau_1.gd" id="2_od41o"]
+[ext_resource type="Script" path="res://Menus/Select Menu/Niveau_2.gd" id="3_76exs"]
 [ext_resource type="PackedScene" uid="uid://div3wmv8qh51r" path="res://tilemaps.tscn" id="5_2rt1m"]
 [ext_resource type="Script" path="res://Menus/Select Menu/Back.gd" id="5_g6mrv"]
 
@@ -36,6 +37,7 @@ shape = SubResource("CircleShape2D_prpqj")
 
 [node name="Niveau_2" type="Area2D" parent="."]
 position = Vector2(470, 615)
+script = ExtResource("3_76exs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Niveau_2"]
 shape = SubResource("CircleShape2D_prpqj")
@@ -97,6 +99,8 @@ layer_0/tile_data = PackedInt32Array(589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 5
 [connection signal="body_entered" from="Niveau_1" to="Niveau_1" method="_on_body_entered"]
 [connection signal="body_exited" from="Niveau_1" to="Niveau_1" method="_on_body_exited"]
 [connection signal="script_changed" from="Niveau_1" to="." method="_on_niveau_1_script_changed"]
+[connection signal="body_entered" from="Niveau_2" to="Niveau_2" method="_on_body_entered"]
+[connection signal="body_exited" from="Niveau_2" to="Niveau_2" method="_on_body_exited"]
 [connection signal="body_entered" from="Back" to="Back" method="_on_body_entered"]
 [connection signal="body_exited" from="Back" to="Back" method="_on_body_exited"]
 
