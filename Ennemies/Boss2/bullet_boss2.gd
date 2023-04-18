@@ -12,22 +12,9 @@ var count2 = 0
 func _process(delta):
 	#position.x += (-9.81*(delta*delta))/2 + speed * sin(teta)
 	#position.y += 9.81 * delta
-	
-	velocity.x = -9.81 * time + speed
-	velocity.y = speed * cos(teta)
-	if position.x < 300 && count == 0:
-		droite = true
+	velocity.y = speed 
+	position.x = sin(position.y*0.02)*250+300
 
-	if droite == true:
-		velocity.y = 0
-		velocity.x = 0
-		
-	if position.x > 300: 
-		gauche = false
-
-	if gauche == true:
-		velocity.x = -9.81 * time + speed
-		velocity.y = speed * cos(teta)
 
 	move_and_slide()
 	look_at(velocity)
