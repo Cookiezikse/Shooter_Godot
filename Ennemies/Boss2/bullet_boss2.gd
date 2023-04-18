@@ -1,9 +1,12 @@
 extends Node2D
 
-const speed = 200
+const speed = 1.0
+const teta = 30.0
+var time = 0.0
 
 func _process(delta):
-	position += transform.x * speed * delta
+	position.x += (-9.81*(delta*delta))/2 + speed * sin(teta)
+	position.y -= speed * cos(teta) * delta
 	if Global.grenade1 >= 0 && Input.is_action_pressed("grenade1"): 
 		queue_free()
 

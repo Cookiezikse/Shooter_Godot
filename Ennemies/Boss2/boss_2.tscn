@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cefltnp8hga5k"]
 
-[ext_resource type="Script" path="res://Ennemies/Boss1/Boss1.gd" id="1_jx7nj"]
+[ext_resource type="Script" path="res://Ennemies/Boss2/Boss2.gd" id="1_qotho"]
 [ext_resource type="Texture2D" uid="uid://c032w4iexrds" path="res://Imports/Graphics/Ships/ship_0001.png" id="2_5ol27"]
 [ext_resource type="Texture2D" uid="uid://206cj2n35m1j" path="res://Imports/Graphics/Ships/pixil-frame-0.png" id="3_ty3ts"]
 
@@ -25,10 +25,10 @@ _data = {
 "hit": SubResource("Animation_6lyov")
 }
 
-[node name="Boss1" type="CharacterBody2D"]
+[node name="Boss2" type="CharacterBody2D"]
 position = Vector2(302, 74)
 rotation = 3.14159
-script = ExtResource("1_jx7nj")
+script = ExtResource("1_qotho")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4.25, 4.28125)
