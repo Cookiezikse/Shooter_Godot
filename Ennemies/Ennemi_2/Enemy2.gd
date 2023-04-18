@@ -8,6 +8,7 @@ var canshoot = true
 
 @export var speed = 5
 @export var health = 2
+@onready var Hit = $AnimationPlayer
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
@@ -30,10 +31,15 @@ func _physics_process(delta):
 		
 func enemy_hit( ):
 	health -= 1
+	Hit.play("hit")
 	if health == 0:
 		Global.score += 75
 		queue_free()
+<<<<<<< Updated upstream
 
+=======
+		
+>>>>>>> Stashed changes
 	if health <= 0:
 		var explosion = Explosion.instantiate()
 		explosion.global_position = global_position

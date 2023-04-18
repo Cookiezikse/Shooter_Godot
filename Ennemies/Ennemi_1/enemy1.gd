@@ -10,6 +10,7 @@ var health = EnnemiVars.Health_Ennemi_1
 
 @onready var postir = $PosTir
 @onready var muzzleflash = $Muzzleflash
+@onready var Hit = $AnimationPlayer
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
@@ -32,10 +33,7 @@ func _physics_process(delta):
 		queue_free()
 
 func _on_atk_speed_timeout():
-	canshoot = true 
-	# Je l'ai mit en commentaire parce que flemme de chercker si le joueur est la, il tire et puis c'est tout
-	#car y a des bug, si il apparait dedans direct il est pas compté et il tire pas
-	#if player != null:
+	canshoot = true
 	shoot()
 
 func shoot():
@@ -50,6 +48,7 @@ func shoot():
 		
 func enemy_hit( ):
 	health -= 1
+	Hit.play("hit")
 	if health <= 0:
 		Global.score +=50
 		queue_free()

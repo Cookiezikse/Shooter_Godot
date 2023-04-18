@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5juk21sudj7v"]
+[gd_scene load_steps=11 format=3 uid="uid://b5juk21sudj7v"]
 
-[ext_resource type="Texture2D" uid="uid://cimmq6eyy3b64" path="res://Imports/Graphics/Ships/ship_0009.png" id="1_kggje"]
 [ext_resource type="Script" path="res://Ennemies/Ennemi_1/enemy1.gd" id="1_wlri8"]
+[ext_resource type="Texture2D" uid="uid://c032w4iexrds" path="res://Imports/Graphics/Ships/ship_0001.png" id="2_scxr1"]
 [ext_resource type="Script" path="res://Ennemies/Ennemi_1/AtkSpeed.gd" id="3_ayd8n"]
 [ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_okejg"]
+[ext_resource type="Texture2D" uid="uid://206cj2n35m1j" path="res://Imports/Graphics/Ships/pixil-frame-0.png" id="5_xm1s2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tad0"]
 size = Vector2(709, 629.5)
@@ -41,6 +42,27 @@ _data = {
 "Muzzleflash": SubResource("Animation_lbveo")
 }
 
+[sub_resource type="Animation" id="Animation_6lyov"]
+resource_name = "hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_scxr1"), ExtResource("5_xm1s2"), ExtResource("2_scxr1")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hoew0"]
+_data = {
+"hit": SubResource("Animation_6lyov")
+}
+
 [node name="Enemy" type="CharacterBody2D"]
 position = Vector2(46, 49)
 script = ExtResource("1_wlri8")
@@ -48,7 +70,7 @@ script = ExtResource("1_wlri8")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159
 scale = Vector2(2.32858, 2.11202)
-texture = ExtResource("1_kggje")
+texture = ExtResource("2_scxr1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-3.15905e-06, 0.0576902)
@@ -76,10 +98,13 @@ libraries = {
 }
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(0, 21)
-rotation = 0.349066
 texture = ExtResource("3_okejg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hoew0")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

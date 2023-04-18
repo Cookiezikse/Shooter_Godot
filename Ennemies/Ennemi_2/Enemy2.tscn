@@ -1,10 +1,45 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=4 format=3 uid="uid://t5oyxv0qoino"]
+=======
+[gd_scene load_steps=8 format=3 uid="uid://t5oyxv0qoino"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Ennemies/Ennemi_2/Enemy2.gd" id="1_sa6a3"]
-[ext_resource type="Texture2D" uid="uid://bicv3sb5mpn75" path="res://Imports/Graphics/Ships/ship_0005.png" id="2_3gnp7"]
+[ext_resource type="Texture2D" uid="uid://c032w4iexrds" path="res://Imports/Graphics/Ships/ship_0001.png" id="2_8c4jm"]
+[ext_resource type="Texture2D" uid="uid://206cj2n35m1j" path="res://Imports/Graphics/Ships/pixil-frame-0.png" id="3_4ujv0"]
 
+<<<<<<< Updated upstream
 [sub_resource type="CircleShape2D" id="CircleShape2D_gkhc5"]
 radius = 463.108
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqtop"]
+size = Vector2(35, 5.00001)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1q7p"]
+radius = 120.0
+height = 496.0
+
+[sub_resource type="Animation" id="Animation_6lyov"]
+resource_name = "hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_8c4jm"), ExtResource("3_4ujv0"), ExtResource("2_8c4jm")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hoew0"]
+_data = {
+"hit": SubResource("Animation_6lyov")
+}
+>>>>>>> Stashed changes
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 rotation = 3.14159
@@ -20,13 +55,19 @@ polygon = PackedVector2Array(-6.11959e-07, -7, 2, -7, 2, -5, 12, -5, 12, -4, 13,
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-8.73897, -6.25344)
 scale = Vector2(1.54619, 1.39084)
-texture = ExtResource("2_3gnp7")
+texture = ExtResource("2_8c4jm")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3, -10)
-shape = SubResource("CircleShape2D_gkhc5")
+position = Vector2(-7.99969, -120)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_f1q7p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hoew0")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

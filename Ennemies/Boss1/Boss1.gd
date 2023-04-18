@@ -27,7 +27,7 @@ func _ready():
 	
 	shoot_timer.wait_time = shooter_timer_wait_time
 	shoot_timer.start()
-
+	
 func _process(delta: float) -> void:
 	var rotate_speed = randi_range(20,100)
 	var new_rotation = rotater.rotation_degrees + rotate_speed * delta

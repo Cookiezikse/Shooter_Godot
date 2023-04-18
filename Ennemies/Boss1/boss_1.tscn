@@ -19,4 +19,18 @@ texture = ExtResource("2_fi5mk")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-12, -10, -11.9999, -36, 1.00011, -44, 12.0001, -33, 41.0001, -27.9999, 56, -3.99986, 59, 15.0001, 37.9999, 28.0001, 1.99988, 48, -21.0001, 35.9999, -45.0001, 25.9999, -59, 8.99985, -54, -16.0001, -42.9999, -28.0001, -23.9999, -29.0001)
 
+<<<<<<< Updated upstream
+=======
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hoew0")
+}
+
+[node name="LaserTimer" type="Timer" parent="."]
+
+>>>>>>> Stashed changes
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

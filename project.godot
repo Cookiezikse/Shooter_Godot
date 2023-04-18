@@ -24,6 +24,8 @@ EnnemiVars="*res://Ennemi_vars.gd"
 
 window/size/viewport_width=600
 window/size/viewport_height=800
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [input]
 
