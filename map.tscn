@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://5mnc0ewhxijx"]
+[gd_scene load_steps=9 format=3 uid="uid://5mnc0ewhxijx"]
 
-[ext_resource type="PackedScene" uid="uid://1solf1coiind" path="res://Player.tscn" id="1_nxivh"]
 [ext_resource type="Script" path="res://map.gd" id="1_xk6fj"]
-[ext_resource type="PackedScene" uid="uid://b207t4mt116x7" path="res://enemy.tscn" id="2_7wk3q"]
+[ext_resource type="PackedScene" uid="uid://ba2pwslwehey8" path="res://enemy.tscn" id="2_7wk3q"]
 [ext_resource type="Script" path="res://Background.gd" id="3_6wcdc"]
 [ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="3_u5rap"]
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="4_naxba"]
@@ -138,15 +137,11 @@ sources/0 = SubResource("TileSetAtlasSource_1hyx3")
 [node name="Map" type="Node2D"]
 script = ExtResource("1_xk6fj")
 
-[node name="Player" parent="." instance=ExtResource("1_nxivh")]
-position = Vector2(312, 728)
-
 [node name="Enemy" parent="." instance=ExtResource("2_7wk3q")]
 position = Vector2(234, 7)
 
 [node name="Background" type="ParallaxBackground" parent="."]
 script = ExtResource("3_6wcdc")
-speed = 50
 
 [node name="WaterBackground" type="ParallaxLayer" parent="Background"]
 position = Vector2(600, 0)
