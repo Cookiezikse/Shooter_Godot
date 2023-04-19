@@ -34,7 +34,7 @@ func _on_spawn_timeout():
 		enemy.position = Vector
 		
 	if mod == 2: 
-		random = (randi() %2 + 1)	
+		random = (randi() %2 + 1)
 		if random == 1:
 			var enemy2 = Enemy2.instantiate()
 			add_child(enemy2)
