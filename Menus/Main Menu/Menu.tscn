@@ -1,13 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://hsemjvhhbfex"]
+[gd_scene load_steps=15 format=3 uid="uid://hsemjvhhbfex"]
 
 [ext_resource type="Script" path="res://Menus/Main Menu/Menu.gd" id="1_80ywm"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="3_408j6"]
 [ext_resource type="Script" path="res://Menus/Main Menu/Start_story.gd" id="3_g474m"]
-[ext_resource type="PackedScene" uid="uid://div3wmv8qh51r" path="res://tilemaps.tscn" id="3_xtupd"]
+[ext_resource type="PackedScene" path="res://tilemaps.tscn" id="3_xtupd"]
 [ext_resource type="Script" path="res://Menus/Main Menu/Start_infinite.gd" id="4_q8v6t"]
 [ext_resource type="Script" path="res://Menus/Main Menu/Options.gd" id="5_3gwmh"]
 [ext_resource type="Script" path="res://Menus/Main Menu/Quit.gd" id="6_4rt42"]
-[ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="8_2xmua"]
+[ext_resource type="PackedScene" path="res://cow.tscn" id="8_2xmua"]
+[ext_resource type="Script" path="res://Credits.gd" id="8_i73r6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sp56q"]
 size = Vector2(61, 27.75)
@@ -130,7 +131,7 @@ text = "Credits
 
 [node name="Start_story" type="Area2D" parent="Credits"]
 position = Vector2(-19, 0)
-script = ExtResource("3_g474m")
+script = ExtResource("8_i73r6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Credits/Start_story"]
 position = Vector2(50.5, 15.125)

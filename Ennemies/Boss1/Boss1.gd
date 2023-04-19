@@ -6,7 +6,11 @@ extends CharacterBody2D
 # Config 3 : rotate speed = 75 shoot timer wait time = 0.2 spawn point count 12
 # Config 4 : Les balles se tirent en cloche en suivant une fonction
 
+<<<<<<< HEAD
 const Bullet_scene = preload("res://Ennemies/Boss2/bullet_boss2.tscn")
+=======
+const Bullet_scene = preload("res://Ennemies/Boss1/bullet_boss.tscn")
+>>>>>>> main
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
 @onready var Hit = $AnimationPlayer

@@ -11,8 +11,8 @@ const Bullet_scene = preload("res://Ennemies/Boss2/bullet_boss2.tscn")
 @onready var rotater = $Rotater
 @onready var Hit = $AnimationPlayer
 
-var shooter_timer_wait_time = EnnemiVars.Speed_atk_Boss_1
-var spawn_point_count = EnnemiVars.Spawn_point_Boss_1
+var shooter_timer_wait_time = EnnemiVars.Speed_atk_Boss_1 
+var spawn_point_count = EnnemiVars.Spawn_point_Boss_1 
 const radius = 70
 var health = EnnemiVars.Health_Boss_1
 
@@ -26,7 +26,7 @@ func _ready():
 		spawn_point.rotation = pos.angle()
 		rotater.add_child(spawn_point)
 	
-	shoot_timer.wait_time = shooter_timer_wait_time
+	shoot_timer.wait_time = shooter_timer_wait_time 
 	shoot_timer.start()
 
 func _process(delta: float) -> void:

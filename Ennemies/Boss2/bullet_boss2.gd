@@ -1,12 +1,35 @@
-extends Node2D
+extends CharacterBody2D
 
-const speed = 1.0
-const teta = 30.0
-var time = 0.0
+const speed = 300.0
+const teta = 70.0
+var time = 0
+var timer = 0
+var gauche = true 
+var droite = false
+var count = 0
+var count2 = 0
+var Vector = Vector2(0,velocity.x) 
+var random = (randi_range(1,2))
+var CHOISIR = 1
 
 func _process(delta):
-	position.x += (-9.81*(delta*delta))/2 + speed * sin(teta)
-	position.y -= speed * cos(teta) * delta
+	#position.x += (-9.81*(delta*delta))/2 + speed * sin(teta)
+	#position.y += 9.81 * delta
+	if CHOISIR == 1:
+		if random == 1:
+			velocity.y = speed - 150
+			position.x = sin((position.y)*0.02)*400
+		if random == 2:
+			velocity.y = speed - 200
+			position.x = sin((position.y)*0.02)*400 + 600
+		velocity.y = speed - 200
+	if CHOISIR == 2:
+		velocity.y = speed 
+		position.x += sin(position.y/100)*5
+	
+	move_and_slide()
+	
+	look_at(Vector)
 	if Global.grenade1 >= 0 && Input.is_action_pressed("grenade1"): 
 		queue_free()
 
@@ -18,3 +41,5 @@ func _on_area_2d_body_entered(body):
 		body.player_hit( )
 		queue_free( )
 
+func _on_timer_timeout():
+	time +=4
