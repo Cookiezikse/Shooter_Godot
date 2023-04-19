@@ -27,7 +27,7 @@ func _physics_process(delta):
 		velocity = position.direction_to(player.position) * speed
 	move_and_collide(velocity)
 	if Global.grenade1 >= 0 && Input.is_action_pressed("grenade1"): 
-		Global.score += 50
+		Global.score += 10
 		var explosion = Explosion.instantiate()
 		explosion.global_position = global_position
 		get_tree().current_scene.add_child(explosion)
@@ -35,6 +35,11 @@ func _physics_process(delta):
 		
 func enemy_hit( ):
 	health -= 1
-	if health == 0:
+	if health <= 0:
 		Global.score += 75
 		queue_free()
+		
+	if health <= 0:
+		var explosion = Explosion.instantiate()
+		explosion.global_position = global_position
+		get_tree().current_scene.add_child(explosion)
