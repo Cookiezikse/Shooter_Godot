@@ -13,6 +13,7 @@ var amelioration = 0
 @onready var muzzleflash1 = $Muzzleflash1_2
 @onready var muzzleflash2 = $Muzzleflash2_2
 @onready var Godmod = $CollisionPolygon2D
+@onready var Nohit = $CollisionPolygon2D
 
 @warning_ignore("unused_parameter")
 
@@ -48,6 +49,7 @@ func _on_shoot_speed_timeout():
 func _process(delta):
 	if Input.is_action_pressed("Noscoop"):
 		Noscoop.play("Nscoop")
+		Nohit.disabled = true
 	
 	if Input.is_action_pressed("shoot") and canshoot:
 		shoot()
@@ -78,3 +80,6 @@ func player_hit( ):
 		if Global.P1_dead == 1 && Global.P2_dead == 1 && Global.P3_dead == 1 && Global.P4_dead == 1:
 			get_tree( ).change_scene_to_file("res://Menus/Game Over/gameovermenu.tscn")
 		queue_free()
+
+func _on_noscoopie_animation_finished(anim_name):
+	Nohit.disabled = false
