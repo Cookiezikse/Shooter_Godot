@@ -9,13 +9,13 @@
 [ext_resource type="Script" path="res://Menus/Select Menu/Back.gd" id="5_g6mrv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_prpqj"]
-radius = 63.0714
+radius = 80.0062
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cnn4w"]
-radius = 74.108
+radius = 89.1403
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qtmp"]
-size = Vector2(299, 134)
+size = Vector2(175, 134)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2n8y"]
 size = Vector2(47, 27)
@@ -48,20 +48,21 @@ position = Vector2(131, 423)
 script = ExtResource("4_b2p2y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Niveau_3"]
-position = Vector2(3, 26)
+position = Vector2(-2, -34)
 shape = SubResource("CircleShape2D_cnn4w")
 
 [node name="Niveau_4" type="Area2D" parent="."]
 position = Vector2(440, 306)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Niveau_4"]
+position = Vector2(24, -38)
 shape = SubResource("CircleShape2D_prpqj")
 
 [node name="Niveau_5" type="Area2D" parent="."]
 position = Vector2(279, 135)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Niveau_5"]
-position = Vector2(0.5, -57)
+position = Vector2(-61.5, -57)
 shape = SubResource("RectangleShape2D_1qtmp")
 
 [node name="Player" parent="." instance=ExtResource("2_7lua1")]
