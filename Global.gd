@@ -26,3 +26,7 @@ var Death_ennemi1 = 0
 var Boss_amelioration = 0
 
 var velocity = 0
+
+var The_END = 0
+
+var Game_Over = false

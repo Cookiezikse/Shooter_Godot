@@ -5,6 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://c032w4iexrds" path="res://Imports/Graphics/Ships/ship_0001.png" id="3_m7wrj"]
 [ext_resource type="Texture2D" uid="uid://206cj2n35m1j" path="res://Imports/Graphics/Ships/pixil-frame-0.png" id="4_i2pq5"]
 
+[sub_resource type="Animation" id="Animation_ngncd"]
+resource_name = "Spawn"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(300, -75), Vector2(300, 75)]
+}
+
 [sub_resource type="Animation" id="Animation_6lyov"]
 resource_name = "hit"
 length = 0.2
@@ -21,9 +37,6 @@ tracks/0/keys = {
 "values": [ExtResource("3_m7wrj"), ExtResource("4_i2pq5"), ExtResource("3_m7wrj")]
 }
 
-[sub_resource type="Animation" id="Animation_ngncd"]
-resource_name = "Spawn"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hoew0"]
 _data = {
 "Spawn": SubResource("Animation_ngncd"),
@@ -31,7 +44,7 @@ _data = {
 }
 
 [node name="Boss3" type="CharacterBody2D"]
-position = Vector2(302, 74)
+position = Vector2(300, 75)
 rotation = 3.14159
 script = ExtResource("1_e8l8i")
 
@@ -75,4 +88,5 @@ autostart = true
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Pattern" to="." method="_on_pattern_timeout"]

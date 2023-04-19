@@ -224,7 +224,7 @@ _data = {
 script = ExtResource("1_i1ec0")
 
 [node name="Player" parent="." instance=ExtResource("2_32gt8")]
-position = Vector2(312, 728)
+position = Vector2(300, 700)
 
 [node name="Background" type="ParallaxBackground" parent="."]
 script = ExtResource("3_omgyl")
@@ -307,15 +307,14 @@ script = ExtResource("9_ehiba")
 [node name="Label" type="Label" parent="Control"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = -438.944
-offset_top = -48.1111
-offset_right = -89.9445
-offset_bottom = 3.88889
+offset_left = -550.0
+offset_top = 775.0
+offset_right = -201.0
+offset_bottom = 827.0
 scale = Vector2(1.5, 1.5)
-text = "You don't know how much
- it will be hard or..."
-visible_characters = 2
-visible_ratio = 0.0555555
+text = ".... Do you ? "
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
 autoplay = "Text"
