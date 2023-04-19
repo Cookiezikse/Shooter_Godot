@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_nq5jh"]
 [ext_resource type="Script" path="res://Niveaux/Infinite/Background.gd" id="3_s0nwc"]
 [ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="4_3l8t8"]
-[ext_resource type="PackedScene" path="res://tilemaps.tscn" id="5_nkebx"]
+[ext_resource type="PackedScene" uid="uid://div3wmv8qh51r" path="res://tilemaps.tscn" id="5_nkebx"]
 [ext_resource type="Script" path="res://DispScore.gd" id="6_pkbca"]
 [ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_juamr"]
-[ext_resource type="PackedScene" path="res://cow.tscn" id="8_vrt57"]
+[ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="8_vrt57"]
 
 [node name="Map2" type="Node2D"]
 script = ExtResource("1_jpdu1")
