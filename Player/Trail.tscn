@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://eodsdcof0wl5"]
+
+[ext_resource type="Script" path="res://Player/Trail.gd" id="1_dr2x6"]
+
+[node name="Trail" type="Node2D"]
+modulate = Color(0.0117647, 1, 1, 1)
+script = ExtResource("1_dr2x6")

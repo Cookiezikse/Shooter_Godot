@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cp30k1nt88lqk"]
+[gd_scene load_steps=6 format=3 uid="uid://cp30k1nt88lqk"]
 
 [ext_resource type="Script" path="res://Autres/Explosion.gd" id="1_nvm4x"]
 [ext_resource type="Texture2D" uid="uid://bgvuens4mlgfm" path="res://Autres/cercle.png" id="1_qe8yp"]
@@ -8,7 +8,12 @@ _data = [Vector2(0, 0.318182), 0.0, 0.0, 0, 0, Vector2(0.862245, 0.0636363), 0.0
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_lohac"]
-colors = PackedColorArray(0.955313, 0.209601, 0, 1, 0.129558, 0.129558, 0.129558, 1)
+colors = PackedColorArray(0.120696, 0.00702115, 0, 1, 0.991164, 0.991164, 0.991164, 1)
+
+[sub_resource type="Curve" id="Curve_f4lsr"]
+min_value = -1.0
+_data = [Vector2(0, 0.109091), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Explosion" type="CPUParticles2D"]
 scale = Vector2(0.21, 0.21)
@@ -29,4 +34,5 @@ scale_amount_min = 0.01
 scale_amount_max = 0.2
 scale_amount_curve = SubResource("Curve_wx3rc")
 color_ramp = SubResource("Gradient_lohac")
+hue_variation_curve = SubResource("Curve_f4lsr")
 script = ExtResource("1_nvm4x")
