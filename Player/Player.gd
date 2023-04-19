@@ -6,6 +6,7 @@ const SPEED = 300.0
 var health = 1
 var canshoot = true
 var amelioration = 0
+var canscoop = true
 
 @onready var Noscoop = $Noscoopie
 @onready var spawnpos = $SpawnPos
@@ -14,6 +15,7 @@ var amelioration = 0
 @onready var muzzleflash2 = $Muzzleflash2_2
 @onready var Godmod = $CollisionPolygon2D
 @onready var Nohit = $CollisionPolygon2D
+@onready var ScoopTimer = $ScoopTimer
 
 @warning_ignore("unused_parameter")
 
@@ -47,9 +49,11 @@ func _on_shoot_speed_timeout():
 	canshoot = true 
 
 func _process(delta):
-	if Input.is_action_pressed("Noscoop"):
+	if Input.is_action_pressed("Noscoop") && canscoop:
 		Noscoop.play("Nscoop")
 		Nohit.disabled = true
+		canscoop = false
+		ScoopTimer.start()
 	
 	if Input.is_action_pressed("shoot") and canshoot:
 		shoot()
@@ -83,3 +87,7 @@ func player_hit( ):
 
 func _on_noscoopie_animation_finished(anim_name):
 	Nohit.disabled = false
+
+
+func _on_scoop_timer_timeout():
+	canscoop = true
