@@ -55,15 +55,111 @@ libraries = {
 position = Vector2(144, -52.9996)
 rotation = 0.785398
 
+[node name="HG2" type="Marker2D" parent="HG"]
+position = Vector2(2.82864, -52.326)
+
+[node name="HG3" type="Marker2D" parent="HG"]
+position = Vector2(2.82874, -74.9534)
+
+[node name="HG4" type="Marker2D" parent="HG"]
+position = Vector2(2.82881, -107.48)
+
+[node name="HG5" type="Marker2D" parent="HG"]
+position = Vector2(4.24313, -138.593)
+
+[node name="HG6" type="Marker2D" parent="HG"]
+position = Vector2(5.65741, -169.706)
+
+[node name="HG7" type="Marker2D" parent="HG"]
+position = Vector2(2.82857, -29.6986)
+
+[node name="HG8" type="Marker2D" parent="HG"]
+position = Vector2(2.12141, -13.4352)
+
+[node name="HG9" type="Marker2D" parent="HG"]
+position = Vector2(0.707108, 21.9202)
+
+[node name="HG10" type="Marker2D" parent="HG"]
+position = Vector2(1.41417, 43.8405)
+
+[node name="HG11" type="Marker2D" parent="HG"]
+position = Vector2(2.12122, 65.7608)
+
 [node name="HD" type="Marker2D" parent="."]
 position = Vector2(-136, -46.0004)
 rotation = 0.785398
+
+[node name="HD2" type="Marker2D" parent="HD"]
+position = Vector2(-25.4557, -9.15527e-05)
+
+[node name="HD4" type="Marker2D" parent="HD"]
+position = Vector2(-76.3674, 1.41397)
+
+[node name="HD3" type="Marker2D" parent="HD"]
+position = Vector2(-50.9116, 1.41403)
+
+[node name="HD5" type="Marker2D" parent="HD"]
+position = Vector2(-98.2877, 2.12103)
+
+[node name="HD6" type="Marker2D" parent="HD"]
+position = Vector2(-121.622, 1.41382)
+
+[node name="HD7" type="Marker2D" parent="HD"]
+position = Vector2(-147.078, 4.24225)
+
+[node name="HD8" type="Marker2D" parent="HD"]
+position = Vector2(-172.534, 1.41368)
+
+[node name="HD9" type="Marker2D" parent="HD"]
+position = Vector2(-200.818, 1.41364)
+
+[node name="HD10" type="Marker2D" parent="HD"]
+position = Vector2(25.456, 3.05176e-05)
+
+[node name="HD11" type="Marker2D" parent="HD"]
+position = Vector2(48.0834, -1.41412)
 
 [node name="BD" type="Marker2D" parent="."]
 position = Vector2(-273.999, -437.001)
 
 [node name="BG" type="Marker2D" parent="."]
 position = Vector2(270.001, -431.999)
+
+[node name="BG9" type="Marker2D" parent="."]
+position = Vector2(270.001, -454.999)
+
+[node name="BG10" type="Marker2D" parent="."]
+position = Vector2(269.001, -474.999)
+
+[node name="BG11" type="Marker2D" parent="."]
+position = Vector2(268.001, -495.999)
+
+[node name="BG12" type="Marker2D" parent="."]
+position = Vector2(268.001, -495.999)
+
+[node name="BG13" type="Marker2D" parent="."]
+position = Vector2(269.001, -518.999)
+
+[node name="BG2" type="Marker2D" parent="."]
+position = Vector2(270.001, -406.999)
+
+[node name="BG3" type="Marker2D" parent="."]
+position = Vector2(271.001, -383.999)
+
+[node name="BG4" type="Marker2D" parent="."]
+position = Vector2(270.001, -357.999)
+
+[node name="BG5" type="Marker2D" parent="."]
+position = Vector2(269.001, -329.999)
+
+[node name="BG6" type="Marker2D" parent="."]
+position = Vector2(269.001, -303.999)
+
+[node name="BG7" type="Marker2D" parent="."]
+position = Vector2(268.001, -275.999)
+
+[node name="BG8" type="Marker2D" parent="."]
+position = Vector2(267.001, -251.999)
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

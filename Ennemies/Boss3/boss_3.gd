@@ -10,7 +10,10 @@ const Bullet_scene = preload("res://Ennemies/Boss3/bullet_boss3.tscn")
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
 @onready var Hit = $AnimationPlayer
-@onready var spawn1 = $Marker2D 
+@onready var spawn1 = $HD
+@onready var spawn2 = $HG
+@onready var spawn3 = $BD
+@onready var spawn4 = $BG
 
 var shooter_timer_wait_time = EnnemiVars.Speed_atk_Boss_1 
 var spawn_point_count = EnnemiVars.Spawn_point_Boss_1 
@@ -25,9 +28,20 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_shoot_timer_timeout() -> void:
-
+	var random = (randi_range(1,4))
 	var bullet = Bullet_scene.instantiate()
-	bullet.position = spawn1.global_position
+	if random == 1:
+		bullet.position = spawn1.global_position
+		bullet.rotation = -spawn1.global_rotation
+	if random == 2:
+		bullet.position = spawn2.global_position
+		bullet.rotation = spawn2.global_rotation + 185.5
+	if random == 3:
+		bullet.position = spawn3.global_position
+		bullet.rotation = spawn3.global_rotation
+	if random == 4:
+		bullet.position = spawn4.global_position
+		bullet.rotation = spawn4.global_rotation
 	get_tree().root.add_child(bullet)
 
 

@@ -10,7 +10,6 @@ size = Vector2(10, 40)
 radius = 1.41421
 
 [node name="Bullet2" type="CharacterBody2D"]
-rotation = 0.785398
 script = ExtResource("1_bm5dq")
 
 [node name="Bullet_sprite" type="Sprite2D" parent="."]
