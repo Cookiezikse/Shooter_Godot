@@ -4,9 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://ctyhht02gkiko" path="res://Imports/Graphics/Tilemap/tiles.png" id="2_0guqo"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="3_408j6"]
 [ext_resource type="Script" path="res://Menus/Main Menu/Start_story.gd" id="3_g474m"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://Menus/Main Menu/Start_infinite.gd" id="4_q8v6t"]
 [ext_resource type="Script" path="res://Menus/Main Menu/Options.gd" id="5_3gwmh"]
 [ext_resource type="Script" path="res://Menus/Main Menu/Quit.gd" id="6_4rt42"]
+=======
+[ext_resource type="PackedScene" uid="uid://div3wmv8qh51r" path="res://tilemaps.tscn" id="3_xtupd"]
+[ext_resource type="Script" path="res://Menus/Main Menu/Start_infinite.gd" id="4_q8v6t"]
+[ext_resource type="Script" path="res://Menus/Main Menu/Options.gd" id="5_3gwmh"]
+[ext_resource type="Script" path="res://Menus/Main Menu/Quit.gd" id="6_4rt42"]
+[ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="8_2xmua"]
+[ext_resource type="Script" path="res://Credits.gd" id="8_i73r6"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sp56q"]
 size = Vector2(85, 31.5)

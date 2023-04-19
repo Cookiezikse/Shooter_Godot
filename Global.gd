@@ -1,6 +1,11 @@
 extends Node
 
 var score = 0
+<<<<<<< Updated upstream
+=======
+var score_temp = 0
+var meilleurScore = 0
+>>>>>>> Stashed changes
 
 var Scene = 0
 var Scene2 = ""

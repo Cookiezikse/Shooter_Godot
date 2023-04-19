@@ -1,8 +1,19 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=14 format=3 uid="uid://c6cc7560dq5kx"]
+=======
+[gd_scene load_steps=18 format=3 uid="uid://c6cc7560dq5kx"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Menus/Game Over/gameovermenu.gd" id="1_273dy"]
 [ext_resource type="PackedScene" uid="uid://t8kum1rqiuoq" path="res://Score.tscn" id="2_emt37"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="3_d77ov"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Script" path="res://Menus/Game Over/Restart.gd" id="3_roiwo"]
+[ext_resource type="PackedScene" uid="uid://div3wmv8qh51r" path="res://tilemaps.tscn" id="4_l1o2h"]
+[ext_resource type="Script" path="res://Menus/Game Over/Quit.gd" id="4_lpmu0"]
+[ext_resource type="Script" path="res://Menus/Game Over/DispMeilleur.gd" id="6_ydlip"]
+>>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmbie"]
 bg_color = Color(0.203922, 0.188235, 0.235294, 1)
@@ -121,18 +132,56 @@ size_flags_vertical = 3
 
 [node name="Score" parent="Node2D/Control" index="0"]
 layout_mode = 1
-offset_right = 129.0
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 180.0
 offset_bottom = 70.0
 label_settings = SubResource("LabelSettings_auffp")
 
 [node name="DispScore" parent="Node2D/Control" index="1"]
-offset_left = 112.0
-offset_top = 2.0
-offset_right = 224.0
-offset_bottom = 74.0
+offset_left = 124.0
+offset_right = 236.0
+offset_bottom = 72.0
 label_settings = SubResource("LabelSettings_nnt7r")
 
+<<<<<<< Updated upstream
 [connection signal="body_entered" from="CenterContainer2/VBoxContainer/Restart/Restart" to="." method="_on_restart_body_entered"]
 [connection signal="body_entered" from="CenterContainer2/VBoxContainer/Quit/Quit" to="." method="_on_quit_body_entered"]
+=======
+[node name="MeilleurScore" type="Label" parent="Node2D/Control" index="2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 64.0
+offset_right = 138.0
+offset_bottom = 124.0
+text = "Meilleur score : "
+
+[node name="DispMeilleur" type="Label" parent="Node2D/Control" index="3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 141.0
+offset_top = 64.0
+offset_right = 181.0
+offset_bottom = 90.0
+text = "0"
+script = ExtResource("6_ydlip")
+
+[node name="Tilemaps" parent="." instance=ExtResource("4_l1o2h")]
+
+[node name="Ground" parent="Tilemaps" index="0"]
+layer_0/tile_data = PackedInt32Array()
+
+[node name="Objects" parent="Tilemaps" index="1"]
+layer_0/tile_data = PackedInt32Array()
+
+[node name="Water" parent="Tilemaps" index="2"]
+layer_0/tile_data = PackedInt32Array()
+
+[connection signal="body_entered" from="CenterContainer2/VBoxContainer/Restart/Restart" to="CenterContainer2/VBoxContainer/Restart/Restart" method="_on_body_entered"]
+[connection signal="body_exited" from="CenterContainer2/VBoxContainer/Restart/Restart" to="CenterContainer2/VBoxContainer/Restart/Restart" method="_on_body_exited"]
+[connection signal="body_entered" from="CenterContainer2/VBoxContainer/Quit/Quit" to="CenterContainer2/VBoxContainer/Quit/Quit" method="_on_body_entered"]
+[connection signal="body_exited" from="CenterContainer2/VBoxContainer/Quit/Quit" to="CenterContainer2/VBoxContainer/Quit/Quit" method="_on_body_exited"]
+>>>>>>> Stashed changes
 
 [editable path="Node2D"]

@@ -44,4 +44,9 @@ func enemy_hit( ):
 	health -= 1
 	if health == 0:
 		Global.score +=5000
+<<<<<<< Updated upstream
+=======
+		Global.grenade1+=1
+		Global.Boss_amelioration = 0
+>>>>>>> Stashed changes
 		queue_free()
