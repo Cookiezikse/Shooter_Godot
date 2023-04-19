@@ -10,6 +10,9 @@ var Speed_atk_Boss_1 = 0.2
 var Health_Boss_1 = 50
 var Spawn_point_Boss_1 = 12
 
+var Speed_atk_Boss_FIN = 0.2
+var Health_Boss_FIN = 1000
+
 var Spawn_Infinite = 1
 
 

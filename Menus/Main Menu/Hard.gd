@@ -10,6 +10,7 @@ func _process(delta):
 			EnnemiVars.Spawn_point_Boss_1 = 15
 			EnnemiVars.Speed_atk_Boss_1 = 0.1
 			EnnemiVars.Health_Boss_1 = 100
+			EnnemiVars.Speed_atk_Boss_FIN = 0.05
 			get_tree().change_scene_to_file(Global.Scene2)
 
 func _on_body_entered(body):

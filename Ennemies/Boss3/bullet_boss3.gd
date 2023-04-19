@@ -1,6 +1,6 @@
 extends Node2D
 
-const speed = 200
+const speed = 300
 
 func _process(delta):
 	position += transform.x * speed * delta
