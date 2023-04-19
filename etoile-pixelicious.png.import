@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btg1ssagr70nk"
-path="res://.godot/imported/etoile.jpg-5f50050b6df10ea4193285c86bbeb130.ctex"
+uid="uid://5wwoj8a24rwa"
+path="res://.godot/imported/etoile-pixelicious.png-41c0d022b3fe439250ea21e8d4472222.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://etoile.jpg"
-dest_files=["res://.godot/imported/etoile.jpg-5f50050b6df10ea4193285c86bbeb130.ctex"]
+source_file="res://etoile-pixelicious.png"
+dest_files=["res://.godot/imported/etoile-pixelicious.png-41c0d022b3fe439250ea21e8d4472222.ctex"]
 
 [params]
 
