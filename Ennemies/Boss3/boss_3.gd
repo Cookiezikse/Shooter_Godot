@@ -8,10 +8,11 @@ extends CharacterBody2D
 
 const Bullet_scene = preload("res://Ennemies/Boss3/bullet_boss3.tscn")
 const speed = 20
+var pattern = 1
 
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
-@onready var Hit = $AnimationPlayer
+@onready var AnimationBoss = $AnimationPlayer
 
 @onready var spawn1_1 = $HD1
 
@@ -56,15 +57,13 @@ func _on_shoot_timer_timeout() -> void:
 			bullet.rotation = spawn4.global_rotation + 84.85
 			get_tree().root.add_child(bullet)
 
-
-
 func enemy_hit( ):
 	health -= 1
-	Hit.play("hit")
+	AnimationBoss.play("hit")
 	if health == 0:
 		Global.score +=5000
 		queue_free()
 
-
 func _on_pattern_timeout():
 	pass
+	#pattern = randi_range(1,5)
