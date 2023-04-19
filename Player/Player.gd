@@ -88,6 +88,5 @@ func player_hit( ):
 func _on_noscoopie_animation_finished(anim_name):
 	Nohit.disabled = false
 
-
 func _on_scoop_timer_timeout():
 	canscoop = true
