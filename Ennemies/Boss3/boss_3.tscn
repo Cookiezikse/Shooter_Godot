@@ -51,18 +51,18 @@ libraries = {
 "": SubResource("AnimationLibrary_hoew0")
 }
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="HG" type="Marker2D" parent="."]
 position = Vector2(144, -52.9996)
 rotation = 0.785398
 
-[node name="Marker2D2" type="Marker2D" parent="."]
+[node name="HD" type="Marker2D" parent="."]
 position = Vector2(-136, -46.0004)
 rotation = 0.785398
 
-[node name="Marker2D3" type="Marker2D" parent="."]
+[node name="BD" type="Marker2D" parent="."]
 position = Vector2(-273.999, -437.001)
 
-[node name="Marker2D4" type="Marker2D" parent="."]
+[node name="BG" type="Marker2D" parent="."]
 position = Vector2(270.001, -431.999)
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

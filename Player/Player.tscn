@@ -143,5 +143,9 @@ libraries = {
 "": SubResource("AnimationLibrary_cpegb")
 }
 
+[node name="ScoopTimer" type="Timer" parent="."]
+wait_time = 1.5
+
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]
 [connection signal="animation_finished" from="Noscoopie" to="." method="_on_noscoopie_animation_finished"]
+[connection signal="timeout" from="ScoopTimer" to="." method="_on_scoop_timer_timeout"]
