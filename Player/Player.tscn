@@ -144,3 +144,4 @@ libraries = {
 }
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]
+[connection signal="animation_finished" from="Noscoopie" to="." method="_on_noscoopie_animation_finished"]
