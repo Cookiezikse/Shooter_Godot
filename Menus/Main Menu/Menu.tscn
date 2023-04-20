@@ -65,7 +65,7 @@ text = "Z Q S D : To move"
 [node name="Attack P1" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Space : Attack"
+text = "Space : Attack / Select"
 
 [node name="Spin P1" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
@@ -89,7 +89,7 @@ text = "Arrows : To move"
 [node name="Attack P2" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "M : Attack"
+text = "M : Attack / Select"
 
 [node name="Spin P2" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
