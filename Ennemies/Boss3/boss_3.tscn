@@ -69,11 +69,11 @@ libraries = {
 }
 
 [node name="HG1" type="Marker2D" parent="."]
-position = Vector2(355, -27.9991)
+position = Vector2(419, -68.9989)
 rotation = 0.785398
 
 [node name="HD1" type="Marker2D" parent="."]
-position = Vector2(-408, -21.001)
+position = Vector2(-424, -65.0011)
 rotation = 0.785398
 
 [node name="BD1" type="Marker2D" parent="."]
