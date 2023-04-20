@@ -69,24 +69,28 @@ libraries = {
 }
 
 [node name="HG1" type="Marker2D" parent="."]
-position = Vector2(192, -86.9995)
+position = Vector2(355, -27.9991)
 rotation = 0.785398
 
 [node name="HD1" type="Marker2D" parent="."]
-position = Vector2(-188, -75.0005)
+position = Vector2(-408, -21.001)
 rotation = 0.785398
 
 [node name="BD1" type="Marker2D" parent="."]
-position = Vector2(-273.999, -445.001)
+position = Vector2(-389.999, -491.001)
 
 [node name="BG1" type="Marker2D" parent="."]
-position = Vector2(271.001, -439.999)
+position = Vector2(385.001, -500.999)
 
 [node name="Pattern" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
 
+[node name="Mod" type="Timer" parent="."]
+wait_time = 10.0
+
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Pattern" to="." method="_on_pattern_timeout"]
+[connection signal="timeout" from="Mod" to="." method="_on_mod_timeout"]

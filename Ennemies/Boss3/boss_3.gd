@@ -7,11 +7,13 @@ extends CharacterBody2D
 # Config 4 : Les balles se tirent en cloche en suivant une fonction
 
 const Bullet_scene = preload("res://Ennemies/Boss3/bullet_boss3.tscn")
+
 const speed = 20
 var pattern = 1
 var FIGHT = 0
 var Mod = 1
 
+@onready var Mod_Timer = $Mod
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
 @onready var AnimationBoss = $AnimationPlayer
@@ -26,17 +28,21 @@ var Mod = 1
 
 var shooter_timer_wait_time = EnnemiVars.Speed_atk_Boss_FIN
 var health = EnnemiVars.Health_Boss_FIN
+var random_move = (randi_range(1,2))
 
 func _ready():
 	shoot_timer.wait_time = shooter_timer_wait_time 
 	shoot_timer.start()
 	AnimationBoss.play("Spawn")
-	
-var random = 1
-
-@onready var Cow = $AnimationPlayer
 
 func _physics_process(delta):
+	if Mod == 2:
+		if random_move == 1:
+			velocity.x = -speed
+		if random_move == 2:
+			velocity.x = speed
+		move_and_slide()
+
 	
 
 func _on_shoot_timer_timeout() -> void:
@@ -69,8 +75,9 @@ func _on_shoot_timer_timeout() -> void:
 func enemy_hit( ):
 	health -= 1
 	AnimationBoss.play("hit")
-	if health == health - 50:
+	if health == 900:
 		Mod = 2
+		Mod_Timer.start()
 	if health == 0:
 		Global.score +=5000
 		queue_free()
@@ -81,3 +88,10 @@ func _on_pattern_timeout():
 
 func _on_animation_player_animation_finished(Spawn):
 	Global.FIGHT = 1
+
+
+func _on_mod_timeout():
+	if random_move == 1:
+		random_move = 2
+	elif random_move == 2:
+		random_move = 1
