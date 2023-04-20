@@ -265,7 +265,6 @@ position = Vector2(363, -459)
 position = Vector2(141, -796)
 
 [node name="Spawn" type="Timer" parent="."]
-wait_time = 1.5
 autostart = true
 
 [node name="Node2D" type="Node2D" parent="."]

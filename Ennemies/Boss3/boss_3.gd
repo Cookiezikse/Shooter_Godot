@@ -38,7 +38,7 @@ var random = 1
 func _on_shoot_timer_timeout() -> void:
 	if Global.Game_Over:
 		queue_free()
-	if FIGHT == 1:
+	if Global.FIGHT == 1:
 		var bullet = Bullet_scene.instantiate()
 		for i in range(1,12,1):
 			var random = (randi_range(1,4))
@@ -73,6 +73,5 @@ func _on_pattern_timeout():
 	pass
 	#pattern = randi_range(1,5)
 
-
 func _on_animation_player_animation_finished(Spawn):
-	FIGHT = 1
+	Global.FIGHT = 1

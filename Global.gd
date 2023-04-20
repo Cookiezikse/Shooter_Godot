@@ -30,3 +30,5 @@ var velocity = 0
 var The_END = 0
 
 var Game_Over = false
+
+var FIGHT = 0
