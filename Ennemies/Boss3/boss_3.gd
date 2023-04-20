@@ -10,6 +10,7 @@ const Bullet_scene = preload("res://Ennemies/Boss3/bullet_boss3.tscn")
 const speed = 20
 var pattern = 1
 var FIGHT = 0
+var Mod = 1
 
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
@@ -34,6 +35,9 @@ func _ready():
 var random = 1
 
 @onready var Cow = $AnimationPlayer
+
+func _physics_process(delta):
+	
 
 func _on_shoot_timer_timeout() -> void:
 	if Global.Game_Over:
@@ -65,6 +69,8 @@ func _on_shoot_timer_timeout() -> void:
 func enemy_hit( ):
 	health -= 1
 	AnimationBoss.play("hit")
+	if health == health - 50:
+		Mod = 2
 	if health == 0:
 		Global.score +=5000
 		queue_free()
