@@ -53,8 +53,6 @@ func _physics_process(delta):
 			velocity.x = speed
 		move_and_slide()
 
-	
-
 func _on_shoot_timer_timeout() -> void:
 	if Global.Game_Over:
 		queue_free()
@@ -88,12 +86,12 @@ func _on_shoot_timer_timeout() -> void:
 				var random = (randi_range(1,7))
 				if random == 1:
 					bullet.position = spawn1_2.global_position + Vector2((randi_range(-100,100)),0)
-					bullet.rotation = -spawn1_2.global_rotation
+					bullet.rotation = spawn1_2.global_rotation - 89.52
 					get_tree().root.add_child(bullet)
 			
 				elif random == 2:
 					bullet.position = spawn1_3.global_position + Vector2((randi_range(-100,100)),0)
-					bullet.rotation = spawn1_3.global_rotation
+					bullet.rotation = spawn1_3.global_rotation - 89.52
 					get_tree().root.add_child(bullet)
 			
 				elif random == 3:
@@ -115,7 +113,7 @@ func _on_shoot_timer_timeout() -> void:
 					get_tree().root.add_child(bullet)
 				elif random == 7:
 					bullet.position = spawn1_4.global_position + Vector2(0,(randi_range(-300,300)))
-					bullet.rotation = spawn1_4.global_rotation #Mettre les valeurs de rotations pour que ça tire vers le bas et pour celles de gauche que ça tire vers la droite
+					bullet.rotation = spawn1_4.global_rotation - 89.52#Mettre les valeurs de rotations pour que ça tire vers le bas et pour celles de gauche que ça tire vers la droite
 					get_tree().root.add_child(bullet)
 
 func enemy_hit( ):
