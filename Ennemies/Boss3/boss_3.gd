@@ -19,12 +19,19 @@ var Mod = 1
 @onready var AnimationBoss = $AnimationPlayer
 
 @onready var spawn1_1 = $HD1
-
 @onready var spawn2_1 = $HG1
-
 @onready var spawn3_1 = $BD1
-
 @onready var spawn4 = $BG1
+
+# PATTERN 2
+
+@onready var spawn1_2 = $HD2
+@onready var spawn1_3 = $HG2
+@onready var spawn1_4 = $HM1
+@onready var spawn2_2 = $BG2
+@onready var spawn2_3 = $BG3
+@onready var spawn3_2 = $BD2
+@onready var spawn3_3 = $BD3
 
 var shooter_timer_wait_time = EnnemiVars.Speed_atk_Boss_FIN
 var health = EnnemiVars.Health_Boss_FIN

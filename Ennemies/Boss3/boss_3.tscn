@@ -72,15 +72,36 @@ libraries = {
 position = Vector2(419, -68.9989)
 rotation = 0.785398
 
+[node name="HG2" type="Marker2D" parent="."]
+position = Vector2(193, 22.0005)
+
+[node name="HM1" type="Marker2D" parent="."]
+position = Vector2(-2.00009, 38)
+
 [node name="HD1" type="Marker2D" parent="."]
 position = Vector2(-424, -65.0011)
 rotation = 0.785398
 
+[node name="HD2" type="Marker2D" parent="."]
+position = Vector2(-219, 30.9995)
+
 [node name="BD1" type="Marker2D" parent="."]
 position = Vector2(-389.999, -491.001)
 
+[node name="BD2" type="Marker2D" parent="."]
+position = Vector2(-369.999, -328.001)
+
+[node name="BD3" type="Marker2D" parent="."]
+position = Vector2(-370.998, -682.001)
+
 [node name="BG1" type="Marker2D" parent="."]
 position = Vector2(385.001, -500.999)
+
+[node name="BG2" type="Marker2D" parent="."]
+position = Vector2(378.001, -298.999)
+
+[node name="BG3" type="Marker2D" parent="."]
+position = Vector2(385.002, -692.999)
 
 [node name="Pattern" type="Timer" parent="."]
 wait_time = 10.0
