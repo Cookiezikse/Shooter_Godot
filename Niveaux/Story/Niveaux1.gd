@@ -7,6 +7,7 @@ const count = 20
 func _on_spawn_timeout():
 
 	if count < Global.Death_ennemi1:
+		Global.Niveau1_clear = true
 		get_tree().change_scene_to_file("res://Menus/Select Menu/select_menu1.tscn")
 	var enemy = Enemy.instantiate()
 	add_child(enemy)

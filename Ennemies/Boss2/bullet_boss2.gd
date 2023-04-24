@@ -30,7 +30,7 @@ func _process(delta):
 		if random2 == 2:
 			if random == 1:
 				velocity.y = speed - 150
-				position.x = cos((position.y)*0.02)*400
+				position.x = cos((position.y)*0.02)*400 #Ne pourra s'adapter si c'est position = et pas velocity.x
 			if random == 2:
 				velocity.y = speed - 200
 				position.x = cos((position.y)*0.02)*400 + 600

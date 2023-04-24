@@ -7,6 +7,12 @@ extends CharacterBody2D
 # Config 4 : Les balles se tirent en cloche en suivant une fonction
 
 const Bullet_scene = preload("res://Ennemies/Boss3/bullet_boss3.tscn")
+const Bullet_scene2 = preload("res://Ennemies/Boss2/bullet_boss2.tscn")
+# Vu que balles en position.x soit créer autres balles soit créer d'autres attaques
+#Si velocity joueur  = 0 , Les balles le tue pas.
+#Des coeurs qui bougent et il faut tirer dessus pour débloquer une amélioration.
+
+#Toutes les variables qui vont servir
 
 const speed = 20
 var pattern = 1
@@ -57,8 +63,9 @@ func _on_shoot_timer_timeout() -> void:
 	if Global.Game_Over:
 		queue_free()
 	if Global.FIGHT == 1:
-		if pattern_fight == 1:
+		if pattern_fight == 1 or pattern_fight == 2:
 			var bullet = Bullet_scene.instantiate()
+			var bullet2 = Bullet_scene2.instantiate()
 			for i in range(1,12,1):
 				var random = (randi_range(1,4))
 				if random == 1:
@@ -80,7 +87,7 @@ func _on_shoot_timer_timeout() -> void:
 					bullet.position = spawn4.global_position + Vector2(0,(randi_range(-300,300)))
 					bullet.rotation = spawn4.global_rotation + 84.85
 					get_tree().root.add_child(bullet)
-		elif pattern_fight == 2:
+		elif pattern_fight == 3 or pattern_fight == 4:
 			var bullet = Bullet_scene.instantiate()
 			for i in range(1,12,1): #Voir si on peut utiliser un switch ça peut optimiser le code et la rapidité
 				var random = (randi_range(1,7))
@@ -96,12 +103,12 @@ func _on_shoot_timer_timeout() -> void:
 			
 				elif random == 3:
 					bullet.position = spawn2_2.global_position  + Vector2(0,(randi_range(-300,300)))
-					bullet.rotation = spawn2_2.global_rotation
+					bullet.rotation = spawn2_2.global_rotation + 84.85
 					get_tree().root.add_child(bullet)
 			
 				elif random == 4:
 					bullet.position = spawn2_3.global_position + Vector2(0,(randi_range(-300,300)))
-					bullet.rotation = spawn2_3.global_rotation
+					bullet.rotation = spawn2_3.global_rotation + 84.85
 					get_tree().root.add_child(bullet)
 				elif random == 5:
 					bullet.position = spawn3_2.global_position + Vector2(0,(randi_range(-300,300)))
@@ -127,11 +134,10 @@ func enemy_hit( ):
 		queue_free()
 
 func _on_pattern_timeout():
-	pattern_fight = randi_range(1,2)
+	pattern_fight = randi_range(1,5)
 
 func _on_animation_player_animation_finished(Spawn):
 	Global.FIGHT = 1
-
 
 func _on_mod_timeout():
 	if random_move == 1:

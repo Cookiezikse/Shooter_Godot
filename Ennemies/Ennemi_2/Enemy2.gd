@@ -25,6 +25,8 @@ func _physics_process(delta):
 	if Global.The_END == 1:
 		velocity.y = speed
 		move_and_collide(velocity)
+	if Global.speed2 == 1:
+		speed = 8
 	else:
 		velocity.y = speed
 		if player && velocity.y > 0:
