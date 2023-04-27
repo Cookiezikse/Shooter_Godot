@@ -7,6 +7,7 @@ var health = 1
 var canshoot = true
 var amelioration = 0
 var canscoop = true
+var Count = 0
 
 @onready var Noscoop = $Noscoopie
 @onready var spawnpos = $SpawnPos
@@ -94,10 +95,17 @@ func shoot():
 
 func player_hit( ):
 	health -= 1
+	Count = 0
 	if health >= 0:
 		Global.P1_dead = 1
-		if Global.score > 5000 && Global.amelioration == 0:
-			Global.amelioration == 1
+		if Global.score > 5000 && Global.score < 9000 && Count == 0 :
+			if Global.atk_speed > 0.5:
+				Global.atk_speed -= 0.02
+			Count = 1
+		elif Global.score > 10000 && Count == 0:
+			if Global.atk_speed > 0.5:
+				Global.atk_speed -= 0.03
+			Count = 1
 		if Global.P1_dead == 1 && Global.P2_dead == 1 && Global.P3_dead == 1 && Global.P4_dead == 1:
 			Global.Game_Over = true
 			get_tree( ).change_scene_to_file("res://Menus/Game Over/gameovermenu.tscn")
