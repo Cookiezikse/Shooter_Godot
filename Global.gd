@@ -2,6 +2,7 @@ extends Node
 
 var score = 0
 var score_temp = 0
+var meilleurScore = 0
 
 var Scene = 0
 var Scene2 = ""

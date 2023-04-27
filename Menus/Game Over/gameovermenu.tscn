@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c6cc7560dq5kx"]
+[gd_scene load_steps=18 format=3 uid="uid://c6cc7560dq5kx"]
 
 [ext_resource type="Script" path="res://Menus/Game Over/gameovermenu.gd" id="1_273dy"]
 [ext_resource type="PackedScene" uid="uid://bnorwxtqfdgst" path="res://Score.tscn" id="2_emt37"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Menus/Game Over/Restart.gd" id="3_roiwo"]
 [ext_resource type="PackedScene" uid="uid://div3wmv8qh51r" path="res://tilemaps.tscn" id="4_l1o2h"]
 [ext_resource type="Script" path="res://Menus/Game Over/Quit.gd" id="4_lpmu0"]
+[ext_resource type="Script" path="res://Menus/Game Over/DispMeilleur.gd" id="6_n4yo7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmbie"]
 bg_color = Color(0.203922, 0.188235, 0.235294, 1)
@@ -136,6 +137,25 @@ offset_top = 2.0
 offset_right = 224.0
 offset_bottom = 74.0
 label_settings = SubResource("LabelSettings_nnt7r")
+
+[node name="MeilleurScore" type="Label" parent="Node2D/Control" index="2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 64.0
+offset_bottom = 87.0
+text = "Meilleur score :"
+
+[node name="DispMeilleur" type="Label" parent="Node2D/Control" index="3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 147.0
+offset_top = 65.0
+offset_right = 187.0
+offset_bottom = 91.0
+text = "0"
+script = ExtResource("6_n4yo7")
 
 [node name="Tilemaps" parent="." instance=ExtResource("4_l1o2h")]
 
