@@ -72,6 +72,15 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Score : "
 
+[node name="Objectif" type="Label" parent="Node2D/Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 400.0
+offset_top = 10.0
+offset_right = 575.0
+offset_bottom = 36.0
+text = "Survive 60 seconds ! "
+
 [node name="DispScore" type="Label" parent="Node2D/Control"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
