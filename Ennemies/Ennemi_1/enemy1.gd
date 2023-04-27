@@ -14,7 +14,7 @@ var health = EnnemiVars.Health_Ennemi_1
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		player = true
-		
+
 func _on_area_2d_body_exited(body):
 	player = null
 	
@@ -22,7 +22,7 @@ func _on_area_2d_2_body_entered(body):
 	if body.has_method("player_hit"):
 		body.player_hit( )
 		queue_free( )
-
+		
 func _physics_process(delta):
 	velocity.y = speed
 	velocity.x = 0

@@ -8,9 +8,9 @@
 [ext_resource type="Script" path="res://Niveaux/Infinite/Spawn_infinite.gd" id="6_74mks"]
 [ext_resource type="PackedScene" uid="uid://bnorwxtqfdgst" path="res://Score.tscn" id="6_utghi"]
 [ext_resource type="PackedScene" uid="uid://div3wmv8qh51r" path="res://tilemaps.tscn" id="6_w4m0b"]
-[ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_l4vyr"]
+[ext_resource type="PackedScene" path="res://Grenade.tscn" id="8_l4vyr"]
 [ext_resource type="PackedScene" uid="uid://100rssj613rg" path="res://shop.tscn" id="9_biitr"]
-[ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="11_b8nlw"]
+[ext_resource type="PackedScene" path="res://cow.tscn" id="11_b8nlw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xaicx"]
 size = Vector2(92, 36)

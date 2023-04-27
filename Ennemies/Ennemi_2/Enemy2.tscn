@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://t5oyxv0qoino"]
+[gd_scene load_steps=4 format=3 uid="uid://t5oyxv0qoino"]
 
 [ext_resource type="Script" path="res://Ennemies/Ennemi_2/Enemy2.gd" id="1_sa6a3"]
 [ext_resource type="Texture2D" uid="uid://bicv3sb5mpn75" path="res://Imports/Graphics/Ships/ship_0005.png" id="2_3gnp7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqtop"]
-size = Vector2(35, 5.00001)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gkhc5"]
 radius = 463.108
@@ -12,16 +9,9 @@ radius = 463.108
 [node name="CharacterBody2D" type="CharacterBody2D"]
 rotation = 3.14159
 collision_layer = 2
-collision_mask = 2
 script = ExtResource("1_sa6a3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8.49998, -9.50003)
-shape = SubResource("RectangleShape2D_vqtop")
-
-[node name="Area2D2" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-10, -10)
 polygon = PackedVector2Array(-6.11959e-07, -7, 2, -7, 2, -5, 12, -5, 12, -4, 13, -4, 13, -1.1365e-06, 2, -1.74846e-07, 2, 1, 1, 1, 1, 3, 2, 3, 2, 5, 3, 5, 3, 7, 1, 7, 1, 8, -0.999999, 8, -0.999999, 7, -3, 7, -3, 5, -2, 5, -2, 3, -1, 3, -1, 1, -2, 1, -2, 1.74846e-07, -13, 1.1365e-06, -13, -4, -12, -4, -12, -5, -2, -5, -2, -7)
 
@@ -36,6 +26,5 @@ texture = ExtResource("2_3gnp7")
 position = Vector2(-3, -10)
 shape = SubResource("CircleShape2D_gkhc5")
 
-[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Menus/Main Menu/Start_infinite.gd" id="4_q8v6t"]
 [ext_resource type="Script" path="res://Menus/Main Menu/Options.gd" id="5_3gwmh"]
 [ext_resource type="Script" path="res://Menus/Main Menu/Quit.gd" id="6_4rt42"]
-[ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="8_2xmua"]
+[ext_resource type="PackedScene" path="res://cow.tscn" id="8_2xmua"]
 [ext_resource type="Script" path="res://Credits.gd" id="8_i73r6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sp56q"]

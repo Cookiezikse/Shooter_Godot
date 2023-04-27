@@ -17,7 +17,6 @@ amount = 15
 one_shot = true
 speed_scale = 3.0
 explosiveness = 0.8
-local_coords = true
 texture = ExtResource("1_qe8yp")
 emission_shape = 1
 emission_sphere_radius = 0.01
