@@ -107,6 +107,8 @@ func player_hit( ):
 				Global.atk_speed -= 0.03
 			Count = 1
 		if Global.P1_dead == 1 && Global.P2_dead == 1 && Global.P3_dead == 1 && Global.P4_dead == 1:
+			if Global.score>Global.meilleurScore:
+				Global.meilleurScore=Global.score
 			Global.Game_Over = true
 			get_tree( ).change_scene_to_file("res://Menus/Game Over/gameovermenu.tscn")
 		queue_free()
