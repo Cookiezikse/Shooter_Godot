@@ -20,7 +20,7 @@ size = Vector2(100, 30.5)
 size = Vector2(70.5, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3j68s"]
-size = Vector2(42.5, 30)
+size = Vector2(41.5, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbc2r"]
 size = Vector2(218, 20)
@@ -70,7 +70,7 @@ text = "Space : Attack / Select"
 [node name="Spin P1" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "A : Beyblade"
+text = "A : Spain without the A"
 
 [node name="Space" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
@@ -94,7 +94,7 @@ text = "M : Attack / Select"
 [node name="Spin P2" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "L : Beyblade"
+text = "L : Spain without the A"
 
 [node name="Player" parent="." instance=ExtResource("3_408j6")]
 position = Vector2(-150, -150)
@@ -152,7 +152,7 @@ y_sort_enabled = true
 layout_mode = 2
 size_flags_horizontal = 4
 button_mask = 0
-text = "Options"
+text = "Options (Working)"
 
 [node name="Options" type="Area2D" parent="VBoxContainer/Options2"]
 position = Vector2(-26, 5)
@@ -173,7 +173,7 @@ text = "Quit"
 script = ExtResource("6_4rt42")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Quit2/Quit"]
-position = Vector2(20.75, 15.5)
+position = Vector2(20.25, 15.5)
 shape = SubResource("RectangleShape2D_3j68s")
 
 [node name="Credits" type="Button" parent="."]

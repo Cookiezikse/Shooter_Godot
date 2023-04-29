@@ -1,11 +1,15 @@
 extends Node2D
 
+@onready var Anim_fin = $After_boss/AnimationPlayer
+@onready var timer_fin = $Timer_fin
+
 var Enemy2 = preload("res://Ennemies/Ennemi_2/Enemy2.tscn")
 var Boss_Fin = preload("res://Ennemies/Boss3/boss_3.tscn")
 var random = 0
 const count = 20
 var Count = true
 func _on_spawn_timeout():
+	Global.amelioration = 2 #Pour aller plus vite sur le boss et sinon go mettre 1 pour les joueurs
 	if Global.FIGHT == 1:
 		var enemy = Enemy2.instantiate()
 		add_child(enemy)
@@ -16,4 +20,14 @@ func _on_spawn_timeout():
 			Boss.position = Vector2(300,-50)
 			get_tree().root.add_child(Boss)
 			Count = false
-		
+	if Global.score > 4000:
+		timer_fin.wait_time = 2
+		timer_fin.start()  
+		Global.FIGHT = 0
+		Global.The_END = 0
+		#lance les anims 
+		#Ou faire un signal qui directement à l'anim quand le boss meurt
+
+func _on_timer_fin_timeout():
+	print("Bonjour")
+	Anim_fin.play("Text1")
