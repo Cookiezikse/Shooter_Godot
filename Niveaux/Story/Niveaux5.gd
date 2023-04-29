@@ -8,6 +8,7 @@ var Boss_Fin = preload("res://Ennemies/Boss3/boss_3.tscn")
 var random = 0
 const count = 20
 var Count = true
+var Count2 = true
 func _on_spawn_timeout():
 	Global.amelioration = 2 #Pour aller plus vite sur le boss et sinon go mettre 1 pour les joueurs
 	if Global.FIGHT == 1:
@@ -20,11 +21,13 @@ func _on_spawn_timeout():
 			Boss.position = Vector2(300,-50)
 			get_tree().root.add_child(Boss)
 			Count = false
-	if Global.score > 4000:
+	if Global.score > 4000 && Count2:
 		timer_fin.wait_time = 2
-		timer_fin.start()  
+		timer_fin.start()
+		#print(timer_fin)  
 		Global.FIGHT = 0
 		Global.The_END = 0
+		Count2 = false
 		#lance les anims 
 		#Ou faire un signal qui directement à l'anim quand le boss meurt
 
