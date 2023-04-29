@@ -32,5 +32,4 @@ func _on_spawn_timeout():
 		#Ou faire un signal qui directement à l'anim quand le boss meurt
 
 func _on_timer_fin_timeout():
-	print("Bonjour")
 	Anim_fin.play("Text1")
