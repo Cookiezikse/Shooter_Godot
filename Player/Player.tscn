@@ -118,6 +118,9 @@ position = Vector2(-12, -10)
 [node name="SpawnPos2" type="Marker2D" parent="."]
 position = Vector2(11, -10)
 
+[node name="SpawnPos3" type="Marker2D" parent="."]
+position = Vector2(0, -12)
+
 [node name="Muzzleflash1_1" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-12, -10)

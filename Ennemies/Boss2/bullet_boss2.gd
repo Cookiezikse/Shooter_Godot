@@ -13,9 +13,12 @@ var random = (randi_range(1,2))
 var random2 = (randi_range(1,2))
 var CHOISIR = 1
 
+@onready var Collision = $Area2D/CollisionShape2D
+
 func _process(delta):
 	#position.x += (-9.81*(delta*delta))/2 + speed * sin(teta)
 	#position.y += 9.81 * delta
+
 	if CHOISIR == 1:
 		if random2 == 1:
 			if random == 1:
@@ -27,7 +30,7 @@ func _process(delta):
 		if random2 == 2:
 			if random == 1:
 				velocity.y = speed - 150
-				position.x = cos((position.y)*0.02)*400
+				position.x = cos((position.y)*0.02)*400 #Ne pourra s'adapter si c'est position = et pas velocity.x
 			if random == 2:
 				velocity.y = speed - 200
 				position.x = cos((position.y)*0.02)*400 + 600
@@ -38,7 +41,9 @@ func _process(delta):
 		position.x += sin(position.y/150)*5
 	
 	move_and_slide()
-	
+	if Global.Game_Over == true:
+		Collision.disabled = true
+		
 	look_at(Vector)
 	if Global.grenade1 >= 0 && Input.is_action_pressed("grenade1"): 
 		queue_free()

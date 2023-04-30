@@ -22,16 +22,22 @@ func _on_area_2d_2_body_entered(body):
 		queue_free( )
 		
 func _physics_process(delta):
-	velocity.y = speed
-	if player && velocity.y > 0:
-		velocity = position.direction_to(player.position) * speed
-	move_and_collide(velocity)
-	if Global.grenade1 >= 0 && Input.is_action_pressed("grenade1"): 
-		Global.score += 10
-		var explosion = Explosion.instantiate()
-		explosion.global_position = global_position
-		get_tree().current_scene.add_child(explosion)
-		queue_free()
+	if Global.The_END == 1:
+		velocity.y = speed
+		move_and_collide(velocity)
+	if Global.speed2 == 1:
+		speed = 8
+	else:
+		velocity.y = speed
+		if player && velocity.y > 0:
+			velocity = position.direction_to(player.position) * speed
+		move_and_collide(velocity)
+		if Global.grenade1 >= 0 && Input.is_action_pressed("grenade1"): 
+			Global.score += 10
+			var explosion = Explosion.instantiate()
+			explosion.global_position = global_position
+			get_tree().current_scene.add_child(explosion)
+			queue_free()
 		
 func enemy_hit( ):
 	health -= 1

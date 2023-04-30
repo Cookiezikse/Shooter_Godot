@@ -1,6 +1,7 @@
 extends Control
 
 @onready var AnimationText = $AnimationPlayer
+
 var anim = 0
 var anim_temp = 0
 
@@ -17,4 +18,7 @@ func _on_animation_player_animation_finished(anim_name):
 	if anim == 3:
 		AnimationText.play("Text5")
 		anim_temp = 4
+	if anim == 4:
+		Global.The_END = 1
 	anim = anim_temp
+

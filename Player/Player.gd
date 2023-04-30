@@ -7,10 +7,12 @@ var health = 1
 var canshoot = true
 var amelioration = 0
 var canscoop = true
+var Count = 0
 
 @onready var Noscoop = $Noscoopie
 @onready var spawnpos = $SpawnPos
 @onready var spawnpos2 = $SpawnPos2
+@onready var spawnpos3 = $SpawnPos3
 @onready var muzzleflash1 = $Muzzleflash1_2
 @onready var muzzleflash2 = $Muzzleflash2_2
 @onready var Godmod = $CollisionPolygon2D
@@ -80,12 +82,38 @@ func shoot():
 		muzzleflash2.queue("Muzzleflash2")
 		$ShootSpeed.start()
 		canshoot = false
+	if Global.amelioration == 2:
+		var bullet2 = Bullet.instantiate()
+		bullet2.position = spawnpos2.global_position
+		get_tree().current_scene.add_child(bullet2)
+		muzzleflash2.queue("Muzzleflash2")
+		$ShootSpeed.start()
+		canshoot = false
+		
+		var bullet3 = Bullet.instantiate()
+		bullet3.position = spawnpos3.global_position
+		get_tree().current_scene.add_child(bullet3)
+		muzzleflash2.queue("Muzzleflash2")
+		$ShootSpeed.start()
+		canshoot = false
 
 func player_hit( ):
 	health -= 1
+	Count = 0
 	if health >= 0:
 		Global.P1_dead = 1
+		if Global.score > 5000 && Global.score < 9000 && Count == 0 :
+			if Global.atk_speed > 0.5:
+				Global.atk_speed -= 0.02
+			Count = 1
+		elif Global.score > 10000 && Count == 0:
+			if Global.atk_speed > 0.5:
+				Global.atk_speed -= 0.03
+			Count = 1
 		if Global.P1_dead == 1 && Global.P2_dead == 1 && Global.P3_dead == 1 && Global.P4_dead == 1:
+			if Global.score>Global.meilleurScore:
+				Global.meilleurScore=Global.score
+			Global.Game_Over = true
 			get_tree( ).change_scene_to_file("res://Menus/Game Over/gameovermenu.tscn")
 		queue_free()
 

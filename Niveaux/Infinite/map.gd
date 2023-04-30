@@ -10,6 +10,12 @@ var spawn_boss = 0
 var shop = 0
 @onready var SHOOP = $Shop
 
+# Methode opti pour faire le mod infini vraiment infini, les mods et faire un nombre x, si c'est inférieur, mod 1
+# si supérieur mod 2 etc... et quand ça arrive au mod2
+# Garde le global.score, il est inférieur à x etc... 
+#Faire un truc pour avoir un x, init du x et si le boss meurt le x augmente de 2000 par exemple, et ducoup c'est infini
+# Voila voila 
+
 func _ready():
 	Global.grenade1 = 3
 

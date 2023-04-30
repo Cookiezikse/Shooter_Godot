@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://0i88ln2thvdp"]
+[gd_scene load_steps=9 format=3 uid="uid://0i88ln2thvdp"]
 
 [ext_resource type="Script" path="res://Niveaux/Story/Niveaux2.gd" id="1_0k4oa"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_1qw02"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="6_22hby"]
 [ext_resource type="Script" path="res://DispScore.gd" id="7_0ofon"]
 [ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_kyr2e"]
-[ext_resource type="PackedScene" uid="uid://cefltnp8hga5k" path="res://Ennemies/Boss2/boss_2.tscn" id="9_h708u"]
 
 [node name="Map2" type="Node2D"]
 script = ExtResource("1_0k4oa")
@@ -55,7 +54,7 @@ position = Vector2(363, -459)
 position = Vector2(141, -796)
 
 [node name="Spawn" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 0.15
 autostart = true
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -73,6 +72,15 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Score : "
 
+[node name="Objectif" type="Label" parent="Node2D/Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 400.0
+offset_top = 10.0
+offset_right = 575.0
+offset_bottom = 36.0
+text = "Survive 60 seconds ! "
+
 [node name="DispScore" type="Label" parent="Node2D/Control"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
@@ -87,9 +95,12 @@ script = ExtResource("7_0ofon")
 [node name="Node2D2" parent="." instance=ExtResource("8_kyr2e")]
 position = Vector2(-1, 1)
 
-[node name="Boss2" parent="." instance=ExtResource("9_h708u")]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
 
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="Background/MapBackground/Tilemaps"]
 [editable path="Node2D2"]
