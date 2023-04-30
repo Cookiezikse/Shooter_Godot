@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://btjjxuubxunt8"]
+[gd_scene load_steps=11 format=3 uid="uid://btjjxuubxunt8"]
 
 [ext_resource type="Script" path="res://Menus/Credits/Creditss.gd" id="1_q4fsh"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_lqfhg"]
@@ -83,7 +83,7 @@ tracks/5/path = NodePath("Control/Label2:text")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(7, 12, 12.4),
+"times": PackedFloat32Array(7, 12, 12.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": ["Marketing / Communication :
@@ -127,7 +127,7 @@ tracks/8/path = NodePath("Control/Label2:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(7.1, 7.4, 11.6, 11.9, 12.1, 12.3),
+"times": PackedFloat32Array(7.1, 8.5, 11.6, 11.9, 12.1, 12.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -144,57 +144,87 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector2(2, 2), Vector2(2, 2), Vector2(4, 4), Vector2(5, 5)]
 }
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Control/Stars:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 3.9),
+
+[sub_resource type="Animation" id="Animation_8i53c"]
+resource_name = "Etoiles"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Stars:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-30, 30), Vector2(600, 900)]
+"values": [Vector2(-30, 30), Vector2(700, 500)]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Control/Stars:rotation")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 3.9),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Stars2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 6.28319]
+"values": [Vector2(-70, 80), Vector2(600, 800)]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Control/Stars2:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 3.9),
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Stars:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.7),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-70, 80), Vector2(540, 900)]
+"update": 1,
+"values": [true, false]
 }
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Control/Stars2:rotation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 3.9),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Stars2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Stars3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 1.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.0944, 8.37758]
+"values": [Vector2(-50, 200), Vector2(700, 800)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/Stars3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fbe1o"]
 _data = {
+"Etoiles": SubResource("Animation_8i53c"),
 "Text": SubResource("Animation_4gw45")
 }
 
@@ -266,18 +296,19 @@ offset_bottom = 40.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
 root_node = NodePath("../..")
+autoplay = "Etoiles"
 libraries = {
 "": SubResource("AnimationLibrary_fbe1o")
 }
 
 [node name="Label" type="Label" parent="Control"]
-self_modulate = Color(0, 0, 0, 0)
+self_modulate = Color(0, 0, 0, 1)
 z_index = 1
 layout_mode = 1
-offset_left = 300.0
-offset_top = 700.0
-offset_right = 507.001
-offset_bottom = 830.003
+offset_left = 255.319
+offset_top = 74.4681
+offset_right = 462.32
+offset_bottom = 204.471
 scale = Vector2(2, 2)
 text = "Developpers :
 Cookie - Jaja
@@ -288,31 +319,34 @@ Bascab - Bastien
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Control"]
-self_modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 0)
 z_index = 1
 layout_mode = 0
-offset_left = -150.0
-offset_top = 200.0
-offset_right = 76.0
-offset_bottom = 304.0
-scale = Vector2(5, 5)
-text = ":3"
+offset_top = -20.0
+offset_right = 226.0
+offset_bottom = 84.0001
+scale = Vector2(2, 2)
+text = "Marketing / Communication :
+Raven_Rza - Chloé
+Sixaxis - Guillaume
+Ryanfdn - Ryan
+"
 horizontal_alignment = 1
 
 [node name="Stars" type="Sprite2D" parent="Control"]
-position = Vector2(600, 900)
-rotation = 6.28319
+visible = false
+position = Vector2(662.84, 476.075)
 scale = Vector2(0.265625, 0.266526)
 texture = ExtResource("7_5b6c5")
 
 [node name="Stars2" type="Sprite2D" parent="Control"]
-position = Vector2(540, 900)
-rotation = 8.37758
+position = Vector2(480.77, 671.872)
+rotation = 2.0944
 scale = Vector2(0.265625, 0.266526)
 texture = ExtResource("7_5b6c5")
 
 [node name="Stars3" type="Sprite2D" parent="Control"]
-position = Vector2(399.656, 623.335)
+position = Vector2(662.62, 770.096)
 rotation = 2.14255
 scale = Vector2(0.265625, 0.266526)
 texture = ExtResource("7_5b6c5")

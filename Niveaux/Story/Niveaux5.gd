@@ -35,4 +35,4 @@ func _on_timer_fin_timeout():
 	Anim_fin.play("Text1")
 
 func _on_animation_player_animation_finished(anim_name):
-	get_tree().change_scene_to_file("res://Menus/Credits/Credits.tscn")
+	get_tree().change_scene_to_file("res://Menus/Credits/Creditss.tscn")

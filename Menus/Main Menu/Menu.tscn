@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://hsemjvhhbfex"]
+[gd_scene load_steps=16 format=3 uid="uid://hsemjvhhbfex"]
 
 [ext_resource type="Script" path="res://Menus/Main Menu/Menu.gd" id="1_80ywm"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="3_408j6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Menus/Main Menu/Quit.gd" id="6_4rt42"]
 [ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="8_2xmua"]
 [ext_resource type="Script" path="res://Credits.gd" id="8_i73r6"]
+[ext_resource type="AudioStream" uid="uid://jvm6r7uhnjk3" path="res://Imports/Audio/Main_music.wav" id="10_qm7a7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sp56q"]
 size = Vector2(61, 27.75)
@@ -241,6 +242,10 @@ scale = Vector2(0.950079, 1.14722)
 position = Vector2(-191, 251)
 scale = Vector2(0.950079, 1.14722)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_qm7a7")
+autoplay = true
+
 [connection signal="body_entered" from="VBoxContainer/Start_story2/Start_story" to="VBoxContainer/Start_story2/Start_story" method="_on_body_entered"]
 [connection signal="body_exited" from="VBoxContainer/Start_story2/Start_story" to="VBoxContainer/Start_story2/Start_story" method="_on_body_exited"]
 [connection signal="body_entered" from="VBoxContainer/Start_infinite2/Start_infinite" to="VBoxContainer/Start_infinite2/Start_infinite" method="_on_body_entered"]
@@ -253,3 +258,4 @@ scale = Vector2(0.950079, 1.14722)
 [connection signal="body_exited" from="Credits/Start_story" to="Credits/Start_story" method="_on_body_exited"]
 [connection signal="body_entered" from="Spawn_Player" to="." method="_on_spawn_player_body_entered"]
 [connection signal="body_entered" from="Destroy_player" to="." method="_on_destroy_player_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
