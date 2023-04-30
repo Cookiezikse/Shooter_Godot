@@ -73,7 +73,7 @@ position = Vector2(419, -68.9989)
 rotation = 0.785398
 
 [node name="HG2" type="Marker2D" parent="."]
-position = Vector2(185, 140)
+position = Vector2(263, 199.001)
 
 [node name="HM1" type="Marker2D" parent="."]
 position = Vector2(-2.00009, 38)
@@ -83,7 +83,7 @@ position = Vector2(-424, -65.0011)
 rotation = 0.785398
 
 [node name="HD2" type="Marker2D" parent="."]
-position = Vector2(-215, 143.999)
+position = Vector2(-331, 192.999)
 
 [node name="BD1" type="Marker2D" parent="."]
 position = Vector2(-366.999, -442.001)

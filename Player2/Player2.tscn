@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cys3ak2h84xuo"]
 
 [ext_resource type="Script" path="res://Player2/Player2.gd" id="1_0iqd5"]
-[ext_resource type="Texture2D" uid="uid://dapdwbogc4obx" path="res://Imports/Graphics/Ships/ship_0011.png" id="2_fisxh"]
+[ext_resource type="Texture2D" uid="uid://cd1u5rw41yxga" path="res://Imports/croacroa-pixelicious.png" id="2_jnkj2"]
 [ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_csfu3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vuw4"]
@@ -95,9 +95,8 @@ z_index = 4
 script = ExtResource("1_0iqd5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.53674e-07, 0)
-scale = Vector2(1.90625, 1.65625)
-texture = ExtResource("2_fisxh")
+scale = Vector2(0.0927735, 0.112833)
+texture = ExtResource("2_jnkj2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1vuw4")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://blvgtmwsacn6q"]
+[gd_scene load_steps=19 format=3 uid="uid://blvgtmwsacn6q"]
 
 [ext_resource type="Script" path="res://Niveaux/Story/Niveaux5.gd" id="1_i1ec0"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_32gt8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://DispScore.gd" id="7_yy4ka"]
 [ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_6b208"]
 [ext_resource type="Script" path="res://Niveaux/Story/Niveau5_text.gd" id="9_ehiba"]
+[ext_resource type="Texture2D" uid="uid://v0ajr5xfbbax" path="res://Imports/Water.png" id="10_l00r6"]
 
 [sub_resource type="Animation" id="Animation_n5ou0"]
 resource_name = "Text"
@@ -222,7 +223,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_02xss"]
 resource_name = "Text1"
-length = 6.0
+length = 26.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -230,10 +231,10 @@ tracks/0/path = NodePath("Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 5.5, 9, 11.7, 14.7, 17.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["..."]
+"values": ["...", "Someone controls you, I know. I know you're not determined. I know you are tired. I know you want to rest. Who's torturing you ? ", "I know you're not determined. I know you are tired. I know you want to rest. Who's torturing you ? ", "I know you are tired. I know you want to rest. Who's torturing you ? ", "I know you want to rest. Who's torturing you ? ", "Who's torturing you ? "]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -255,10 +256,10 @@ tracks/2/path = NodePath("Label2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.9, 3.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.9, 3.2, 3.7, 5.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(800, 0), Vector2(0, 300)]
+"values": [Vector2(800, 0), Vector2(0, 300), Vector2(0, 300), Vector2(500, 500)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -267,10 +268,10 @@ tracks/3/path = NodePath("Label:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.6, 2.9, 5.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.6, 2.9, 5.2, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-30, 50), Vector2(700, 500), Vector2(800, 500), Vector2(0, 200)]
+"values": [Vector2(-30, 50), Vector2(700, 500), Vector2(800, 500), Vector2(0, 200), Vector2(150, 200)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -279,10 +280,10 @@ tracks/4/path = NodePath("Label:visible_ratio")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.8, 2.7, 2.8, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.8, 2.7, 2.8, 3.6, 5.2, 5.4, 6, 6.7, 7.1, 7.7, 8.8, 9, 9.3, 9.8, 10.4, 10.8, 11.5, 11.9, 12.3, 13, 13.4, 14, 14.4, 14.8, 15.1, 15.7, 16.4002, 16.8, 17.3, 17.7, 19.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.0, 1.0, 0.0, 1.0]
+"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.171, 0.171, 0.228, 0.228, 0.0, 0.0, 0.08, 0.08, 0.3, 0.3, 0.0, 0.0, 0.1, 0.1, 0.3, 0.3, 0.0, 0.0, 0.144, 0.144, 0.5, 0.5, 0.0, 0.0, 1.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -291,10 +292,10 @@ tracks/5/path = NodePath("Label:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(2.1, 2.8, 3, 4.4, 5.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(2.1, 2.8, 3, 4.4, 5.2, 5.5, 5.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -303,10 +304,10 @@ tracks/6/path = NodePath("Label2:visible_ratio")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.9, 1.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.9, 1.8, 3, 3.2, 3.9, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [0.0, 1.0, 1.0, 0.0, 0.0, 1.0]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -315,10 +316,10 @@ tracks/7/path = NodePath("Label2:self_modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(2.6, 3.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(2.6, 3.2, 4.4, 4.7, 5.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -368,6 +369,30 @@ tracks/11/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Label:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(5.4),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 1.5)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../Sprite2D:self_modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(20.3, 23.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cn5n4"]
@@ -488,14 +513,15 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="After_boss"]
 modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 0)
+self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 layout_mode = 0
+offset_left = 150.0
 offset_top = 200.0
-offset_right = 45.0006
-offset_bottom = 226.0
-scale = Vector2(2, 2)
-text = "..."
+offset_right = 1150.99
+offset_bottom = 226.001
+scale = Vector2(1.5, 1.5)
+text = "Who's torturing you ? "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="After_boss"]
 libraries = {
@@ -506,9 +532,10 @@ libraries = {
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_top = 300.0
-offset_right = 39.9998
-offset_bottom = 326.001
+offset_left = 500.0
+offset_top = 500.0
+offset_right = 539.999
+offset_bottom = 526.001
 scale = Vector2(2, 2)
 text = "...
 "
@@ -518,24 +545,22 @@ modulate = Color(0, 0, 0, 1)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 200.0
-offset_right = 239.999
+offset_right = 240.0
 offset_bottom = 26.0
 scale = Vector2(2, 2)
 text = "...
 "
 
-[node name="Label4" type="Label" parent="After_boss"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-scale = Vector2(2, 2)
-text = "...
-"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(307.5, 412)
+scale = Vector2(10.6094, 52.5)
+texture = ExtResource("10_l00r6")
 
 [connection signal="timeout" from="Timer_fin" to="." method="_on_timer_fin_timeout"]
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
 [connection signal="animation_finished" from="Control/AnimationPlayer" to="Control" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="After_boss/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Background/MapBackground/Tilemaps"]
 [editable path="Node2D2"]
