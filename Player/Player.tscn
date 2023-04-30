@@ -160,7 +160,7 @@ pitch_scale = 1.88
 [node name="Grenade_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_g2501")
 volume_db = -40.0
-pitch_scale = 0.89
+pitch_scale = 0.93
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]
 [connection signal="animation_finished" from="Noscoopie" to="." method="_on_noscoopie_animation_finished"]
