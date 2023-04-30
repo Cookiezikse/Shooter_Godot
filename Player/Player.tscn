@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://6k33bmmxwbg"]
+[gd_scene load_steps=13 format=3 uid="uid://b0n1eqy1jm6kt"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_i2ueo"]
 [ext_resource type="Texture2D" uid="uid://o0b6lx8bopr1" path="res://Imports/Graphics/Ships/ship_0006.png" id="1_s6fmv"]
 [ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_lo0vl"]
 [ext_resource type="Script" path="res://Player/ShootSpeed.gd" id="3_wb4q8"]
+[ext_resource type="AudioStream" uid="uid://cm50c3fti3vrs" path="res://Audio/Shoot_sound.mp3" id="5_xl0xj"]
+[ext_resource type="AudioStream" uid="uid://c3s3ug3x7io1b" path="res://Audio/hq-explosion-6288.mp3" id="6_g2501"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_der08"]
 size = Vector2(16, 12)
@@ -146,6 +148,16 @@ libraries = {
 
 [node name="ScoopTimer" type="Timer" parent="."]
 wait_time = 1.5
+
+[node name="Shoot_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xl0xj")
+volume_db = -38.07
+pitch_scale = 1.88
+
+[node name="Grenade_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_g2501")
+volume_db = -40.0
+pitch_scale = 0.89
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]
 [connection signal="animation_finished" from="Noscoopie" to="." method="_on_noscoopie_animation_finished"]

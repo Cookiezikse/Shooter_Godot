@@ -16,6 +16,8 @@ var canscoop = true
 @onready var Godmod = $CollisionPolygon2D
 @onready var Nohit = $CollisionPolygon2D
 @onready var ScoopTimer = $ScoopTimer
+@onready var Shooting = $Shoot_sound
+@onready var Grenade = $Grenade_sound
 
 @warning_ignore("unused_parameter")
 
@@ -42,6 +44,7 @@ func _physics_process(delta):
 	
 	if Global.grenade1 >= 0 && Input.is_action_just_pressed("grenade1"):
 		Global.grenade1 -= 1
+		Grenade.play()
 
 	move_and_slide()
 
@@ -62,6 +65,7 @@ func shoot():
 	
 	#SpawnPos1
 	var bullet = Bullet.instantiate()
+	Shooting.play()
 	bullet.position = spawnpos.global_position
 	get_tree().current_scene.add_child(bullet)
 	muzzleflash1.play("Muzzleflash1")

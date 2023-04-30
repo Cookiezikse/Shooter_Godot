@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://1bclrx2w8d2p"]
 
 [ext_resource type="Script" path="res://Niveaux/Infinite/map.gd" id="1_jt7uk"]
-[ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_83wul"]
+[ext_resource type="PackedScene" uid="uid://b0n1eqy1jm6kt" path="res://Player/Player.tscn" id="2_83wul"]
 [ext_resource type="Script" path="res://Niveaux/Infinite/Area2D.gd" id="2_vppom"]
 [ext_resource type="Script" path="res://Niveaux/Infinite/Background.gd" id="3_flxbs"]
 [ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="4_sn71v"]

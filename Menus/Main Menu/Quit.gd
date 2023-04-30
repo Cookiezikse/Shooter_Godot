@@ -4,7 +4,7 @@ var player = false
 
 func _process(delta):
 	if player:
-		if Input.is_action_pressed("ui_accept"):
+		if Input.is_action_pressed("ui_accept") :
 			get_tree().quit()
 
 func _on_body_entered(body):
