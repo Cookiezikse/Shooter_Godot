@@ -521,7 +521,6 @@ offset_top = 200.0
 offset_right = 1150.99
 offset_bottom = 226.001
 scale = Vector2(1.5, 1.5)
-text = "Who's torturing you ? "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="After_boss"]
 libraries = {
@@ -552,7 +551,7 @@ text = "...
 "
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 0)
 position = Vector2(307.5, 412)
 scale = Vector2(10.6094, 52.5)
 texture = ExtResource("10_l00r6")
