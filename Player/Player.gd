@@ -28,8 +28,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_focus_next"):
 		Godmod.disabled = true
 	if Input.is_action_pressed("pause"):
-		
-		get_tree().change_scene_to_file("res://Menus/Main Menu/Menu.tscn")
+		get_tree().change_scene_to_file(Global.Scene_escape)
 	#direction horizontale
 	if horizontale == 1:
 		velocity.x = horizontale * SPEED 

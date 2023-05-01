@@ -36,6 +36,7 @@ position = Vector2(164, 742)
 script = ExtResource("2_od41o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Niveau_1"]
+position = Vector2(-33, -51)
 shape = SubResource("CircleShape2D_prpqj")
 
 [node name="Niveau_2" type="Area2D" parent="."]

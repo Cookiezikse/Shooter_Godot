@@ -6,6 +6,7 @@ var random = 0
 func _ready():
 	Global.The_END = 1
 	Global.speed2 = 1
+	Global.score = 0
 
 func _on_spawn_timeout():
 	var enemy2 = Enemy2.instantiate()

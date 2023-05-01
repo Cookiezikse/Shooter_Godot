@@ -17,6 +17,7 @@ const radius = 70
 var health = EnnemiVars.Health_Boss_1
 
 func _ready():
+	Global.Boss_dead = false
 	var step = 2 * PI / spawn_point_count
 	
 	for i in range(spawn_point_count):
@@ -47,6 +48,7 @@ func enemy_hit( ):
 	if health == 0:
 		Global.score +=5000
 		Global.Boss_amelioration = 0
+		Global.Boss_dead = true
 		queue_free()
 
 const SPEED = 20

@@ -14,7 +14,7 @@ config/name="Shooter_Godot"
 run/main_scene="res://Menus/Main Menu/Menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/image="res://etoile-pixelicious.png"
-config/icon="res://Imports/Graphics/Ships/ship_0006.png"
+config/icon="res://Imports/croacroa-pixelicious.png"
 
 [autoload]
 

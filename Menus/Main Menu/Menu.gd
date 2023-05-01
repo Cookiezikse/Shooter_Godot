@@ -9,6 +9,9 @@ extends Control
 
 var Player2_scene = preload("res://Player2/Player2.tscn")
 	
+func _ready():
+	Global.Scene_escape = "res://Menus/Main Menu/Menu.tscn"
+
 func _on_spawn_player_body_entered(body):
 	if Global.P2_dead == 1:
 		Global.P2_dead = 0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bk4b0a2pb73b2"]
 
-[ext_resource type="Script" path="res://Niveaux/Story/Niveaux2.gd" id="1_fytcv"]
+[ext_resource type="Script" path="res://Niveaux/Story/Niveaux3.gd" id="1_812ph"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_v54vv"]
 [ext_resource type="Script" path="res://Niveaux/Infinite/Background.gd" id="3_lg71c"]
 [ext_resource type="Texture2D" uid="uid://b86lpisuqx15c" path="res://Imports/Graphics/Tiles/tile_0042.png" id="4_if4on"]
@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="6_7ngpm"]
 [ext_resource type="Script" path="res://DispScore.gd" id="7_4kxom"]
 [ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_m8k7l"]
-[ext_resource type="PackedScene" uid="uid://dhgy1g0vusag6" path="res://Ennemies/Boss3/boss_3.tscn" id="9_cxyn2"]
+[ext_resource type="PackedScene" uid="uid://bmb8xk5i4qfhh" path="res://Ennemies/Boss1/boss_1.tscn" id="9_v7pfp"]
 
 [node name="Niveau3" type="Node2D"]
-script = ExtResource("1_fytcv")
+script = ExtResource("1_812ph")
 
 [node name="Player" parent="." instance=ExtResource("2_v54vv")]
 position = Vector2(312, 728)
@@ -87,7 +87,7 @@ script = ExtResource("7_4kxom")
 [node name="Node2D2" parent="." instance=ExtResource("8_m8k7l")]
 position = Vector2(-1, 1)
 
-[node name="Boss2" parent="." instance=ExtResource("9_cxyn2")]
+[node name="Boss1" parent="." instance=ExtResource("9_v7pfp")]
 
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
 

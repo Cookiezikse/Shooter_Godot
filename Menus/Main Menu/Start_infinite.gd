@@ -6,7 +6,7 @@ var player = false
 func _process(delta):
 	if player:
 		if Input.is_action_pressed("ui_accept"):
-			Global.Scene2 = "res://Niveaux/Infinite/map.tscn"
+			Global.Scene = "res://Niveaux/Infinite/map.tscn"
 			Sound.play()
 			get_tree().change_scene_to_file("res://Menus/Main Menu/menu_difficulty.tscn")
 

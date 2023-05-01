@@ -79,7 +79,7 @@ offset_left = 400.0
 offset_top = 10.0
 offset_right = 575.0
 offset_bottom = 36.0
-text = "Survive 60 seconds ! "
+text = "Survive 20 seconds ! "
 
 [node name="DispScore" type="Label" parent="Node2D/Control"]
 modulate = Color(0, 0, 0, 1)
@@ -96,7 +96,7 @@ script = ExtResource("7_0ofon")
 position = Vector2(-1, 1)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 20.0
 autostart = true
 
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]

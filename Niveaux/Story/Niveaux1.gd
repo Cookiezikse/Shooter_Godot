@@ -4,6 +4,10 @@ var Enemy = preload("res://Ennemies/Ennemi_1/enemy.tscn")
 var Enemy2 = preload("res://Ennemies/Ennemi_2/Enemy2.tscn")
 var random = 0
 const count = 20
+
+func _ready():
+	Global.score = 0
+
 func _on_spawn_timeout():
 
 	var enemy = Enemy.instantiate()

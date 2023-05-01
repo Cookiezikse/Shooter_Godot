@@ -4,10 +4,11 @@ var player = false
 
 func _process(delta):
 	if player:
-		if Input.is_action_pressed("ui_accept"):
-			emit_signal("script_changed")
-			Global.Scene = "res://Niveaux/Story/Niveaux3.tscn"
-			get_tree().change_scene_to_file("res://Niveaux/Story/Niveaux3.tscn")
+		if Global.Niveau2_clear:
+			if Input.is_action_pressed("ui_accept"):
+				emit_signal("script_changed")
+				Global.Scene = "res://Niveaux/Story/Niveaux3.tscn"
+				get_tree().change_scene_to_file("res://Niveaux/Story/Niveaux3.tscn")
 
 func _on_body_entered(body):
 	player = true

@@ -5,6 +5,7 @@ var score_temp = 0
 var meilleurScore = 0
 
 var Scene = ""
+var Scene_escape = ""
 var Scene_story = ""
 
 var Main_scene = 1
@@ -32,6 +33,7 @@ var The_END = 0
 var Game_Over = false
 
 var FIGHT = 0
+var Boss_dead = false
 
 var Niveau1_clear = false
 var Niveau2_clear = false
