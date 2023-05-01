@@ -22,9 +22,7 @@ func _physics_process(delta):
 	
 	var horizontale = Input.get_axis("ui_left_p2", "ui_right_p2") 
 	var verticale = Input.get_axis("ui_up_p2", "ui_down_p2")
-	
-	if Input.is_action_pressed("ui_focus_next"):
-		Godmod.disabled = true
+
 	#direction horizontale
 	if horizontale == 1:
 		velocity.x = horizontale * SPEED 

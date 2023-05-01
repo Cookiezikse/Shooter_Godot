@@ -24,6 +24,7 @@ var pattern_fight = 1
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
 @onready var AnimationBoss = $AnimationPlayer
+@onready var Music = $Boss
 
 # PATTERN 1
 
@@ -144,3 +145,9 @@ func _on_mod_timeout():
 		random_move = 2
 	elif random_move == 2:
 		random_move = 1
+
+func _on_boss_intro_finished():
+	Music.play()
+	
+func _on_boss_finished():
+	Music.play()

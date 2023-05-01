@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://btjjxuubxunt8"]
+[gd_scene load_steps=12 format=3 uid="uid://btjjxuubxunt8"]
 
 [ext_resource type="Script" path="res://Menus/Credits/Creditss.gd" id="1_q4fsh"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_lqfhg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://div3wmv8qh51r" path="res://tilemaps.tscn" id="5_8t2v3"]
 [ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="6_44dnq"]
 [ext_resource type="Texture2D" uid="uid://dt1vxlhdpndjv" path="res://Imports/etoile_2.png" id="7_5b6c5"]
+[ext_resource type="AudioStream" uid="uid://7y1l77v5cmd4" path="res://Imports/2023-05-01-22-22-47.mp3" id="8_bfubc"]
 
 [sub_resource type="Animation" id="Animation_8i53c"]
 resource_name = "Etoiles"
@@ -87,7 +88,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_4gw45"]
 resource_name = "Text"
-length = 15.0
+length = 18.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -95,10 +96,10 @@ tracks/0/path = NodePath("Control/Label:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.4, 2.7, 4.7, 5, 9.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.4, 2.7, 4.7, 5, 9.7, 12, 17),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(50, 300), Vector2(50, 300), Vector2(0, 300), Vector2(30, 300), Vector2(250, 0), Vector2(300, 700)]
+"values": [Vector2(50, 300), Vector2(50, 300), Vector2(0, 300), Vector2(30, 300), Vector2(250, -450), Vector2(275, 700), Vector2(50, 300), Vector2(50, 300)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -107,15 +108,21 @@ tracks/1/path = NodePath("Control/Label:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.4, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 2.4, 5, 9.7, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": ["Thank you for playing !", "Hope you liked the story :3", "Developpers :
+"values": ["Hey !", "Hope you liked the story :3", "Developpers :
 Cookie - Jaja
 Portos18 - Florian
 Melvin - Melvin
 Bascab - Bastien
-"]
+
+
+Sound Design : 
+Bascab - Bastien
+Cookie - Jaja", "
+", "
+Thank you for playing !"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -124,10 +131,10 @@ tracks/2/path = NodePath("Control/Label:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.3, 1.7, 2.4, 2.8, 3.6, 4.2, 4.7, 5, 5.2, 9, 9.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.6, 1.3, 1.7, 2.4, 2.8, 3.6, 4.2, 4.7, 5, 5.2, 9, 9.7, 12, 13.6, 15.3, 15.9, 17),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.243137, 0.462745, 0.992157, 0), Color(0, 0, 0, 1), Color(0.247059, 0.466667, 1, 1), Color(0.247059, 0.466667, 1, 1), Color(0.243137, 0.462745, 0.992157, 0), Color(0.243137, 0.462745, 0.992157, 0), Color(0, 0, 0, 1), Color(0.713726, 0.392157, 0.937255, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 2.38418e-06), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(0.243137, 0.462745, 0.992157, 0), Color(0, 0, 0, 1), Color(0.247059, 0.466667, 1, 1), Color(0.247059, 0.466667, 1, 1), Color(0.243137, 0.462745, 0.992157, 0), Color(0.243137, 0.462745, 0.992157, 0), Color(0, 0, 0, 1), Color(0.713726, 0.392157, 0.937255, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 2.38418e-06), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0.247059, 0.466667, 1, 1), Color(0.247059, 0.466667, 1, 1), Color(0.243137, 0.462745, 0.992157, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -136,10 +143,10 @@ tracks/3/path = NodePath("Control/Label:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.4, 2.7, 4.9, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.4, 2.7, 4.9, 5, 9.6, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(3, 3), Vector2(2.9, 2.9), Vector2(2.7, 2.7), Vector2(2.7, 2.7), Vector2(2, 2)]
+"values": [Vector2(3, 3), Vector2(2.9, 2.9), Vector2(2.7, 2.7), Vector2(2.7, 2.7), Vector2(2, 2), Vector2(2, 2), Vector2(3, 3)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -148,10 +155,10 @@ tracks/4/path = NodePath("Control/Label:horizontal_alignment")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 12.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [0, 1, 0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -160,7 +167,7 @@ tracks/5/path = NodePath("Control/Label2:text")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(7, 12, 12.3),
+"times": PackedFloat32Array(7, 12, 12.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": ["Marketing / Communication :
@@ -204,7 +211,7 @@ tracks/8/path = NodePath("Control/Label2:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(7.1, 8.5, 11.6, 11.9, 12.1, 12.3),
+"times": PackedFloat32Array(7.1, 8.5, 11.6, 11.9, 12.1, 12.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -302,21 +309,15 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="Control"]
-self_modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0.105882, 0.2, 0.428571, 1)
 z_index = 1
 layout_mode = 1
-offset_left = 255.319
-offset_top = 74.4681
-offset_right = 462.32
-offset_bottom = 204.471
-scale = Vector2(2, 2)
-text = "Developpers :
-Cookie - Jaja
-Portos18 - Florian
-Melvin - Melvin
-Bascab - Bastien
-"
-horizontal_alignment = 1
+offset_left = 50.0
+offset_top = 300.0
+offset_right = 256.998
+offset_bottom = 560.0
+scale = Vector2(2.9625, 2.9625)
+text = "Hey !"
 
 [node name="Label2" type="Label" parent="Control"]
 self_modulate = Color(0, 0, 0, 0)
@@ -324,7 +325,7 @@ z_index = 1
 layout_mode = 0
 offset_top = -20.0
 offset_right = 226.0
-offset_bottom = 84.0001
+offset_bottom = 84.0
 scale = Vector2(2, 2)
 text = "Marketing / Communication :
 Raven_Rza - Chloé
@@ -334,22 +335,25 @@ Ryanfdn - Ryan
 horizontal_alignment = 1
 
 [node name="Stars" type="Sprite2D" parent="Control"]
-visible = false
-position = Vector2(662.84, 476.075)
+position = Vector2(356.471, 278.824)
 scale = Vector2(0.265625, 0.266526)
 texture = ExtResource("7_5b6c5")
 
 [node name="Stars2" type="Sprite2D" parent="Control"]
-position = Vector2(480.77, 671.872)
+position = Vector2(139.375, 305)
 rotation = 2.0944
 scale = Vector2(0.265625, 0.266526)
 texture = ExtResource("7_5b6c5")
 
 [node name="Stars3" type="Sprite2D" parent="Control"]
-position = Vector2(662.62, 770.096)
+position = Vector2(302.941, 482.353)
 rotation = 2.14255
 scale = Vector2(0.265625, 0.266526)
 texture = ExtResource("7_5b6c5")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bfubc")
+autoplay = true
 
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
 [connection signal="animation_finished" from="Control/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cys3ak2h84xuo"]
+[gd_scene load_steps=11 format=3 uid="uid://cys3ak2h84xuo"]
 
 [ext_resource type="Script" path="res://Player2/Player2.gd" id="1_0iqd5"]
 [ext_resource type="Texture2D" uid="uid://cd1u5rw41yxga" path="res://Imports/croacroa-pixelicious.png" id="2_jnkj2"]
 [ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_csfu3"]
+[ext_resource type="Script" path="res://Player2/Line2D.gd" id="4_sn10s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vuw4"]
 radius = 12.0
@@ -138,5 +139,10 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_g8kf1")
 }
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 7.0
+default_color = Color(1, 0.698039, 1, 0.45098)
+script = ExtResource("4_sn10s")
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]

@@ -15,7 +15,6 @@ var Count = 0
 @onready var spawnpos3 = $SpawnPos3
 @onready var muzzleflash1 = $Muzzleflash1_2
 @onready var muzzleflash2 = $Muzzleflash2_2
-@onready var Godmod = $CollisionPolygon2D
 @onready var Nohit = $CollisionPolygon2D
 @onready var ScoopTimer = $ScoopTimer
 @onready var Tir = $Tir
@@ -25,10 +24,6 @@ var Count = 0
 func _physics_process(delta):
 	var horizontale = Input.get_axis("ui_left", "ui_right") 
 	var verticale = Input.get_axis("ui_up", "ui_down")
-	if Input.is_action_pressed("ui_focus_next"):
-		Godmod.disabled = true
-	if Input.is_action_pressed("pause"):
-		get_tree().change_scene_to_file(Global.Scene_escape)
 	#direction horizontale
 	if horizontale == 1:
 		velocity.x = horizontale * SPEED 

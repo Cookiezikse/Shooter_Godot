@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://6k33bmmxwbg"]
+[gd_scene load_steps=15 format=3 uid="uid://6k33bmmxwbg"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_i2ueo"]
 [ext_resource type="Texture2D" uid="uid://cdvm42u7rewd8" path="res://Imports/corbeau.png" id="2_0kwxy"]
 [ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_lo0vl"]
 [ext_resource type="Script" path="res://Player/ShootSpeed.gd" id="3_wb4q8"]
 [ext_resource type="AudioStream" uid="uid://cjqh3kolxv4vl" path="res://Imports/Audio/laserShoot.wav" id="5_ff12l"]
+[ext_resource type="Script" path="res://Player/Line2D.gd" id="6_nsmw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_der08"]
 size = Vector2(16, 12)
@@ -190,6 +191,11 @@ wait_time = 1.5
 [node name="Tir" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ff12l")
 volume_db = -6.398
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 7.0
+default_color = Color(0.964706, 0.529412, 0.682353, 0.384314)
+script = ExtResource("6_nsmw4")
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]
 [connection signal="animation_finished" from="Noscoopie" to="." method="_on_noscoopie_animation_finished"]

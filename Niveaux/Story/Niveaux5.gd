@@ -14,7 +14,7 @@ func _ready():
 	Global.score = 0
 
 func _on_spawn_timeout():
-	Global.amelioration = 2 #Pour aller plus vite sur le boss et sinon go mettre 1 pour les joueurs
+ #Pour aller plus vite sur le boss et sinon go mettre 1 pour les joueurs
 	if Global.FIGHT == 1:
 		var enemy = Enemy2.instantiate()
 		add_child(enemy)
