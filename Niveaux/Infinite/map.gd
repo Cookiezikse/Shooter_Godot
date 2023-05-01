@@ -19,7 +19,9 @@ var shop = 0
 
 func _ready():
 	Global.grenade1 = 3
-
+	EnnemiVars.Speed_atk_Boss_1 = 0.2
+	EnnemiVars.Health_Boss_1 = 50
+	EnnemiVars.Spawn_point_Boss_1 = 12
 func _on_spawn_timeout():
 	var Vector = Vector2(randi_range(2,580),randi_range(-5,-5))
 	
@@ -28,6 +30,8 @@ func _on_spawn_timeout():
 		EnnemiVars.Spawn_Infinite = 0.5
 	if Global.score >= Global.x:
 		mod = 3
+
+		
 
 	if mod == 2: 
 		random = (randi() %2 + 1)

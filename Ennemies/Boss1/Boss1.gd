@@ -51,6 +51,12 @@ func enemy_hit( ):
 		Global.Boss_amelioration = 0
 		Global.Boss_dead = true
 		Global.amelioration = 1
+		if Global.atk_speed > 0.08:
+			Global.atk_speed -= 0.01
+		if EnnemiVars.Speed_atk_Boss_1 > 0.1:
+			EnnemiVars.Speed_atk_Boss_1 -= 0.01
+		EnnemiVars.Health_Boss_1 += 50
+		EnnemiVars.Spawn_point_Boss_1 += 1
 		queue_free()
 
 const SPEED = 20
