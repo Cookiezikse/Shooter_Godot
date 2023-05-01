@@ -8,6 +8,7 @@ var random = 0
 var mod = 1
 var spawn_boss = 0
 var shop = 0
+@onready var Music = $AudioStreamPlayer
 @onready var SHOOP = $Shop
 
 # Methode opti pour faire le mod infini vraiment infini, les mods et faire un nombre x, si c'est inférieur, mod 1
@@ -67,4 +68,5 @@ func _on_spawn_timeout():
 			add_child(enemy)
 			enemy.position = Vector
 	
-
+func _on_audio_stream_player_finished():
+	Music.play()

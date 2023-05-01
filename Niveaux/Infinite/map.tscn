@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://1bclrx2w8d2p"]
+[gd_scene load_steps=14 format=3 uid="uid://1bclrx2w8d2p"]
 
 [ext_resource type="Script" path="res://Niveaux/Infinite/map.gd" id="1_jt7uk"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_83wul"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_l4vyr"]
 [ext_resource type="PackedScene" uid="uid://100rssj613rg" path="res://shop.tscn" id="9_biitr"]
 [ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="11_b8nlw"]
+[ext_resource type="PackedScene" uid="uid://dyxhpod1wjxhe" path="res://Niveaux/Music_levels.tscn" id="12_ff34i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xaicx"]
 size = Vector2(92, 36)
@@ -84,11 +85,14 @@ visible = false
 offset_left = 300.0
 offset_right = 300.0
 
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("12_ff34i")]
+
 [connection signal="Scarafandre" from="Area2D" to="." method="_on_area_2d_scarafandre"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="Spawn" to="Spawn" method="_on_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
 [editable path="Background/MapBackground/Tilemaps"]
 [editable path="Shop"]

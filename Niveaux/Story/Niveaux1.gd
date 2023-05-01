@@ -5,6 +5,8 @@ var Enemy2 = preload("res://Ennemies/Ennemi_2/Enemy2.tscn")
 var random = 0
 const count = 20
 
+@onready var Music = $AudioStreamPlayer
+
 func _ready():
 	Global.score = 0
 
@@ -18,3 +20,5 @@ func _on_spawn_timeout():
 		Global.Niveau1_clear = true
 		get_tree().change_scene_to_file("res://Menus/Select Menu/select_menu1.tscn")
 
+func _on_audio_stream_player_finished():
+	Music.play()

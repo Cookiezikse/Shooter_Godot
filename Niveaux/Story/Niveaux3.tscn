@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk4b0a2pb73b2"]
+[gd_scene load_steps=11 format=3 uid="uid://bk4b0a2pb73b2"]
 
 [ext_resource type="Script" path="res://Niveaux/Story/Niveaux3.gd" id="1_812ph"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_v54vv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://DispScore.gd" id="7_4kxom"]
 [ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_m8k7l"]
 [ext_resource type="PackedScene" uid="uid://bmb8xk5i4qfhh" path="res://Ennemies/Boss1/boss_1.tscn" id="9_v7pfp"]
+[ext_resource type="PackedScene" uid="uid://dyxhpod1wjxhe" path="res://Niveaux/Music_levels.tscn" id="10_elaul"]
 
 [node name="Niveau3" type="Node2D"]
 script = ExtResource("1_812ph")
@@ -89,7 +90,10 @@ position = Vector2(-1, 1)
 
 [node name="Boss1" parent="." instance=ExtResource("9_v7pfp")]
 
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("10_elaul")]
+
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
 [editable path="Background/MapBackground/Tilemaps"]
 [editable path="Node2D2"]

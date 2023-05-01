@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://0i88ln2thvdp"]
+[gd_scene load_steps=10 format=3 uid="uid://0i88ln2thvdp"]
 
 [ext_resource type="Script" path="res://Niveaux/Story/Niveaux2.gd" id="1_0k4oa"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="2_1qw02"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="6_22hby"]
 [ext_resource type="Script" path="res://DispScore.gd" id="7_0ofon"]
 [ext_resource type="PackedScene" uid="uid://dmpkgvykouksg" path="res://Grenade.tscn" id="8_kyr2e"]
+[ext_resource type="PackedScene" uid="uid://dyxhpod1wjxhe" path="res://Niveaux/Music_levels.tscn" id="9_ii820"]
 
 [node name="Map2" type="Node2D"]
 script = ExtResource("1_0k4oa")
@@ -99,8 +100,11 @@ position = Vector2(-1, 1)
 wait_time = 20.0
 autostart = true
 
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("9_ii820")]
+
 [connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
 [editable path="Background/MapBackground/Tilemaps"]
 [editable path="Node2D2"]
