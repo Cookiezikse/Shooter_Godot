@@ -8,7 +8,6 @@ var random = 0
 var mod = 2
 var spawn_boss = 0
 var shop = 0
-var x = 1000
 @onready var Music = $AudioStreamPlayer
 @onready var SHOOP = $Shop
 
@@ -24,17 +23,11 @@ func _ready():
 func _on_spawn_timeout():
 	var Vector = Vector2(randi_range(2,580),randi_range(-5,-5))
 	
-	if Global.score <= x:
+	if Global.score <= Global.x:
 		mod = 2
 		EnnemiVars.Spawn_Infinite = 0.5
-	if Global.score >= x:
+	if Global.score >= Global.x:
 		mod = 3
-	if Global.score > 5000:
-		mod = 4
-	if Global.score > 8000:
-		mod = 3
-		Global.Boss_amelioration = 1
-		Global.amelioration = 1
 
 	if mod == 2: 
 		random = (randi() %2 + 1)
@@ -52,17 +45,5 @@ func _on_spawn_timeout():
 		add_child(Boss_Spawn)
 		spawn_boss = 1
 
-	if mod == 4:
-		spawn_boss = 0
-		random = (randi() %2 + 1)
-		if random == 1:
-			var enemy2 = Enemy2.instantiate()
-			add_child(enemy2)
-			enemy2.position = Vector
-		if random == 2:
-			var enemy = Enemy.instantiate()
-			add_child(enemy)
-			enemy.position = Vector
-	
 func _on_audio_stream_player_finished():
 	Music.play()

@@ -5,6 +5,7 @@ extends Node2D
 func _ready():
 	Global.Boss_amelioration = 1
 	Global.score = 0
+	Global.amelioration = 0
 
 func _on_spawn_timeout():
 	if Global.Boss_dead:

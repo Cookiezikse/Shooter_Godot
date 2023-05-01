@@ -9,6 +9,7 @@ const count = 20
 
 func _ready():
 	Global.score = 0
+	Global.amelioration = 0
 
 func _on_spawn_timeout():
 

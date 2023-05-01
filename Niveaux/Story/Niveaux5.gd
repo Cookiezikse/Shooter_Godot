@@ -12,6 +12,7 @@ var Count2 = true
 
 func _ready():
 	Global.score = 0
+	Global.amelioration = 0
 
 func _on_spawn_timeout():
  #Pour aller plus vite sur le boss et sinon go mettre 1 pour les joueurs

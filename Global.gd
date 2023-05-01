@@ -1,6 +1,7 @@
 extends Node
 
 var score = 0
+var x = 1000
 var score_temp = 0
 var meilleurScore = 0
 

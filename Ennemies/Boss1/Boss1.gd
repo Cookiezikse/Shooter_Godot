@@ -47,8 +47,10 @@ func enemy_hit( ):
 	Hit.play("hit")
 	if health == 0:
 		Global.score +=5000
+		Global.x += 5000
 		Global.Boss_amelioration = 0
 		Global.Boss_dead = true
+		Global.amelioration = 1
 		queue_free()
 
 const SPEED = 20
