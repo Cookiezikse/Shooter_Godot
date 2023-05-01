@@ -2,6 +2,7 @@ extends Area2D
 
 var player = false
 
+
 func _process(delta):
 	if player:
 		if Input.is_action_pressed("ui_accept"):

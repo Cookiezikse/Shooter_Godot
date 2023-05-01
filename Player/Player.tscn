@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://6k33bmmxwbg"]
+[gd_scene load_steps=14 format=3 uid="uid://6k33bmmxwbg"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_i2ueo"]
 [ext_resource type="Texture2D" uid="uid://cdvm42u7rewd8" path="res://Imports/corbeau.png" id="2_0kwxy"]
 [ext_resource type="Texture2D" uid="uid://gdjo0p2o0ewp" path="res://Imports/Graphics/Tiles/tile_0005.png" id="3_lo0vl"]
 [ext_resource type="Script" path="res://Player/ShootSpeed.gd" id="3_wb4q8"]
+[ext_resource type="AudioStream" uid="uid://cjqh3kolxv4vl" path="res://Imports/Audio/laserShoot.wav" id="5_ff12l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_der08"]
 size = Vector2(16, 12)
@@ -70,22 +71,6 @@ _data = {
 "Muzzleflash2": SubResource("Animation_vuu0n")
 }
 
-[sub_resource type="Animation" id="Animation_b3go3"]
-resource_name = "Nscoop"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
 [sub_resource type="Animation" id="Animation_86dk1"]
 resource_name = "Fly"
 length = 0.8
@@ -101,6 +86,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 0.241484),
 "update": 1,
 "values": [8, 9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_b3go3"]
+resource_name = "Nscoop"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
 }
 
 [sub_resource type="Animation" id="Animation_c5ql3"]
@@ -185,6 +186,10 @@ libraries = {
 
 [node name="ScoopTimer" type="Timer" parent="."]
 wait_time = 1.5
+
+[node name="Tir" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ff12l")
+volume_db = -6.398
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]
 [connection signal="animation_finished" from="Noscoopie" to="." method="_on_noscoopie_animation_finished"]

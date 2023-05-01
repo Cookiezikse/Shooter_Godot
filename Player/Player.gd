@@ -18,6 +18,7 @@ var Count = 0
 @onready var Godmod = $CollisionPolygon2D
 @onready var Nohit = $CollisionPolygon2D
 @onready var ScoopTimer = $ScoopTimer
+@onready var Tir = $Tir
 
 @warning_ignore("unused_parameter")
 
@@ -26,6 +27,9 @@ func _physics_process(delta):
 	var verticale = Input.get_axis("ui_up", "ui_down")
 	if Input.is_action_pressed("ui_focus_next"):
 		Godmod.disabled = true
+	if Input.is_action_pressed("pause"):
+		
+		get_tree().change_scene_to_file("res://Menus/Main Menu/Menu.tscn")
 	#direction horizontale
 	if horizontale == 1:
 		velocity.x = horizontale * SPEED 
@@ -92,6 +96,7 @@ func shoot():
 		muzzleflash2.queue("Muzzleflash2")
 		$ShootSpeed.start()
 		canshoot = false
+	Tir.play()
 
 func player_hit( ):
 	health -= 1

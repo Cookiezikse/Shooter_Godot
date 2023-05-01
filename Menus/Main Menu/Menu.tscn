@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://hsemjvhhbfex"]
+[gd_scene load_steps=15 format=3 uid="uid://hsemjvhhbfex"]
 
 [ext_resource type="Script" path="res://Menus/Main Menu/Menu.gd" id="1_80ywm"]
 [ext_resource type="PackedScene" uid="uid://6k33bmmxwbg" path="res://Player/Player.tscn" id="3_408j6"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://Menus/Main Menu/Options.gd" id="5_3gwmh"]
 [ext_resource type="Script" path="res://Menus/Main Menu/Quit.gd" id="6_4rt42"]
 [ext_resource type="PackedScene" uid="uid://hj4mr7yeyjgh" path="res://cow.tscn" id="8_2xmua"]
-[ext_resource type="Script" path="res://Credits.gd" id="8_i73r6"]
 [ext_resource type="AudioStream" uid="uid://jvm6r7uhnjk3" path="res://Imports/Audio/Main_music.wav" id="10_qm7a7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sp56q"]
@@ -131,6 +130,8 @@ script = ExtResource("3_g474m")
 position = Vector2(61.75, 15.25)
 shape = SubResource("RectangleShape2D_sp56q")
 
+[node name="Choose2" type="AudioStreamPlayer" parent="VBoxContainer/Start_story2/Start_story"]
+
 [node name="Start_infinite2" type="Button" parent="VBoxContainer"]
 z_index = 1
 layout_mode = 2
@@ -145,6 +146,8 @@ script = ExtResource("4_q8v6t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Start_infinite2/Start_infinite"]
 position = Vector2(61, 50.75)
 shape = SubResource("RectangleShape2D_rq4gg")
+
+[node name="Choose3" type="AudioStreamPlayer" parent="VBoxContainer/Start_infinite2/Start_infinite"]
 
 [node name="Options2" type="Button" parent="VBoxContainer"]
 z_index = 1
@@ -163,6 +166,8 @@ script = ExtResource("5_3gwmh")
 position = Vector2(61.25, 10.5)
 shape = SubResource("RectangleShape2D_ot1nl")
 
+[node name="Choose4" type="AudioStreamPlayer" parent="VBoxContainer/Options2/Options"]
+
 [node name="Quit2" type="Button" parent="VBoxContainer"]
 z_index = 1
 layout_mode = 2
@@ -176,27 +181,6 @@ script = ExtResource("6_4rt42")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Quit2/Quit"]
 position = Vector2(20.25, 15.5)
 shape = SubResource("RectangleShape2D_3j68s")
-
-[node name="Credits" type="Button" parent="."]
-z_index = 3
-layout_mode = 2
-offset_left = -30.0
-offset_top = 288.0
-offset_right = 33.0
-offset_bottom = 319.0
-size_flags_horizontal = 4
-size_flags_vertical = 3
-button_mask = 0
-text = "Credits
-"
-
-[node name="Start_story" type="Area2D" parent="Credits"]
-position = Vector2(-19, 0)
-script = ExtResource("8_i73r6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Credits/Start_story"]
-position = Vector2(50.5, 15.125)
-shape = SubResource("RectangleShape2D_sp56q")
 
 [node name="Spawn_Player" type="Area2D" parent="."]
 position = Vector2(-259, 334)
@@ -242,7 +226,7 @@ scale = Vector2(0.950079, 1.14722)
 position = Vector2(-191, 251)
 scale = Vector2(0.950079, 1.14722)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Main_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_qm7a7")
 autoplay = true
 
@@ -254,8 +238,6 @@ autoplay = true
 [connection signal="body_exited" from="VBoxContainer/Options2/Options" to="VBoxContainer/Options2/Options" method="_on_body_exited"]
 [connection signal="body_entered" from="VBoxContainer/Quit2/Quit" to="VBoxContainer/Quit2/Quit" method="_on_body_entered"]
 [connection signal="body_exited" from="VBoxContainer/Quit2/Quit" to="VBoxContainer/Quit2/Quit" method="_on_body_exited"]
-[connection signal="body_entered" from="Credits/Start_story" to="Credits/Start_story" method="_on_body_entered"]
-[connection signal="body_exited" from="Credits/Start_story" to="Credits/Start_story" method="_on_body_exited"]
 [connection signal="body_entered" from="Spawn_Player" to="." method="_on_spawn_player_body_entered"]
 [connection signal="body_entered" from="Destroy_player" to="." method="_on_destroy_player_body_entered"]
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="Main_music" to="." method="_on_audio_stream_player_finished"]

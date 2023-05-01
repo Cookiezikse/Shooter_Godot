@@ -2,6 +2,7 @@ extends Area2D
 
 var player = false
 
+
 func _process(delta):
 	if player:
 		if Input.is_action_pressed("ui_accept"):
@@ -10,6 +11,7 @@ func _process(delta):
 			EnnemiVars.Spawn_point_Boss_1 = 10
 			EnnemiVars.Speed_atk_Boss_1 = 0.2
 			EnnemiVars.Health_Boss_1 = 50
+
 			get_tree().change_scene_to_file(Global.Scene2)
 
 func _on_body_entered(body):

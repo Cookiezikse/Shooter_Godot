@@ -1,6 +1,8 @@
 extends Area2D
 
 var player = false
+@onready var Sound = $Choose
+
 
 func _process(delta):
 	if player:
