@@ -44,7 +44,7 @@ var pattern_fight = 1
 @onready var spawn3_3 = $BD3
 
 var shooter_timer_wait_time = EnnemiVars.Speed_atk_Boss_FIN
-var health = 10#EnnemiVars.Health_Boss_FIN
+var health = EnnemiVars.Health_Boss_FIN
 var random_move = (randi_range(1,2))
 
 func _ready():
