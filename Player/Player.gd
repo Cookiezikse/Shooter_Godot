@@ -24,6 +24,8 @@ var Count = 0
 func _physics_process(delta):
 	var horizontale = Input.get_axis("ui_left", "ui_right") 
 	var verticale = Input.get_axis("ui_up", "ui_down")
+	if Input.is_action_pressed("pause"):
+		get_tree().change_scene_to_file("res://Menus/Main Menu/Menu.tscn")
 	#direction horizontale
 	if horizontale == 1:
 		velocity.x = horizontale * SPEED 

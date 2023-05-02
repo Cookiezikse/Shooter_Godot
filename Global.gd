@@ -1,5 +1,7 @@
 extends Node
 
+var DIFF = 1
+
 var score = 0
 var x = 1000
 var score_temp = 0

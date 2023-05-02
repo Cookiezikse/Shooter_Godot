@@ -12,6 +12,7 @@ func _process(delta):
 			EnnemiVars.Speed_atk_Boss_1 = 0.1
 			EnnemiVars.Health_Boss_1 = 100
 			EnnemiVars.Speed_atk_Boss_FIN = 0.05
+			Global.DIFF = 3
 			get_tree().change_scene_to_file(Global.Scene)
 
 func _on_body_entered(body):

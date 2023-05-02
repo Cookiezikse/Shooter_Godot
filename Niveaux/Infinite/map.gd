@@ -19,9 +19,18 @@ var shop = 0
 
 func _ready():
 	Global.grenade1 = 3
-	EnnemiVars.Speed_atk_Boss_1 = 0.2
-	EnnemiVars.Health_Boss_1 = 50
-	EnnemiVars.Spawn_point_Boss_1 = 12
+	if Global.DIFF == 1:
+		EnnemiVars.Speed_atk_Boss_1 = 0.2
+		EnnemiVars.Health_Boss_1 = 50
+		EnnemiVars.Spawn_point_Boss_1 = 12
+	if Global.DIFF == 2:
+		EnnemiVars.Spawn_point_Boss_1 = 11
+		EnnemiVars.Speed_atk_Boss_1 = 0.15
+		EnnemiVars.Health_Boss_1 = 75
+	if Global.DIFF == 3:
+		EnnemiVars.Spawn_point_Boss_1 = 15
+		EnnemiVars.Speed_atk_Boss_1 = 0.1
+		EnnemiVars.Health_Boss_1 = 100
 func _on_spawn_timeout():
 	var Vector = Vector2(randi_range(2,580),randi_range(-5,-5))
 	
