@@ -4,5 +4,5 @@
 
 https://cookiekrips.itch.io/dreamstrike
 
-A game made in godot ! <img style="width:3%;"  src="./svgviewer-output (2).svg" alt="Itch.io icon" />
+A game made in godot 4 ! <img style="width:3%;"  src="./svgviewer-output (2).svg" alt="Itch.io icon" />
 
