@@ -1,4 +1,4 @@
 # Shooter_Godot
 
-To see the game and try it on itch.io !
+<a style="width=500%">To see the game and try it on itch.io !</a>
 https://cookiekrips.itch.io/dreamstrike
